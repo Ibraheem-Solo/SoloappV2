@@ -37,57 +37,118 @@ export default function Home() {
         description="Solotech Digital designs websites, brands, and digital content that help businesses in The Gambia and West Africa stand out, attract customers, and grow online."
       />
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-6 md:px-12">
+      <section className="relative min-h-[92vh] flex items-center pt-10 pb-20 px-6 md:px-12 overflow-hidden">
+        {/* Space background */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity" />
-        
-        <div className="container mx-auto max-w-5xl relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8">
-              <span className="text-yellow-400">⚡</span>
-              <span className="text-white/90">Launch Your Website in 24 Hours</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-              We Build Digital Experiences <br className="hidden md:block" />
-              <span className="text-gradient">That Drive Growth</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12">
-              Solotech Digital designs websites, brands, and digital content that help businesses stand out, attract customers, and grow online.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
-                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base w-full sm:w-auto hover:scale-105 transition-transform">
-                  Start a Project
-                </Button>
-              </Link>
-              <Link href="/work">
-                <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-white/20 hover:bg-white/10">
-                  View Our Work
-                </Button>
-              </Link>
-            </div>
-            
-            <div className="mt-20 pt-10 border-t border-white/10 flex flex-wrap justify-center gap-12 text-center">
-              <div>
-                <div className="text-4xl font-bold text-white mb-2">120+</div>
-                <div className="text-white/60">Projects Delivered</div>
+        {/* Purple glow behind image */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] h-[80%] bg-purple-600/25 blur-[100px] rounded-full pointer-events-none" />
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left — Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              {/* Online indicator */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-6">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                </span>
+                <span className="text-green-400 font-semibold">We're online now</span>
+                <span className="text-white/40">— ready to start your project</span>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-white mb-2">40+</div>
-                <div className="text-white/60">Happy Clients</div>
+
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8 ml-2">
+                <span className="text-yellow-400">⚡</span>
+                <span className="text-white/90">Launch Your Website in 24 Hours</span>
               </div>
-              <div>
-                <div className="text-4xl font-bold text-white mb-2 flex justify-center"><Star className="text-yellow-400 fill-yellow-400 mr-2" /> 5.0</div>
-                <div className="text-white/60">Client Rating</div>
+
+              <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.08]">
+                We Build<br />
+                Digital <span className="text-gradient">Experiences</span><br />
+                That Drive <span className="text-gradient">Growth</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/65 max-w-xl mb-10 leading-relaxed">
+                Solotech Digital crafts websites, brands, and content that help businesses across The Gambia and West Africa stand out, attract customers, and grow online.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base hover:scale-105 transition-transform">
+                    Start a Project
+                  </Button>
+                </Link>
+                <Link href="/work">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base border-white/20 hover:bg-white/10">
+                    View Our Work
+                  </Button>
+                </Link>
               </div>
-            </div>
-          </motion.div>
+
+              {/* Stats */}
+              <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">120+</div>
+                  <div className="text-white/50 text-sm">Projects Delivered</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1">40+</div>
+                  <div className="text-white/50 text-sm">Happy Clients</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-1 flex items-center gap-1"><Star className="text-yellow-400 fill-yellow-400 w-6 h-6" /> 5.0</div>
+                  <div className="text-white/50 text-sm">Client Rating</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right — Person image */}
+            <motion.div
+              initial={{ opacity: 0, x: 40, scale: 0.97 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+              className="relative hidden lg:flex items-end justify-center"
+            >
+              {/* Subtle ring */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-purple-600/15 border border-purple-500/20 blur-sm" />
+              {/* Floating badge */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+                className="absolute top-8 left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-purple-500/30"
+              >
+                <div className="text-xs text-white/50 mb-0.5">Latest project</div>
+                <div className="text-sm font-semibold text-white">Delivered in 18hrs ⚡</div>
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+                className="absolute bottom-16 right-0 glass-panel px-4 py-3 rounded-2xl z-20 border-green-500/30"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <Star size={14} className="text-green-400 fill-green-400" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-white/50">Client review</div>
+                    <div className="text-sm font-semibold text-white">5 Stars ✨</div>
+                  </div>
+                </div>
+              </motion.div>
+              <img
+                src={`${import.meta.env.BASE_URL}hero-person.png`}
+                alt="Solotech Digital team member"
+                className="relative z-10 h-[600px] xl:h-[680px] w-auto object-contain drop-shadow-2xl"
+                style={{ filter: "drop-shadow(0 0 60px rgba(123,47,190,0.35))" }}
+              />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
