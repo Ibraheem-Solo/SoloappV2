@@ -152,6 +152,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Client Logos Marquee */}
+      <section className="py-12 border-y border-white/5 overflow-hidden bg-black/60 relative">
+        <div className="text-center mb-8">
+          <p className="text-white/25 text-xs font-semibold uppercase tracking-[0.25em]">
+            Trusted by organisations across The Gambia &amp; West Africa
+          </p>
+        </div>
+
+        {/* Fade edges */}
+        <div className="absolute inset-y-0 left-0 w-20 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #06060f, transparent)" }} />
+        <div className="absolute inset-y-0 right-0 w-20 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #06060f, transparent)" }} />
+
+        <div
+          className="flex gap-8 items-center animate-marquee"
+          style={{ width: "max-content" }}
+        >
+          {[
+            { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School",         dark: false },
+            { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute",              dark: false },
+            { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network", dark: false },
+            { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University",                   dark: false },
+            { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products",                dark: false },
+            { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique",                          dark: true  },
+            { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School",         dark: false },
+            { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute",              dark: false },
+            { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network", dark: false },
+            { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University",                   dark: false },
+            { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products",                dark: false },
+            { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique",                          dark: true  },
+          ].map((logo, i) => (
+            <div
+              key={i}
+              title={logo.name}
+              className="shrink-0 flex items-center justify-center rounded-2xl px-5 py-3 border border-white/10 hover:border-white/20 transition-all duration-300"
+              style={{ background: "rgba(255,255,255,0.04)" }}
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="h-10 w-auto max-w-[120px] object-contain"
+                style={{
+                  filter: logo.dark
+                    ? "brightness(10) grayscale(0.3) opacity(0.75)"
+                    : "grayscale(0.2) opacity(0.85)",
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* LaunchPad Section */}
       <section className="py-24 px-6 md:px-12 bg-black/40 relative">
         <div className="container mx-auto max-w-6xl">
