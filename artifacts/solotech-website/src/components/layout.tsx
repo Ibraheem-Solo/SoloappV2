@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import WhatsAppWidget from "@/components/whatsapp-widget";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -137,7 +138,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3 text-white/60">
                 <li>Banjul, The Gambia</li>
                 <li>hello@solotechdigital.com</li>
-                <li>+220 123 4567</li>
+                <li>+220 753 2757</li>
               </ul>
             </div>
           </div>
@@ -147,15 +148,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
 
-      {/* Floating WhatsApp */}
-      <a 
-        href="https://wa.me/2201234567" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform"
-      >
-        <MessageCircle size={24} />
-      </a>
+      <WhatsAppWidget />
     </div>
   );
 }

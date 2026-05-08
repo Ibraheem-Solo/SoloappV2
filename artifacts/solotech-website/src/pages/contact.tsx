@@ -44,14 +44,14 @@ const contactInfo = [
   {
     icon: <Phone size={22} />,
     label: "Phone",
-    value: "+220 123 4567",
-    href: "tel:+2201234567",
+    value: "+220 753 2757",
+    href: "tel:+2207532757",
   },
   {
     icon: <MessageCircle size={22} />,
     label: "WhatsApp",
     value: "Chat with us on WhatsApp",
-    href: "https://wa.me/2201234567",
+    href: "https://wa.me/2207532757",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function Contact() {
 
               {/* Quick CTA */}
               <a
-                href="https://wa.me/2201234567"
+                href="https://wa.me/2207532757"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="whatsapp-cta"
