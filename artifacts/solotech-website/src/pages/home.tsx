@@ -2,10 +2,16 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote } from "lucide-react";
+import SeoHead from "@/components/seo-head";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
+      <SeoHead
+        path="/"
+        title={undefined}
+        description="Solotech Digital designs websites, brands, and digital content that help businesses in The Gambia and West Africa stand out, attract customers, and grow online."
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-10 pb-20 px-6 md:px-12">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity" />

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
+import SeoHead from "@/components/seo-head";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -100,6 +101,11 @@ const services = [
 export default function Services() {
   return (
     <div className="flex flex-col w-full">
+      <SeoHead
+        title="Services"
+        path="/services"
+        description="Web design, branding, social media management, photography, videography, and digital marketing services in The Gambia. Results-focused digital solutions for African businesses."
+      />
       {/* Hero */}
       <section className="relative py-28 px-6 md:px-12 text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent pointer-events-none" />

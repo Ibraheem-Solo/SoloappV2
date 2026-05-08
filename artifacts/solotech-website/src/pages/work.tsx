@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import SeoHead from "@/components/seo-head";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -103,6 +104,11 @@ export default function Work() {
 
   return (
     <div className="flex flex-col w-full">
+      <SeoHead
+        title="Our Work"
+        path="/work"
+        description="Browse Solotech Digital's portfolio — websites, brand identities, social media campaigns, and more for clients across The Gambia and West Africa."
+      />
       {/* Hero */}
       <section className="relative py-28 px-6 md:px-12 text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent pointer-events-none" />

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Globe, Zap, Award } from "lucide-react";
+import SeoHead from "@/components/seo-head";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -62,6 +63,11 @@ const values = [
 export default function About() {
   return (
     <div className="flex flex-col w-full">
+      <SeoHead
+        title="About Us"
+        path="/about"
+        description="Learn about Solotech Digital LLC — a next-generation creative agency based in Banjul, The Gambia. Our story, mission, vision, values, and team."
+      />
       {/* Hero */}
       <section className="relative py-28 px-6 md:px-12 text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent pointer-events-none" />

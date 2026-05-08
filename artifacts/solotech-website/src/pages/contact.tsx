@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SeoHead from "@/components/seo-head";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -65,6 +66,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const form = useForm<ContactForm>({
+
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
@@ -83,6 +85,11 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col w-full">
+      <SeoHead
+        title="Contact Us"
+        path="/contact"
+        description="Start a project with Solotech Digital LLC. Contact us for web design, branding, social media management, and digital marketing services in The Gambia."
+      />
       {/* Hero */}
       <section className="relative py-28 px-6 md:px-12 text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent pointer-events-none" />
