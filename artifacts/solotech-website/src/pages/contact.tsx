@@ -340,7 +340,7 @@ export default function Contact() {
                           type="submit"
                           size="lg"
                           data-testid="button-submit"
-                          className="w-full bg-gradient-solotech text-white rounded-xl py-6 text-lg hover:scale-[1.02] transition-transform"
+                          className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 text-base hover:scale-[1.02] transition-transform"
                         >
                           Send Message — We'll Reply in 24hrs
                         </Button>

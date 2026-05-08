@@ -188,7 +188,7 @@ export default function Services() {
 
                 <div className="mt-8 pt-8 border-t border-white/10">
                   <Link href="/contact">
-                    <Button className="bg-white/15 hover:bg-white/25 text-white border border-white/20 rounded-xl px-8 py-3 transition-all hover:scale-105">
+                    <Button className="bg-white/15 hover:bg-white/25 text-white border border-white/20 rounded-full px-8 py-2.5 transition-all hover:scale-105">
                       Get a Quote for This Service
                     </Button>
                   </Link>
@@ -209,7 +209,7 @@ export default function Services() {
               Book a free 30-minute strategy call. We'll help you figure out exactly what will move the needle for your business.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-6 text-lg hover:scale-105 transition-transform">
+              <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base hover:scale-105 transition-transform">
                 Book a Free Call
               </Button>
             </Link>

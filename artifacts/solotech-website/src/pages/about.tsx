@@ -228,7 +228,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Work With Us?</h2>
             <p className="text-xl text-white/60 mb-10">Let's build something that sets your business apart.</p>
             <Link href="/contact">
-              <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-6 text-lg hover:scale-105 transition-transform">
+              <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base hover:scale-105 transition-transform">
                 Start a Project
               </Button>
             </Link>

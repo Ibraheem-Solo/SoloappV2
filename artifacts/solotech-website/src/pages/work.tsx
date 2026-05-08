@@ -220,12 +220,12 @@ export default function Work() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-6 text-lg hover:scale-105 transition-transform">
+                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base hover:scale-105 transition-transform">
                   Start a Project
                 </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20 hover:bg-white/10">
+                <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base border-white/20 hover:bg-white/10">
                   Explore Services
                 </Button>
               </Link>

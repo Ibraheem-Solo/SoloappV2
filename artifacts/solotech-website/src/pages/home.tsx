@@ -62,12 +62,12 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-8 py-6 text-lg w-full sm:w-auto hover:scale-105 transition-transform">
+                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base w-full sm:w-auto hover:scale-105 transition-transform">
                   Start a Project
                 </Button>
               </Link>
               <Link href="/work">
-                <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg w-full sm:w-auto border-white/20 hover:bg-white/10">
+                <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-white/20 hover:bg-white/10">
                   View Our Work
                 </Button>
               </Link>
@@ -155,7 +155,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/contact">
-                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl py-6 transition-all hover:scale-[1.02]">
+                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full py-3 px-8 transition-all hover:scale-[1.02]">
                   Get Started
                 </Button>
               </Link>
@@ -244,7 +244,7 @@ export default function Home() {
               </button>
 
               <Link href="/contact">
-                <Button className="w-full bg-gradient-solotech text-white rounded-xl py-6 hover:opacity-90 transition-all hover:scale-[1.02]">
+                <Button className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 hover:opacity-90 transition-all hover:scale-[1.02]">
                   Get Pro — D{proPrice.toLocaleString()}{proLabel}
                 </Button>
               </Link>
@@ -317,7 +317,7 @@ export default function Home() {
               {/* Footer CTA */}
               <div className="sticky bottom-0 bg-[#0a0a14]/90 backdrop-blur-xl p-6 border-t border-white/10">
                 <Link href="/contact" onClick={() => setShowProDetails(false)}>
-                  <Button className="w-full bg-gradient-solotech text-white rounded-xl py-6 text-base hover:opacity-90 transition-all hover:scale-[1.02]">
+                  <Button className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 text-base hover:opacity-90 transition-all hover:scale-[1.02]">
                     Get Pro — D{proPrice.toLocaleString()}{proLabel}
                   </Button>
                 </Link>
@@ -464,12 +464,12 @@ export default function Home() {
           <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg w-full sm:w-auto">
+              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-10 py-3 text-base w-full sm:w-auto">
                 Start a Project
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg w-full sm:w-auto border-white/20 bg-black/50 backdrop-blur-sm">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-white/20 bg-black/50 backdrop-blur-sm">
                 Launch My Website
               </Button>
             </Link>
