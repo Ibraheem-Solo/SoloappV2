@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowUpRight, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowUpRight, X, ChevronLeft, ChevronRight, ArrowRight, Star, Quote } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 
 const fadeUp = {
@@ -489,6 +489,161 @@ export default function Work() {
               ))}
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-6 md:px-12 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/5 to-transparent pointer-events-none" />
+        <div className="container mx-auto max-w-6xl relative z-10">
+
+          {/* Header */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full glass-panel text-sm text-white/70 mb-5">
+              Client Reviews
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              What Clients <span className="text-gradient">Say About Us</span>
+            </h2>
+            {/* Aggregate rating */}
+            <div className="flex items-center justify-center gap-3 mt-5">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <span className="text-white font-bold text-lg">5.0</span>
+              <span className="text-white/40 text-sm">· 40+ projects delivered</span>
+            </div>
+          </motion.div>
+
+          {/* Featured testimonial */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="glass-panel rounded-3xl overflow-hidden mb-6 group hover:border-purple-500/25 transition-all duration-300"
+          >
+            <div className="flex flex-col md:flex-row">
+              {/* Project thumbnail */}
+              <div className="md:w-80 flex-shrink-0 h-56 md:h-auto relative overflow-hidden bg-[#0d0d1a]">
+                <img
+                  src={`${BASE}portfolio/alihsan-website.jpg`}
+                  alt="Al-Ihsan University"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform transition-transform"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0e0e1c]/60 md:to-[#0e0e1c]/80" />
+                <div className="absolute bottom-4 left-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur-sm text-white border border-white/10">
+                    Web Project
+                  </span>
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="flex-1 p-8 md:p-10 flex flex-col justify-between">
+                <div>
+                  <Quote size={36} className="text-purple-400/40 mb-5" />
+                  <p className="text-white/85 text-lg md:text-xl leading-relaxed italic">
+                    "Solotech Digital brought our university into the digital age. They built us a bilingual website that our students, staff, and international partners are proud to share. The turnaround was incredibly fast and the quality was world-class."
+                  </p>
+                </div>
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/8 flex-wrap gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                      SM
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold">Sheikh Muhammed</div>
+                      <div className="text-white/45 text-sm">IT Director, Al-Ihsan University</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 3-card grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Ebrima Camara",
+                role: "CEO, EJC Innovative",
+                avatar: "EC",
+                avatarGrad: "from-blue-600 to-cyan-500",
+                project: "EJC Website",
+                img: `${BASE}portfolio/ejc-website.jpg`,
+                review: "I needed a professional website fast and Solotech delivered within 18 hours. The site is clean, loads fast, and has already brought us new clients who found us online.",
+              },
+              {
+                name: "Modou J.",
+                role: "Owner, MJ's Building Essentials",
+                avatar: "MJ",
+                avatarGrad: "from-red-600 to-orange-500",
+                project: "Full Brand System",
+                img: `${BASE}portfolio/mjs-building-brand.jpg`,
+                review: "From our logo to our vehicle wrap — Solotech designed everything. Customers now recognise our brand everywhere they see it. The whole team was impressed from day one.",
+              },
+              {
+                name: "Aminata Jallow",
+                role: "Founder, Halal Organic Products",
+                avatar: "AJ",
+                avatarGrad: "from-teal-600 to-green-500",
+                project: "Brand & Packaging",
+                img: `${BASE}portfolio/halal-jar.jpg`,
+                review: "Our product packaging went from homemade to premium overnight. The mockups Solotech created look so professional that customers think we're an international brand.",
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                {...fadeUp}
+                transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
+                className="glass-panel rounded-2xl p-6 flex flex-col gap-5 hover:border-purple-500/25 transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* Project thumbnail strip */}
+                <div className="h-28 rounded-xl overflow-hidden bg-[#0d0d1a] relative">
+                  <img
+                    src={t.img}
+                    alt={t.project}
+                    className="w-full h-full object-cover opacity-70 hover:opacity-90 transition-opacity"
+                  />
+                  <div className="absolute bottom-2 left-2">
+                    <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-black/60 backdrop-blur-sm text-white/80">
+                      {t.project}
+                    </span>
+                  </div>
+                </div>
+
+                <Quote size={24} className="text-purple-400/40 -mb-1" />
+                <p className="text-white/70 text-sm leading-relaxed flex-1">"{t.review}"</p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/8">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.avatarGrad} flex items-center justify-center text-white font-bold text-xs shrink-0`}>
+                      {t.avatar}
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-sm">{t.name}</div>
+                      <div className="text-white/40 text-xs">{t.role}</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, j) => (
+                      <Star key={j} size={11} className="text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
