@@ -11,7 +11,7 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-type Category = "All" | "Web" | "Brand" | "NGO";
+type Category = "All" | "Web" | "Brand";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -39,11 +39,11 @@ const projects: Project[] = [
     url: "https://alihsanuniversity.org",
   },
   {
-    title: "EJC Innovative",
-    client: "EJC Innovative",
+    title: "EJC Drilling Company Website",
+    client: "EJC Drilling Company",
     category: "Web",
-    desc: "Modern website for an electrical & borehole drilling company — launched within days. Clean layout, mobile-responsive, and conversion-focused.",
-    longDesc: "EJC Innovative needed a professional web presence fast. We delivered a sleek, mobile-first website showcasing their electrical and borehole drilling services, project gallery, and contact forms — all live within 18 hours. Visit ejcdrilling.com.",
+    desc: "Modern website for a borehole drilling & electrical services company — launched within days. Clean layout, mobile-responsive, and conversion-focused.",
+    longDesc: "EJC Drilling Company needed a professional web presence fast. We delivered a sleek, mobile-first website showcasing their borehole drilling and electrical services, project gallery, and contact forms — all live within 18 hours. Visit ejcdrilling.com.",
     tags: ["Web Design", "Business", "Responsive"],
     image: `${BASE}portfolio/ejc-website.jpg`,
     url: "https://ejcdrilling.com",
@@ -95,10 +95,10 @@ const projects: Project[] = [
   },
   {
     title: "The Loss of Parental Love",
-    client: "Fatima Samba",
+    client: "Fatima Sonko",
     category: "Brand",
     desc: "Book cover design for a Gambian author's debut novel. Emotive, illustration-driven cover that captures the story's heart.",
-    longDesc: "Fatima Samba's debut novel required a cover that would stop readers in their tracks. We created an emotive, AI-illustration-driven cover design that captures the warmth and sorrow at the core of the story — published and available in The Gambia.",
+    longDesc: "Fatima Sonko's debut novel required a cover that would stop readers in their tracks. We created an emotive, AI-illustration-driven cover design that captures the warmth and sorrow at the core of the story — published and available in The Gambia.",
     tags: ["Book Cover", "Print", "Illustration"],
     image: `${BASE}portfolio/book-cover.jpg`,
   },
@@ -111,45 +111,14 @@ const projects: Project[] = [
     tags: ["Logo", "Education", "Branding"],
     image: `${BASE}portfolio/alif-badge.jpg`,
   },
-  {
-    title: "Greenafrique",
-    client: "Greenafrique",
-    category: "NGO",
-    desc: "Logo design for a West African NGO focused on health and climate action. Merges organic form with the African continent silhouette.",
-    longDesc: "Greenafrique works at the intersection of health and environmental action across West Africa. Their logo needed to convey nature, Africa, and vitality simultaneously — we achieved that with a pomegranate-meets-continent mark that's instantly recognisable.",
-    tags: ["Logo", "NGO", "Climate"],
-    image: `${BASE}portfolio/greenafrique-logo.png`,
-    imageBg: "bg-black",
-  },
-  {
-    title: "Inicio Ubuntu Network",
-    client: "Inicio Ubuntu",
-    category: "NGO",
-    desc: "Brand identity for a health and wealth network operating across West Africa — clean, professional, and built for trust.",
-    longDesc: "Inicio Ubuntu Health and Wealth Network required a logo that felt institutional and trustworthy without being cold. We designed a modern monogram mark using their initials, rendered in a two-tone blue and green palette that signals health and growth.",
-    tags: ["Logo", "NGO", "Health"],
-    image: `${BASE}portfolio/inicio-ubuntu-logo.jpg`,
-    imageBg: "bg-white",
-  },
-  {
-    title: "Gambia Islamic Council",
-    client: "Gambia Islamic",
-    category: "NGO",
-    desc: "Seal and emblem design for a respected Islamic organisation in The Gambia — drawing on traditional motifs and national colours.",
-    longDesc: "The Gambia Islamic Council needed an official seal that reflected both their Islamic identity and national pride. The circular emblem incorporates the Gambian flag colours, an Islamic crescent, and Arabic calligraphy — a mark of authority and tradition.",
-    tags: ["Logo", "Seal", "Heritage"],
-    image: `${BASE}portfolio/gambia-islamic-logo.jpg`,
-    imageBg: "bg-white",
-  },
 ];
 
-const categories: Category[] = ["All", "Web", "Brand", "NGO"];
+const categories: Category[] = ["All", "Web", "Brand"];
 
 const categoryCounts: Record<string, number> = {
   All: projects.length,
   Web: projects.filter((p) => p.category === "Web").length,
   Brand: projects.filter((p) => p.category === "Brand").length,
-  NGO: projects.filter((p) => p.category === "NGO").length,
 };
 
 function Lightbox({
