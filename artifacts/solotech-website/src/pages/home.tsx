@@ -67,11 +67,6 @@ export default function Home() {
                 <span className="text-white/90">Launch Your Website in 24 Hours</span>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                <span className="text-green-400 text-xs font-bold uppercase tracking-widest">Promo</span>
-              </div>
-
               <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.08]">
                 Web, Media &amp; Branding<br />
                 That Helps <span className="text-gradient">Businesses Grow</span>
@@ -213,6 +208,10 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-black/40 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+              <span className="text-green-400 text-xs font-bold uppercase tracking-widest">Promo</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Solotech LaunchPad</h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Need a professional website fast? We build clean, modern business websites in just 24 hours.
