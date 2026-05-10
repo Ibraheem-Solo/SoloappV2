@@ -523,11 +523,11 @@ export default function Work() {
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/8 flex-wrap gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
-                      SM
+                      BSC
                     </div>
                     <div>
-                      <div className="text-white font-semibold">Sheikh Muhammed</div>
-                      <div className="text-white/45 text-sm">IT Director, Al-Ihsan University</div>
+                      <div className="text-white font-semibold">Sh.Dr Baba Sankung Ceesay</div>
+                      <div className="text-white/45 text-sm">President, Al-Ihsan University</div>
                     </div>
                   </div>
                   <div className="flex gap-1">
@@ -544,27 +544,27 @@ export default function Work() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
-                name: "Ebrima Camara",
-                role: "CEO, EJC Innovative",
-                avatar: "EC",
+                name: "Abdoulie Ebrima Jammeh",
+                role: "CEO, EJC Drilling Company",
+                avatar: "AEJ",
                 avatarGrad: "from-blue-600 to-cyan-500",
                 project: "EJC Website",
                 img: `${BASE}portfolio/ejc-website.jpg`,
                 review: "I needed a professional website fast and Solotech delivered within 18 hours. The site is clean, loads fast, and has already brought us new clients who found us online.",
               },
               {
-                name: "Modou J.",
+                name: "Illyas Trawally",
                 role: "Owner, MJ's Building Essentials",
-                avatar: "MJ",
+                avatar: "IT",
                 avatarGrad: "from-red-600 to-orange-500",
                 project: "Full Brand System",
                 img: `${BASE}portfolio/mjs-building-brand.jpg`,
                 review: "From our logo to our vehicle wrap — Solotech designed everything. Customers now recognise our brand everywhere they see it. The whole team was impressed from day one.",
               },
               {
-                name: "Aminata Jallow",
+                name: "Fatima Sonko",
                 role: "Founder, Halal Organic Products",
-                avatar: "AJ",
+                avatar: "FS",
                 avatarGrad: "from-teal-600 to-green-500",
                 project: "Brand & Packaging",
                 img: `${BASE}portfolio/halal-jar.jpg`,
