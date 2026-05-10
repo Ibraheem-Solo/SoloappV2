@@ -345,8 +345,8 @@ export default function Work() {
             className="flex flex-wrap justify-center gap-8 mt-12"
           >
             {[
-              { label: "Projects Delivered", value: "40+" },
-              { label: "Happy Clients", value: "35+" },
+              { label: "Projects Delivered", value: "120+" },
+              { label: "Happy Clients", value: "40+" },
               { label: "Countries", value: "3" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -486,7 +486,7 @@ export default function Work() {
                 ))}
               </div>
               <span className="text-white font-bold text-lg">5.0</span>
-              <span className="text-white/40 text-sm">· 40+ projects delivered</span>
+              <span className="text-white/40 text-sm">· 120+ projects delivered</span>
             </div>
           </motion.div>
 
@@ -628,7 +628,7 @@ export default function Work() {
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Your Project Could Be Next</h2>
             <p className="text-xl text-white/60 mb-10">
-              Join 40+ businesses that have trusted Solotech Digital to grow their presence online. We deliver fast — most projects in under 18 hours.
+              Join 40+ happy clients that have trusted Solotech Digital to grow their presence online. We deliver fast — most projects within 18 hours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">

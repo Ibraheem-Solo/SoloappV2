@@ -536,9 +536,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Ousman Jallow", role: "CEO, Gambia Tech Hub", review: "Solotech delivered our website in record time. Clean, modern, and professional — exactly what we needed to showcase our work to international partners." },
-              { name: "Fatou Ceesay", role: "Founder, Lamin Crafts", review: "They transformed our brand completely. Our customers keep complimenting the new look. Sales have increased since the rebrand — the results speak for themselves." },
-              { name: "Ibrahim Touray", role: "Director, West Africa NGO Alliance", review: "Working with Solotech was seamless from start to finish. They understood our mission and delivered a website that represents our organization with pride." },
+              { name: "Sh.Dr Baba Sankung Ceesay", role: "President, Al-Ihsan University", avatar: "BSC", review: "Solotech Digital brought our university into the digital age. They built us a bilingual website that our students, staff, and international partners are proud to share. The quality was world-class." },
+              { name: "Abdoulie Ebrima Jammeh", role: "CEO, EJC Drilling Company", avatar: "AEJ", review: "I needed a professional website fast and Solotech delivered within 18 hours. The site is clean, loads fast, and has already brought us new clients who found us online." },
+              { name: "Fatima Sonko", role: "Founder, Halal Organic Products", avatar: "FS", review: "Our product packaging went from homemade to premium overnight. The mockups Solotech created look so professional that customers think we're an international brand." },
             ].map((t, i) => (
               <motion.div
                 key={i}
@@ -551,8 +551,8 @@ export default function Home() {
                 <Quote size={32} className="text-purple-400/50" />
                 <p className="text-white/75 leading-relaxed flex-1">"{t.review}"</p>
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
-                    {t.name.split(" ").map(n => n[0]).join("")}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0">
+                    {t.avatar}
                   </div>
                   <div>
                     <div className="text-white font-semibold text-sm">{t.name}</div>
