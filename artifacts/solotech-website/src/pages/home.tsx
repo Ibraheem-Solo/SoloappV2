@@ -67,6 +67,11 @@ export default function Home() {
                 <span className="text-white/90">Launch Your Website in 24 Hours</span>
               </div>
 
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+                <span className="text-green-400 text-xs font-bold uppercase tracking-widest">Promo</span>
+              </div>
+
               <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.08]">
                 Web, Media &amp; Branding<br />
                 That Helps <span className="text-gradient">Businesses Grow</span>
