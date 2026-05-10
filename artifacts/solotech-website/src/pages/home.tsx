@@ -37,23 +37,24 @@ export default function Home() {
         description="Solotech Digital designs websites, brands, and digital content that help businesses in The Gambia and West Africa stand out, attract customers, and grow online."
       />
       {/* Hero Section */}
-      <section className="relative min-h-[92vh] flex items-center pt-10 pb-20 px-6 md:px-12 overflow-hidden">
+      <section className="relative min-h-[92vh] px-6 md:px-12 overflow-hidden">
         {/* Space background */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity" />
-        {/* Purple glow behind image */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[55%] h-[80%] bg-purple-600/25 blur-[100px] rounded-full pointer-events-none" />
+        {/* Purple glow */}
+        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-purple-600/25 blur-[100px] rounded-full pointer-events-none" />
 
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto max-w-7xl h-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[92vh]">
 
-            {/* Left — Text */}
+            {/* Left — Text, vertically centred */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex flex-col justify-center py-24"
             >
               {/* Online indicator */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-6 w-fit">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
@@ -62,7 +63,7 @@ export default function Home() {
                 <span className="text-white/40">— ready to start your project</span>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8 ml-2">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8 w-fit">
                 <span className="text-yellow-400">⚡</span>
                 <span className="text-white/90">Launch Your Website in 24 Hours</span>
               </div>
@@ -106,28 +107,28 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right — Person image */}
-            <motion.div
-              initial={{ opacity: 0, x: 40, scale: 0.97 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-              className="relative hidden lg:flex items-end justify-center"
-            >
-              {/* Subtle ring */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-purple-600/15 border border-purple-500/20 blur-sm" />
-              {/* Floating badge */}
+            {/* Right — Person image absolutely anchored to bottom */}
+            <div className="relative hidden lg:block">
+              {/* Subtle ring at bottom centre */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-purple-600/15 border border-purple-500/20 blur-sm" />
+
+              {/* Floating badge — top area */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-                className="absolute top-8 left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-purple-500/30"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
+                transition={{ opacity: { duration: 0.6, delay: 0.4 }, y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" } }}
+                className="absolute top-[18%] left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-purple-500/30"
               >
                 <div className="text-xs text-white/50 mb-0.5">Latest project</div>
                 <div className="text-sm font-semibold text-white">Delivered in 18hrs ⚡</div>
               </motion.div>
+
+              {/* Floating badge — mid-right */}
               <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-16 right-0 glass-panel px-4 py-3 rounded-2xl z-20 border-green-500/30"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
+                transition={{ opacity: { duration: 0.6, delay: 0.6 }, y: { repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 } }}
+                className="absolute bottom-[22%] right-0 glass-panel px-4 py-3 rounded-2xl z-20 border-green-500/30"
               >
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center">
@@ -139,13 +140,24 @@ export default function Home() {
                   </div>
                 </div>
               </motion.div>
-              <img
+
+              {/* Person — absolutely pinned to bottom, full visible height */}
+              <motion.img
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
                 src={`${import.meta.env.BASE_URL}hero-person.png`}
                 alt="Solotech Digital team member"
-                className="relative z-10 h-[600px] xl:h-[680px] w-auto object-contain drop-shadow-2xl"
-                style={{ filter: "drop-shadow(0 0 60px rgba(123,47,190,0.35))" }}
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-auto"
+                style={{
+                  height: "88%",
+                  maxHeight: "700px",
+                  objectFit: "contain",
+                  objectPosition: "bottom",
+                  filter: "drop-shadow(0 0 60px rgba(123,47,190,0.4))",
+                }}
               />
-            </motion.div>
+            </div>
 
           </div>
         </div>
