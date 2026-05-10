@@ -68,9 +68,8 @@ export default function Home() {
               </div>
 
               <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-6 leading-[1.08]">
-                We Build<br />
-                Digital <span className="text-gradient">Experiences</span><br />
-                That Drive <span className="text-gradient">Growth</span>
+                Web, Media &amp; Branding<br />
+                That Helps <span className="text-gradient">Businesses Grow</span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/65 max-w-xl mb-10 leading-relaxed">
