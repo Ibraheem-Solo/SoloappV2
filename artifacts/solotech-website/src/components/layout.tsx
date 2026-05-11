@@ -144,7 +144,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-6 md:px-12 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-10 w-auto mb-6" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-10 w-auto mb-6 brightness-0 invert" />
               <p className="text-white/60 max-w-md mb-6">
                 Solotech Digital is a next-generation creative agency based in The Gambia. We build digital experiences that drive growth for ambitious African businesses.
               </p>
