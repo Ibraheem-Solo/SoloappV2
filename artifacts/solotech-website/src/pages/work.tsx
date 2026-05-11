@@ -211,7 +211,7 @@ function Lightbox({
         <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
           {/* Close */}
           <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
               {project.category}
             </span>
             <button
@@ -252,7 +252,7 @@ function Lightbox({
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#592C72] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
                   Visit Live Site <ArrowUpRight size={15} />
                 </a>
@@ -398,7 +398,7 @@ export default function Work() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
-                  className="glass-panel rounded-2xl overflow-hidden group hover:border-purple-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
+                  className="glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
                   onClick={() => openLightbox(i)}
                 >
                   {/* Image */}
@@ -439,7 +439,7 @@ export default function Work() {
                   {/* Content */}
                   <div className="p-5">
                     <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-1">{project.client}</p>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#9CB633] transition-colors leading-snug">
                       {project.title}
                     </h3>
                     <p className="text-white/55 text-sm mb-4 leading-relaxed line-clamp-2">{project.desc}</p>
@@ -515,7 +515,7 @@ export default function Work() {
               {/* Quote */}
               <div className="flex-1 p-8 md:p-10 flex flex-col justify-between">
                 <div>
-                  <Quote size={36} className="text-purple-400/40 mb-5" />
+                  <Quote size={36} className="text-[#9CB633]/40 mb-5" />
                   <p className="text-white/85 text-lg md:text-xl leading-relaxed italic">
                     "Solotech Digital brought our university into the digital age. They built us a bilingual website that our students, staff, and international partners are proud to share. The turnaround was incredibly fast and the quality was world-class."
                   </p>
@@ -547,7 +547,7 @@ export default function Work() {
                 name: "Abdoulie Ebrima Jammeh",
                 role: "CEO, EJC Drilling Company",
                 avatar: "AEJ",
-                avatarGrad: "from-blue-600 to-cyan-500",
+                avatarGrad: "from-[#9CB633] to-cyan-500",
                 project: "EJC Website",
                 img: `${BASE}portfolio/ejc-website.jpg`,
                 review: "I needed a professional website fast and Solotech delivered within 18 hours. The site is clean, loads fast, and has already brought us new clients who found us online.",
@@ -591,7 +591,7 @@ export default function Work() {
                   </div>
                 </div>
 
-                <Quote size={24} className="text-purple-400/40 -mb-1" />
+                <Quote size={24} className="text-[#9CB633]/40 -mb-1" />
                 <p className="text-white/70 text-sm leading-relaxed flex-1">"{t.review}"</p>
 
                 <div className="flex items-center justify-between pt-4 border-t border-white/8">

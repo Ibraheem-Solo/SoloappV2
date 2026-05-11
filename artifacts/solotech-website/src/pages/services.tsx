@@ -15,9 +15,9 @@ const services = [
     icon: <Code size={36} />,
     title: "Web Design & Development",
     tagline: "Websites designed to convert visitors into paying customers.",
-    color: "from-purple-600/20 to-blue-600/10",
+    color: "from-[#592C72]/20 to-[#9CB633]/10",
     borderColor: "hover:border-purple-500/50",
-    iconColor: "text-purple-400",
+    iconColor: "text-[#9CB633]",
     benefits: [
       "Custom-designed for your brand and audience",
       "Mobile-first, blazing fast performance",
@@ -32,7 +32,7 @@ const services = [
     icon: <Paintbrush size={36} />,
     title: "Branding & Graphic Design",
     tagline: "Identities that make your brand impossible to forget.",
-    color: "from-pink-600/20 to-purple-600/10",
+    color: "from-pink-600/20 to-[#592C72]/10",
     borderColor: "hover:border-pink-500/50",
     iconColor: "text-pink-400",
     benefits: [
@@ -49,7 +49,7 @@ const services = [
     icon: <Share2 size={36} />,
     title: "Social Media Management",
     tagline: "Content that builds communities and drives engagement.",
-    color: "from-blue-600/20 to-cyan-600/10",
+    color: "from-[#9CB633]/20 to-cyan-600/10",
     borderColor: "hover:border-blue-500/50",
     iconColor: "text-blue-400",
     benefits: [

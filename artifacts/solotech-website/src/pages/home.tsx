@@ -14,7 +14,7 @@ const featuredProjects = [
     client: "Al-Ihsan University",
     tag: "Web Design",
     color: "from-purple-900/60 to-blue-900/40",
-    accent: "bg-purple-500/20 text-purple-300 border-purple-500/30",
+    accent: "bg-[#592C72]/25 text-[#9CB633] border-[#592C72]/40",
     image: `${BASE}portfolio/alihsan-website.jpg`,
     url: "https://alihsanuniversity.org",
   },
@@ -69,7 +69,7 @@ function WorkSection() {
         {/* Header */}
         <div className="flex items-end justify-between mb-12">
           <div>
-            <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Featured Work</p>
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Featured Work</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white">Our Work</h2>
             <p className="text-white/50 mt-2 text-sm">A selection of recent projects we're proud of</p>
           </div>
@@ -89,7 +89,7 @@ function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-purple-500/40 transition-colors duration-300"
+              className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-[#592C72]/50 transition-colors duration-300"
             >
               <div className={`relative h-56 bg-gradient-to-br ${project.color} overflow-hidden`}>
                 <img
@@ -116,9 +116,9 @@ function WorkSection() {
               </div>
               <div className="p-6">
                 <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{project.client}</p>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#9CB633] transition-colors">{project.title}</h3>
                 <Link href="/work">
-                  <span className="text-sm text-purple-400 hover:text-purple-300 font-medium inline-flex items-center gap-1 transition-colors">
+                  <span className="text-sm text-[#9CB633] hover:text-[#9CB633] font-medium inline-flex items-center gap-1 transition-colors">
                     View case study <ArrowUpRight size={14} />
                   </span>
                 </Link>
@@ -159,7 +159,7 @@ export default function Home() {
         {/* Space background */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity" />
         {/* Purple glow */}
-        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-purple-600/25 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/25 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto max-w-7xl h-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[92vh]">
@@ -218,14 +218,14 @@ export default function Home() {
             {/* Right — Person image absolutely anchored to bottom */}
             <div className="relative hidden lg:block">
               {/* Subtle ring at bottom centre */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-purple-600/15 border border-purple-500/20 blur-sm" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-[#592C72]/15 border border-[#592C72]/30 blur-sm" />
 
               {/* Floating badge — top area */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
                 transition={{ opacity: { duration: 0.6, delay: 0.4 }, y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" } }}
-                className="absolute top-[18%] left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-purple-500/30"
+                className="absolute top-[18%] left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-[#592C72]/40"
               >
                 <div className="text-xs text-white/50 mb-0.5">Latest project</div>
                 <div className="text-sm font-semibold text-white">Delivered in 18hrs ⚡</div>
@@ -342,7 +342,7 @@ export default function Home() {
             <button
               data-testid="billing-toggle"
               onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none ${isAnnual ? "bg-gradient-to-r from-purple-600 to-blue-600" : "bg-white/15"}`}
+              className={`relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none ${isAnnual ? "bg-gradient-to-r from-[#592C72] to-[#9CB633]" : "bg-white/15"}`}
             >
               <motion.div
                 className="absolute top-1 w-6 h-6 rounded-full bg-white shadow-md"
@@ -384,7 +384,7 @@ export default function Home() {
                   "Perfect for startups & small businesses",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-white/80">
-                    <CheckCircle className="text-purple-500 shrink-0 w-5 h-5 mt-0.5" />
+                    <CheckCircle className="text-[#9CB633] shrink-0 w-5 h-5 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -472,7 +472,7 @@ export default function Home() {
               <button
                 data-testid="pro-details-toggle"
                 onClick={() => setShowProDetails(true)}
-                className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors mb-4 font-medium"
+                className="flex items-center gap-2 text-sm text-[#9CB633] hover:text-[#9CB633] transition-colors mb-4 font-medium"
               >
                 <ChevronDown size={16} />
                 See everything that's included
@@ -506,12 +506,12 @@ export default function Home() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 40, scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 32 }}
-              className="fixed bottom-0 left-0 right-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-xl w-full z-50 glass-panel rounded-t-3xl md:rounded-3xl border border-purple-500/30 max-h-[85vh] overflow-y-auto"
+              className="fixed bottom-0 left-0 right-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-xl w-full z-50 glass-panel rounded-t-3xl md:rounded-3xl border border-[#592C72]/40 max-h-[85vh] overflow-y-auto"
             >
               {/* Header */}
               <div className="sticky top-0 bg-[#0a0a14]/90 backdrop-blur-xl p-6 border-b border-white/10 flex items-start justify-between rounded-t-3xl">
                 <div>
-                  <div className="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-1">Pro Package</div>
+                  <div className="text-xs font-semibold text-[#9CB633] uppercase tracking-wider mb-1">Pro Package</div>
                   <h3 className="text-2xl font-bold text-white">Everything That's Included</h3>
                   <p className="text-white/50 text-sm mt-1">
                     {isAnnual
@@ -536,9 +536,9 @@ export default function Home() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition-colors"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#592C72]/40 transition-colors"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -586,7 +586,7 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="glass-panel p-8 rounded-2xl group hover:border-purple-500/50 transition-colors cursor-pointer"
               >
-                <div className="mb-6 text-purple-400 group-hover:scale-110 transition-transform duration-300 origin-left">
+                <div className="mb-6 text-[#9CB633] group-hover:scale-110 transition-transform duration-300 origin-left">
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
@@ -626,9 +626,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-purple-500/40 transition-colors"
+                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-[#592C72]/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0 group-hover:bg-purple-500/30 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -650,7 +650,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white">How We Work</h2>
             <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you informed and delivers results every time.</p>
           </motion.div>
@@ -668,13 +668,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl flex flex-col gap-5 group hover:border-purple-500/40 transition-colors"
+                className="glass-panel p-8 rounded-2xl flex flex-col gap-5 group hover:border-[#592C72]/50 transition-colors"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0 group-hover:bg-purple-500/30 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
                     {item.icon}
                   </div>
-                  <span className="text-4xl font-black text-purple-500/25 leading-none select-none">{item.step}</span>
+                  <span className="text-4xl font-black text-[#9CB633]/25 leading-none select-none">{item.step}</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
@@ -717,10 +717,10 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="glass-panel p-8 rounded-2xl flex flex-col gap-6"
               >
-                <Quote size={32} className="text-purple-400/50" />
+                <Quote size={32} className="text-[#9CB633]/50" />
                 <p className="text-white/75 leading-relaxed flex-1">"{t.review}"</p>
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#592C72] to-[#9CB633] flex items-center justify-center text-white font-bold text-xs shrink-0">
                     {t.avatar}
                   </div>
                   <div>

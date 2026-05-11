@@ -60,7 +60,7 @@ export default function SocialLinks({ size = "md", className = "" }: SocialLinks
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className={`${dim} bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-purple-500/20 hover:border-purple-500/40 transition-all duration-200`}
+          className={`${dim} bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:bg-[#592C72]/25 hover:border-[#592C72]/50 transition-all duration-200`}
         >
           {s.icon}
         </a>

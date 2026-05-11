@@ -75,6 +75,10 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
+  /* Brand colours */
+  --brand-primary: #592C72;
+  --brand-accent:  #9CB633;
+
   /* Making default theme identical to dark for this premium dark site */
   --background: 240 10% 4%;
   --foreground: 0 0% 98%;
@@ -87,17 +91,17 @@
   --sidebar: 240 10% 6%;
   --sidebar-foreground: 0 0% 98%;
   --sidebar-border: 240 5% 15%;
-  --sidebar-primary: 272 61% 46%;
+  --sidebar-primary: 279 44% 31%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 240 5% 15%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 272 61% 46%;
+  --sidebar-ring: 279 44% 31%;
 
   --popover: 240 10% 6%;
   --popover-foreground: 0 0% 98%;
   --popover-border: 240 5% 15%;
 
-  --primary: 272 61% 46%;
+  --primary: 279 44% 31%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 240 5% 15%;
@@ -106,17 +110,17 @@
   --muted: 240 5% 15%;
   --muted-foreground: 240 5% 65%;
 
-  --accent: 280 100% 70%;
+  --accent: 72 56% 46%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
   --input: 240 5% 20%;
-  --ring: 272 61% 46%;
+  --ring: 279 44% 31%;
   
-  --chart-1: 272 61% 46%;
-  --chart-2: 280 100% 70%;
+  --chart-1: 279 44% 31%;
+  --chart-2: 72 56% 46%;
   --chart-3: 190 100% 60%;
   --chart-4: 310 100% 65%;
   --chart-5: 220 100% 60%;
@@ -163,29 +167,29 @@
   --sidebar: 240 10% 6%;
   --sidebar-foreground: 0 0% 98%;
   --sidebar-border: 240 5% 15%;
-  --sidebar-primary: 272 61% 46%;
+  --sidebar-primary: 279 44% 31%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 240 5% 15%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 272 61% 46%;
+  --sidebar-ring: 279 44% 31%;
   --popover: 240 10% 6%;
   --popover-foreground: 0 0% 98%;
   --popover-border: 240 5% 15%;
-  --primary: 272 61% 46%;
+  --primary: 279 44% 31%;
   --primary-foreground: 0 0% 100%;
   --secondary: 240 5% 15%;
   --secondary-foreground: 0 0% 98%;
   --muted: 240 5% 15%;
   --muted-foreground: 240 5% 65%;
-  --accent: 280 100% 70%;
+  --accent: 72 56% 46%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
   --input: 240 5% 20%;
-  --ring: 272 61% 46%;
+  --ring: 279 44% 31%;
   
-  --chart-1: 272 61% 46%;
-  --chart-2: 280 100% 70%;
+  --chart-1: 279 44% 31%;
+  --chart-2: 72 56% 46%;
   --chart-3: 190 100% 60%;
   --chart-4: 310 100% 65%;
   --chart-5: 220 100% 60%;
@@ -219,10 +223,10 @@
   @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
 }
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#c084fc] to-[#592C72];
 }
 .bg-gradient-solotech {
-  @apply bg-gradient-to-r from-[#7B2FBE] via-purple-500 to-blue-600;
+  @apply bg-gradient-to-r from-[#592C72] via-[#7a3d9e] to-[#9CB633];
 }
 
 @layer utilities {
