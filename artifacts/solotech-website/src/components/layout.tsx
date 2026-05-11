@@ -136,7 +136,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </AnimatePresence>
       </header>
 
-      <main className="flex-1 w-full z-10 pt-36">
+      <main className="flex-1 w-full z-10 pt-[7.5rem]">
         {children}
       </main>
 
