@@ -342,7 +342,7 @@ export default function Home() {
             <button
               data-testid="billing-toggle"
               onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none ${isAnnual ? "bg-gradient-to-r from-[#592C72] to-[#9CB633]" : "bg-white/15"}`}
+              className={`relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none ${isAnnual ? "bg-[#9CB633]" : "bg-white/15"}`}
             >
               <motion.div
                 className="absolute top-1 w-6 h-6 rounded-full bg-white shadow-md"
