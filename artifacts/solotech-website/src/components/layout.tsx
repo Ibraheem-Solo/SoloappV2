@@ -44,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed top-[40%] left-[-15%] w-[35%] h-[35%] rounded-full bg-[#9CB633]/8 blur-[100px] pointer-events-none" />
       
       {/* Top info bar — slides up and hides on scroll */}
-      <div className={`fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5 transition-transform duration-300 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
+      <div className={`hidden md:block fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5 transition-transform duration-300 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container mx-auto px-6 md:px-12 py-2 flex items-center justify-between text-xs text-white/50">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
