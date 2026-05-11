@@ -64,20 +64,18 @@ const proDetails = [
 function ScrollWorkSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [overflowPx, setOverflowPx] = useState(1200);
+  const [overflowPx, setOverflowPx] = useState(0);
 
-  // Measure how many px the track overflows the viewport so we set exact section height
+  // Measure the exact px the track overflows the right edge of the viewport
   useEffect(() => {
     const measure = () => {
       if (!trackRef.current) return;
-      const trackW = trackRef.current.scrollWidth;
-      const vw = window.innerWidth;
-      // Visible area = vw minus horizontal padding (px-6 = 24px each side on mobile, px-12 = 48px on md+)
-      const padding = vw >= 768 ? 96 : 48;
-      const overflow = Math.max(0, trackW - (vw - padding));
+      const trackLeft = trackRef.current.getBoundingClientRect().left;
+      const trackScrollW = trackRef.current.scrollWidth;
+      const overflow = Math.max(0, trackLeft + trackScrollW - window.innerWidth);
       setOverflowPx(overflow);
     };
-    measure();
+    measure(); // run immediately on mount — no rAF delay
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, []);
