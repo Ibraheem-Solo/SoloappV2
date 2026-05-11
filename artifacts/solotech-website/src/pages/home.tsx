@@ -384,7 +384,7 @@ export default function Home() {
                   "Perfect for startups & small businesses",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-white/80">
-                    <CheckCircle className="text-[#592C72] shrink-0 w-5 h-5 mt-0.5" />
+                    <CheckCircle className="text-[#9CB633] shrink-0 w-5 h-5 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
