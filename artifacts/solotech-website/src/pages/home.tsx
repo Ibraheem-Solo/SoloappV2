@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight } from "lucide-react";
 import SeoHead from "@/components/seo-head";
@@ -61,133 +61,76 @@ const proDetails = [
   { icon: <Lock size={18} />, label: "Hosting Included", desc: "Fast, reliable managed hosting on our servers for the full year." },
 ];
 
-function ScrollWorkSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [overflowPx, setOverflowPx] = useState(0);
-
-  // Measure the exact px the track overflows the right edge of the viewport
-  useEffect(() => {
-    const measure = () => {
-      if (!trackRef.current) return;
-      const trackLeft = trackRef.current.getBoundingClientRect().left;
-      const trackScrollW = trackRef.current.scrollWidth;
-      const overflow = Math.max(0, trackLeft + trackScrollW - window.innerWidth);
-      setOverflowPx(overflow);
-    };
-    measure(); // run immediately on mount — no rAF delay
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Spring smoothing — stiff enough to feel responsive, loose enough to glide
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 20,
-    restDelta: 0.001,
-  });
-
-  const x = useTransform(smoothProgress, [0, 1], [0, -overflowPx]);
-
+function WorkSection() {
   return (
-    // Section height = 100vh (visible) + overflow so sticky releases exactly when last card is flush right
-    <section
-      ref={sectionRef}
-      className="relative"
-      style={{ height: `calc(100vh + ${overflowPx}px)` }}
-    >
-      <div className="sticky top-0 h-screen flex flex-col justify-center py-14 overflow-hidden">
+    <section className="py-24 px-6 md:px-12">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="px-6 md:px-12 mb-8">
-          <div className="container mx-auto max-w-7xl flex items-end justify-between">
-            <div>
-              <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Featured Work</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">Our Work</h2>
-              <p className="text-white/50 mt-2 text-sm">Scroll to explore recent projects</p>
-            </div>
-            <Link href="/work">
-              <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 hidden md:flex">
-                View All Work <ArrowUpRight size={16} />
-              </Button>
-            </Link>
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Featured Work</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">Our Work</h2>
+            <p className="text-white/50 mt-2 text-sm">A selection of recent projects we're proud of</p>
           </div>
-        </div>
-
-        {/* Progress bar */}
-        <div className="px-6 md:px-12 mb-7">
-          <div className="container mx-auto max-w-7xl">
-            <div className="w-full h-px bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-purple-500 to-blue-500 origin-left rounded-full"
-                style={{ scaleX: smoothProgress }}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Cards track — clips at section edges, translates horizontally */}
-        <div className="px-6 md:px-12 overflow-visible">
-          <div className="container mx-auto max-w-7xl overflow-visible">
-            <motion.div
-              ref={trackRef}
-              className="flex gap-6"
-              style={{ x, willChange: "transform" }}
-            >
-              {featuredProjects.map((project, i) => (
-                <div
-                  key={i}
-                  className={`shrink-0 w-[calc(50vw-3rem)] md:w-[calc(50vw-4rem)] max-w-[600px] rounded-3xl overflow-hidden glass-panel group cursor-pointer border border-white/10 hover:border-purple-500/40 transition-colors duration-300`}
-                >
-                  {/* Image */}
-                  <div className={`relative h-60 bg-gradient-to-br ${project.color} overflow-hidden`}>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                      onError={e => { (e.currentTarget as HTMLImageElement).style.opacity = "0.3"; }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${project.accent} backdrop-blur-sm`}>
-                      {project.tag}
-                    </div>
-                    {project.url && (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/25 transition-colors"
-                        onClick={e => e.stopPropagation()}
-                      >
-                        <ArrowUpRight size={14} className="text-white" />
-                      </a>
-                    )}
-                  </div>
-                  {/* Info */}
-                  <div className="p-6">
-                    <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{project.client}</p>
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{project.title}</h3>
-                    <Link href="/work">
-                      <span className="text-sm text-purple-400 hover:text-purple-300 font-medium inline-flex items-center gap-1 transition-colors">
-                        View case study <ArrowUpRight size={14} />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Mobile CTA */}
-        <div className="px-6 mt-8 md:hidden">
           <Link href="/work">
-            <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 w-full">
+            <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 hidden md:flex">
               View All Work <ArrowUpRight size={16} />
+            </Button>
+          </Link>
+        </div>
+
+        {/* 3-card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featuredProjects.slice(0, 3).map((project, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-purple-500/40 transition-colors duration-300"
+            >
+              <div className={`relative h-56 bg-gradient-to-br ${project.color} overflow-hidden`}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  onError={e => { (e.currentTarget as HTMLImageElement).style.opacity = "0.3"; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${project.accent} backdrop-blur-sm`}>
+                  {project.tag}
+                </div>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/25 transition-colors"
+                    onClick={e => e.stopPropagation()}
+                  >
+                    <ArrowUpRight size={14} className="text-white" />
+                  </a>
+                )}
+              </div>
+              <div className="p-6">
+                <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{project.client}</p>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                <Link href="/work">
+                  <span className="text-sm text-purple-400 hover:text-purple-300 font-medium inline-flex items-center gap-1 transition-colors">
+                    View case study <ArrowUpRight size={14} />
+                  </span>
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Link href="/work">
+            <Button className="rounded-full bg-gradient-solotech hover:opacity-90 px-8 py-3 gap-2">
+              See All Our Work <ArrowUpRight size={16} />
             </Button>
           </Link>
         </div>
@@ -664,7 +607,7 @@ export default function Home() {
       </section>
 
       {/* Our Work — scroll-driven horizontal */}
-      <ScrollWorkSection />
+      <WorkSection />
 
       {/* Why Choose Us */}
       <section className="py-24 px-6 md:px-12 bg-black/40 relative">
