@@ -346,8 +346,8 @@ export default function Home() {
                 alt="Solotech Digital team member"
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-auto"
                 style={{
-                  height: "88%",
-                  maxHeight: "700px",
+                  height: "100%",
+                  maxHeight: "820px",
                   objectFit: "contain",
                   objectPosition: "bottom",
                   filter: "drop-shadow(0 0 60px rgba(123,47,190,0.4))",
