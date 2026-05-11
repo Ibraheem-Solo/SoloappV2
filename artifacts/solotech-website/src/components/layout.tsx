@@ -75,13 +75,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             : "top-8 bg-transparent py-6"
         }`}
       >
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between relative">
-          <Link href="/" className="flex items-center gap-3 z-50">
-            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-14 w-auto" />
-          </Link>
+        <div className="container mx-auto px-6 md:px-12 flex items-center">
+          {/* Logo — left */}
+          <div className="flex-1 flex items-center">
+            <Link href="/" className="flex items-center gap-3 z-50">
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-14 w-auto" />
+            </Link>
+          </div>
 
-          {/* Desktop Nav — centered */}
-          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop Nav — always centered */}
+          <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <Link 
                 key={link.href} 
@@ -95,8 +98,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
 
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-3 z-50">
+          {/* CTA + Mobile Toggle — right */}
+          <div className="flex-1 flex items-center justify-end gap-3 z-50">
             <Link href="/contact" className="hidden md:block">
               <Button className="bg-gradient-solotech text-white border-0 hover:opacity-90 transition-opacity">
                 Start a Project
