@@ -178,41 +178,39 @@ export default function Home() {
           style={{ background: "linear-gradient(to left, #06060f 10%, transparent)" }} />
 
         <div
-          className="flex gap-16 items-center animate-marquee"
+          className="flex items-center animate-marquee"
           style={{ width: "max-content" }}
         >
-          {[
-            { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School"         },
-            { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute"              },
-            { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network" },
-            { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University"                   },
-            { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
-            { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
-            { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School"         },
-            { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute"              },
-            { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network" },
-            { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University"                   },
-            { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
-            { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
-          ].map((logo, i) => (
-            <div
-              key={i}
-              title={logo.name}
-              className="shrink-0 flex items-center justify-center transition-all duration-300 hover:opacity-100"
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="h-14 w-auto max-w-[140px] object-contain"
-                style={{
-                  filter: "grayscale(1) brightness(0.55) contrast(1.1)",
-                  transition: "filter 0.3s ease",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.75) contrast(1.1)")}
-                onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.55) contrast(1.1)")}
-              />
-            </div>
-          ))}
+          {/* 3 identical sets — animation moves exactly 1/3 (–33.33%), seamlessly looping */}
+          {[...Array(3)].flatMap((_, setIdx) =>
+            [
+              { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School"         },
+              { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute"              },
+              { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network" },
+              { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University"                   },
+              { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
+              { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
+            ].map((logo, i) => (
+              <div
+                key={`${setIdx}-${i}`}
+                title={logo.name}
+                className="shrink-0 flex items-center justify-center"
+                style={{ marginRight: "4rem" }}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-14 w-auto max-w-[140px] object-contain"
+                  style={{
+                    filter: "grayscale(1) brightness(0.55) contrast(1.1)",
+                    transition: "filter 0.3s ease",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.75) contrast(1.1)")}
+                  onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.55) contrast(1.1)")}
+                />
+              </div>
+            ))
+          )}
         </div>
       </section>
 
