@@ -112,7 +112,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <footer className="border-t border-white/5 bg-black/50 z-10 relative mt-24">
+      <footer className="border-t border-white/5 bg-black/50 z-10 relative">
         <div className="container mx-auto px-6 md:px-12 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
