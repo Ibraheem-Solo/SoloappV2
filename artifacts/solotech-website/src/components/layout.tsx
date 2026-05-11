@@ -76,7 +76,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 z-50">
-            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-10 w-auto" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
