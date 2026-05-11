@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "top-0 bg-background/80 backdrop-blur-md border-b border-white/5 py-4"
-            : "top-8 bg-transparent py-6"
+            : "top-0 md:top-8 bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center">
