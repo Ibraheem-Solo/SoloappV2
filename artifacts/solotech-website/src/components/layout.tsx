@@ -41,8 +41,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/20 blur-[120px] pointer-events-none" />
       <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px] pointer-events-none" />
       
-      {/* Top info bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5">
+      {/* Top info bar — slides up and hides on scroll */}
+      <div className={`fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5 transition-transform duration-300 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container mx-auto px-6 md:px-12 py-2 flex items-center justify-between text-xs text-white/50">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
@@ -67,8 +67,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
 
       <header
-        className={`fixed top-9 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
+        className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "top-0 bg-background/80 backdrop-blur-md border-b border-white/5 py-4"
+            : "top-8 bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">

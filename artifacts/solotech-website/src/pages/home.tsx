@@ -170,16 +170,6 @@ export default function Home() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="flex flex-col justify-center py-24"
             >
-              {/* Online indicator */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-6 w-fit">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-                </span>
-                <span className="text-green-400 font-semibold">We're online now</span>
-                <span className="text-white/40">— ready to start your project</span>
-              </div>
-
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8 w-fit">
                 <span className="text-yellow-400">⚡</span>
                 <span className="text-white/90">Launch Your Website in 24 Hours</span>
