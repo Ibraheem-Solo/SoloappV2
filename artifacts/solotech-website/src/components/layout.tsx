@@ -179,8 +179,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/40">
-            <p>© {new Date().getFullYear()} Solotech Digital LLC. All rights reserved.</p>
-            <div className="flex items-center gap-5">
+            <p className="text-center md:text-left">© {new Date().getFullYear()} Solotech Digital LLC. All rights reserved.</p>
+            <div className="flex items-center gap-5 text-center">
               <Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link>
               <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Notice</Link>
             </div>
