@@ -664,6 +664,43 @@ export default function Home() {
             <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you informed and delivers results every time.</p>
           </motion.div>
 
+          {/* Zigzag connector — desktop only */}
+          <div className="relative">
+            <svg
+              className="hidden lg:block absolute left-0 right-0 top-0 w-full pointer-events-none z-10"
+              height="112"
+              viewBox="0 0 1000 112"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="zzGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0">
+                  <stop offset="0%"   stopColor="#8b5cf6" />
+                  <stop offset="33%"  stopColor="#3b82f6" />
+                  <stop offset="66%"  stopColor="#d946ef" />
+                  <stop offset="100%" stopColor="#10b981" />
+                </linearGradient>
+                <filter id="zzGlow" x="-20%" y="-100%" width="140%" height="300%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+              {/* Glow halo */}
+              <path d="M 125 28 L 375 92 L 625 28 L 875 92"
+                stroke="url(#zzGrad)" strokeWidth="10" fill="none"
+                strokeOpacity="0.25" strokeLinecap="round" strokeLinejoin="round"
+                filter="url(#zzGlow)" />
+              {/* Main dashed line */}
+              <path d="M 125 28 L 375 92 L 625 28 L 875 92"
+                stroke="url(#zzGrad)" strokeWidth="2" fill="none"
+                strokeDasharray="10 6" strokeLinecap="round" strokeLinejoin="round" />
+              {/* Coloured dots */}
+              <circle cx="125" cy="28"  r="5.5" fill="#8b5cf6" filter="url(#zzGlow)" />
+              <circle cx="375" cy="92"  r="5.5" fill="#3b82f6" filter="url(#zzGlow)" />
+              <circle cx="625" cy="28"  r="5.5" fill="#d946ef" filter="url(#zzGlow)" />
+              <circle cx="875" cy="92"  r="5.5" fill="#10b981" filter="url(#zzGlow)" />
+            </svg>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
@@ -725,7 +762,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-2xl border ${item.border} bg-gradient-to-br ${item.gradient} backdrop-blur-md shadow-xl ${item.glow} overflow-hidden group hover:scale-[1.02] transition-transform duration-300`}
+                className={`relative rounded-2xl border ${item.border} bg-gradient-to-br ${item.gradient} backdrop-blur-md shadow-xl ${item.glow} overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${i % 2 === 1 ? "lg:mt-16" : ""}`}
               >
                 {/* Coloured top bar */}
                 <div className={`h-1 w-full bg-gradient-to-r ${item.topBar}`} />
@@ -751,6 +788,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+          </div>{/* end relative zigzag wrapper */}
         </div>
       </section>
 
