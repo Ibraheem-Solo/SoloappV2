@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { Menu, X, Phone, Mail, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import WhatsAppWidget from "@/components/whatsapp-widget";
@@ -149,7 +149,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </p>
               <div className="flex items-center gap-3">
                 {[
-                  { href: "https://www.facebook.com/share/18bkFet8wR/", label: "Facebook", icon: <Facebook size={16} /> },
+                  {
+                    href: "https://www.facebook.com/share/18bkFet8wR/",
+                    label: "Facebook",
+                    icon: (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.271h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                      </svg>
+                    ),
+                  },
                   {
                     href: "https://x.com/solotechdesigns",
                     label: "X",
