@@ -167,55 +167,55 @@ function ProcessInfographic() {
         </svg>
 
         {/* Center */}
-        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#592C72]/40 border-2 border-[#592C72] flex items-center justify-center z-20"
+        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center z-20 shadow-lg shadow-[#592C72]/40"
           initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.1, ease: "backOut" }}>
-          <Zap size={28} className="text-[#9CB633]" />
+          <Zap size={34} className="text-[#9CB633]" />
         </motion.div>
 
         {/* 01 Discovery — top */}
-        <motion.div className="absolute top-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
+        <motion.div className="absolute top-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, y: -10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.0 }}>
-          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
-            <MessageSquare size={20} />
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <MessageSquare size={26} />
           </div>
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Discovery</span>
-          <span className="text-[#9CB633] text-xs font-bold">01</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Discovery</span>
+          <span className="text-[#9CB633] text-sm font-bold">01</span>
         </motion.div>
 
         {/* 02 Strategy — right */}
-        <motion.div className="absolute top-1/2 right-[6px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
+        <motion.div className="absolute top-1/2 right-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, x: 10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.1 }}>
-          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
-            <BarChart3 size={20} />
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <BarChart3 size={26} />
           </div>
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Strategy</span>
-          <span className="text-[#9CB633] text-xs font-bold">02</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Strategy</span>
+          <span className="text-[#9CB633] text-sm font-bold">02</span>
         </motion.div>
 
         {/* 03 Design & Build — bottom */}
-        <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
+        <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.2 }}>
-          <span className="text-[#9CB633] text-xs font-bold">03</span>
-          <span className="text-white text-base font-bold whitespace-nowrap mb-1">Design & Build</span>
-          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
-            <Palette size={20} />
+          <span className="text-[#9CB633] text-sm font-bold">03</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap mb-1">Design & Build</span>
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <Palette size={26} />
           </div>
         </motion.div>
 
         {/* 04 Launch & Growth — left */}
-        <motion.div className="absolute top-1/2 left-[6px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
+        <motion.div className="absolute top-1/2 left-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, x: -10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.3 }}>
-          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
-            <TrendingUp size={20} />
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <TrendingUp size={26} />
           </div>
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Launch &</span>
-          <span className="text-white text-base font-bold whitespace-nowrap">Growth</span>
-          <span className="text-[#9CB633] text-xs font-bold">04</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Launch &</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap">Growth</span>
+          <span className="text-[#9CB633] text-sm font-bold">04</span>
         </motion.div>
       </div>
 
