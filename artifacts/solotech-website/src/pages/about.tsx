@@ -210,7 +210,7 @@ export default function About() {
                 transition={{ delay: i * 0.1 }}
                 className="glass-panel p-8 rounded-2xl text-center group hover:border-[#592C72]/50 transition-colors"
               >
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#592C72] to-[#9CB633] flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+                <div className="w-20 h-20 rounded-2xl bg-[#9CB633] flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                   {member.avatar}
                 </div>
                 <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>

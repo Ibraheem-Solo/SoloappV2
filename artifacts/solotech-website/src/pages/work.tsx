@@ -522,7 +522,7 @@ export default function Work() {
                 </div>
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-white/8 flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-[#9CB633] flex items-center justify-center text-white font-bold text-sm shrink-0">
                       BSC
                     </div>
                     <div>
@@ -596,7 +596,7 @@ export default function Work() {
 
                 <div className="flex items-center justify-between pt-4 border-t border-white/8">
                   <div className="flex items-center gap-3">
-                    <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.avatarGrad} flex items-center justify-center text-white font-bold text-xs shrink-0`}>
+                    <div className="w-9 h-9 rounded-full bg-[#9CB633] flex items-center justify-center text-white font-bold text-xs shrink-0">
                       {t.avatar}
                     </div>
                     <div>

@@ -720,7 +720,7 @@ export default function Home() {
                 <Quote size={32} className="text-[#9CB633]/50" />
                 <p className="text-white/75 leading-relaxed flex-1">"{t.review}"</p>
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#592C72] to-[#9CB633] flex items-center justify-center text-white font-bold text-xs shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-[#9CB633] flex items-center justify-center text-white font-bold text-xs shrink-0">
                     {t.avatar}
                   </div>
                   <div>
