@@ -39,16 +39,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col relative overflow-hidden font-sans">
       {/* Global Background Orbs */}
-      <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#592C72]/20 blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#9CB633]/8 blur-[120px] pointer-events-none" />
+      <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#592C72]/25 blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#9CB633]/15 blur-[120px] pointer-events-none" />
+      <div className="fixed top-[40%] right-[-15%] w-[35%] h-[35%] rounded-full bg-[#9CB633]/8 blur-[100px] pointer-events-none" />
       
       {/* Top info bar — slides up and hides on scroll */}
       <div className={`fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5 transition-transform duration-300 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container mx-auto px-6 md:px-12 py-2 flex items-center justify-between text-xs text-white/50">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9CB633] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#9CB633]" />
             </span>
             <span className="text-white/60">We're online — ready to start your project</span>
           </div>

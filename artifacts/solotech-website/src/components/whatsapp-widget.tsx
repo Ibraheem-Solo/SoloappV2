@@ -86,7 +86,7 @@ export default function WhatsAppWidget() {
                 <div>
                   <div className="text-white font-semibold text-sm leading-tight">Solotech Digital</div>
                   <div className="text-green-300 text-xs flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#9CB633] inline-block" />
                     Typically replies fast
                   </div>
                 </div>

@@ -327,7 +327,7 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#9CB633] inline-block" />
               <span className="text-green-400 text-xs font-bold uppercase tracking-widest">Promo</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Solotech LaunchPad</h2>
@@ -741,18 +741,19 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-32 px-6 md:px-12 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#592C72]/20" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-[#9CB633]/8 pointer-events-none" />
         <div className="container mx-auto max-w-4xl relative z-10">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Grow Your Business Online?</h2>
           <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-10 py-3 text-base w-full sm:w-auto">
+              <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full sm:w-auto font-semibold transition-colors">
                 Start a Project
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-white/20 bg-black/50 backdrop-blur-sm">
+              <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-[#9CB633]/40 text-white/80 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/50 backdrop-blur-sm transition-colors">
                 Launch My Website
               </Button>
             </Link>
