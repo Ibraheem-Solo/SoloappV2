@@ -652,7 +652,7 @@ export default function Home() {
           >
             <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white">How We Work</h2>
-            <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you informed and delivers results every time.</p>
+            <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you in the loop and delivers results, maximizing your business's potential for growth.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
