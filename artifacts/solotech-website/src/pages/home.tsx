@@ -145,7 +145,7 @@ function ProcessInfographic() {
   const inView = useInView(circleRef, { once: true, margin: "-80px" });
   return (
     <div ref={circleRef} className="flex flex-col items-center gap-5">
-      <div className="relative w-[460px] h-[460px]">
+      <div className="relative w-[460px] h-[460px] scale-[0.65] md:scale-100 origin-top -mb-[161px] md:mb-0">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 460 460" fill="none">
           <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.6"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
