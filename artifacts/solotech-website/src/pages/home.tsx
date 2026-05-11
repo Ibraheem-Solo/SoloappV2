@@ -650,6 +650,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How We Work */}
+      <section className="py-24 px-6 md:px-12">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">How We Work</h2>
+            <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you informed and delivers results every time.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+            {/* Connector line — desktop only */}
+            <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-purple-500/0 via-purple-500/40 to-purple-500/0 z-0" />
+
+            {[
+              { step: "01", title: "Discovery", desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={22} /> },
+              { step: "02", title: "Strategy", desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.", icon: <BarChart3 size={22} /> },
+              { step: "03", title: "Design & Build", desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.", icon: <Palette size={22} /> },
+              { step: "04", title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.", icon: <TrendingUp size={22} /> },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="relative z-10 flex flex-col items-center text-center group"
+              >
+                {/* Step circle */}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-600/30 to-purple-900/40 border border-purple-500/30 flex flex-col items-center justify-center mb-6 group-hover:border-purple-400/60 group-hover:from-purple-600/50 transition-all duration-300 shadow-lg shadow-purple-900/20">
+                  <span className="text-purple-400 mb-0.5">{item.icon}</span>
+                  <span className="text-purple-300 text-[10px] font-bold tracking-widest">{item.step}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">{item.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl">
