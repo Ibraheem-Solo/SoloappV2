@@ -652,7 +652,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Work</h2>
               <p className="text-white/50 text-lg mb-10">A clear, structured process that keeps you in the loop and delivers results, maximizing your business's potential for growth.</p>
 
-              <ul className="space-y-8">
+              <ul className="divide-y divide-white/8">
                 {[
                   { step: "01", title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={18} /> },
                   { step: "02", title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",    icon: <BarChart3 size={18} /> },
@@ -665,7 +665,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-5"
+                    className="flex items-start gap-5 py-6"
                   >
                     <div className="w-10 h-10 rounded-full border border-[#592C72] bg-[#592C72]/20 flex items-center justify-center text-[#9CB633] shrink-0 mt-0.5">
                       {item.icon}
@@ -687,64 +687,66 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center"
+              className="flex flex-col items-center gap-6"
             >
-              <div className="relative w-[340px] h-[340px]">
-                {/* SVG connecting lines — rendered behind items */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 340 340">
-                  {/* Outer circle */}
-                  <circle cx="170" cy="170" r="158" fill="none" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.5" />
-                  {/* Inner dashed ring */}
-                  <circle cx="170" cy="170" r="110" fill="none" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="6 4" />
-                  {/* Spoke lines */}
-                  <line x1="170" y1="38" x2="170" y2="128" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
-                  <line x1="302" y1="170" x2="212" y2="170" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
-                  <line x1="170" y1="302" x2="170" y2="212" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
-                  <line x1="38" y1="170" x2="128" y2="170" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
+              <div className="relative w-[460px] h-[460px]">
+                {/* SVG rings + spokes */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 460 460">
+                  <circle cx="230" cy="230" r="214" fill="none" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.5" />
+                  <circle cx="230" cy="230" r="150" fill="none" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="6 4" />
+                  <line x1="230" y1="190" x2="230" y2="52" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
+                  <line x1="270" y1="230" x2="408" y2="230" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
+                  <line x1="230" y1="270" x2="230" y2="408" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
+                  <line x1="190" y1="230" x2="52" y2="230" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
                 </svg>
 
-                {/* Center circle */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#592C72]/30 border-2 border-[#592C72] flex items-center justify-center z-10">
-                  <Zap size={22} className="text-[#9CB633]" />
+                {/* Center */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#592C72]/30 border-2 border-[#592C72] flex items-center justify-center z-10">
+                  <Zap size={28} className="text-[#9CB633]" />
                 </div>
 
                 {/* 01 Discovery — top */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
-                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
-                    <MessageSquare size={14} />
+                <div className="absolute top-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
+                    <MessageSquare size={20} />
                   </div>
-                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Discovery</span>
-                  <span className="text-[#9CB633] text-[10px] font-bold">01</span>
+                  <span className="text-white text-sm font-bold whitespace-nowrap">Discovery</span>
+                  <span className="text-[#9CB633] text-xs font-bold">01</span>
                 </div>
 
                 {/* 02 Strategy — right */}
-                <div className="absolute top-1/2 right-2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
-                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
-                    <BarChart3 size={14} />
+                <div className="absolute top-1/2 right-3 -translate-y-1/2 flex flex-col items-center gap-1.5 z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
+                    <BarChart3 size={20} />
                   </div>
-                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Strategy</span>
-                  <span className="text-[#9CB633] text-[10px] font-bold">02</span>
+                  <span className="text-white text-sm font-bold whitespace-nowrap">Strategy</span>
+                  <span className="text-[#9CB633] text-xs font-bold">02</span>
                 </div>
 
                 {/* 03 Design & Build — bottom */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
-                  <span className="text-[#9CB633] text-[10px] font-bold">03</span>
-                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Design & Build</span>
-                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
-                    <Palette size={14} />
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
+                  <span className="text-[#9CB633] text-xs font-bold">03</span>
+                  <span className="text-white text-sm font-bold whitespace-nowrap">Design & Build</span>
+                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
+                    <Palette size={20} />
                   </div>
                 </div>
 
                 {/* 04 Launch & Growth — left */}
-                <div className="absolute top-1/2 left-2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
-                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
-                    <TrendingUp size={14} />
+                <div className="absolute top-1/2 left-3 -translate-y-1/2 flex flex-col items-center gap-1.5 z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
+                    <TrendingUp size={20} />
                   </div>
-                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Launch &</span>
-                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Growth</span>
-                  <span className="text-[#9CB633] text-[10px] font-bold">04</span>
+                  <span className="text-white text-sm font-bold whitespace-nowrap">Launch &</span>
+                  <span className="text-white text-sm font-bold whitespace-nowrap">Growth</span>
+                  <span className="text-[#9CB633] text-xs font-bold">04</span>
                 </div>
               </div>
+
+              {/* Caption below graphic */}
+              <p className="text-white/45 text-sm text-center max-w-xs">
+                Our process is: <span className="text-white/70">Discovery, Strategy, Design & Build, Launch & Growth</span>
+              </p>
             </motion.div>
 
           </div>
