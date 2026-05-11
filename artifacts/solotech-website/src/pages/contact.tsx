@@ -317,14 +317,17 @@ export default function Contact() {
                           )}
                         />
 
-                        <Button
-                          type="submit"
-                          size="lg"
-                          data-testid="button-submit"
-                          className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 text-base hover:scale-[1.02] transition-transform"
-                        >
-                          Send Message — We'll Reply in 24hrs
-                        </Button>
+                        <div className="flex flex-col items-center gap-2">
+                          <Button
+                            type="submit"
+                            size="lg"
+                            data-testid="button-submit"
+                            className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 text-base border-0 hover:scale-[1.02] transition-transform"
+                          >
+                            Send Message
+                          </Button>
+                          <p className="text-white/45 text-sm">We'll Reply in 24hrs</p>
+                        </div>
                       </form>
                     </Form>
                   </>
