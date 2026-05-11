@@ -644,44 +644,109 @@ export default function Home() {
       {/* How We Work */}
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">How We Work</h2>
-            <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you in the loop and delivers results, maximizing your business's potential for growth.</p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { step: "01", title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={26} /> },
-              { step: "02", title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",    icon: <BarChart3 size={26} /> },
-              { step: "03", title: "Design & Build",  desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.",             icon: <Palette size={26} /> },
-              { step: "04", title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.",           icon: <TrendingUp size={26} /> },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl flex flex-col gap-5 group hover:border-[#592C72]/50 transition-colors"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
-                    {item.icon}
+            {/* Left: heading + list */}
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Our Process</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How We Work</h2>
+              <p className="text-white/50 text-lg mb-10">A clear, structured process that keeps you in the loop and delivers results, maximizing your business's potential for growth.</p>
+
+              <ul className="space-y-8">
+                {[
+                  { step: "01", title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={18} /> },
+                  { step: "02", title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",    icon: <BarChart3 size={18} /> },
+                  { step: "03", title: "Design & Build",  desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.",             icon: <Palette size={18} /> },
+                  { step: "04", title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.",           icon: <TrendingUp size={18} /> },
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-5"
+                  >
+                    <div className="w-10 h-10 rounded-full border border-[#592C72] bg-[#592C72]/20 flex items-center justify-center text-[#9CB633] shrink-0 mt-0.5">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[#9CB633]/50 text-xs font-bold">{item.step}</span>
+                        <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                      </div>
+                      <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Right: circle infographic */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center"
+            >
+              <div className="relative w-[340px] h-[340px]">
+                {/* SVG connecting lines — rendered behind items */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 340 340">
+                  {/* Outer circle */}
+                  <circle cx="170" cy="170" r="158" fill="none" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.5" />
+                  {/* Inner dashed ring */}
+                  <circle cx="170" cy="170" r="110" fill="none" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="6 4" />
+                  {/* Spoke lines */}
+                  <line x1="170" y1="38" x2="170" y2="128" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
+                  <line x1="302" y1="170" x2="212" y2="170" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
+                  <line x1="170" y1="302" x2="170" y2="212" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
+                  <line x1="38" y1="170" x2="128" y2="170" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.4" />
+                </svg>
+
+                {/* Center circle */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#592C72]/30 border-2 border-[#592C72] flex items-center justify-center z-10">
+                  <Zap size={22} className="text-[#9CB633]" />
+                </div>
+
+                {/* 01 Discovery — top */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
+                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
+                    <MessageSquare size={14} />
                   </div>
-                  <span className="text-4xl font-black text-[#9CB633]/25 leading-none select-none">{item.step}</span>
+                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Discovery</span>
+                  <span className="text-[#9CB633] text-[10px] font-bold">01</span>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+
+                {/* 02 Strategy — right */}
+                <div className="absolute top-1/2 right-2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
+                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
+                    <BarChart3 size={14} />
+                  </div>
+                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Strategy</span>
+                  <span className="text-[#9CB633] text-[10px] font-bold">02</span>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* 03 Design & Build — bottom */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10">
+                  <span className="text-[#9CB633] text-[10px] font-bold">03</span>
+                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Design & Build</span>
+                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
+                    <Palette size={14} />
+                  </div>
+                </div>
+
+                {/* 04 Launch & Growth — left */}
+                <div className="absolute top-1/2 left-2 -translate-y-1/2 flex flex-col items-center gap-1 z-10">
+                  <div className="w-9 h-9 rounded-full bg-[#592C72]/30 border border-[#592C72]/70 flex items-center justify-center text-[#9CB633]">
+                    <TrendingUp size={14} />
+                  </div>
+                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Launch &</span>
+                  <span className="text-white text-[11px] font-bold whitespace-nowrap">Growth</span>
+                  <span className="text-[#9CB633] text-[10px] font-bold">04</span>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
