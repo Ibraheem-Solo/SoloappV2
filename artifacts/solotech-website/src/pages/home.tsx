@@ -74,7 +74,7 @@ function WorkSection() {
             <p className="text-white/50 mt-2 text-sm">A selection of recent projects we're proud of</p>
           </div>
           <Link href="/work">
-            <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 hidden md:flex">
+            <Button variant="outline" className="rounded-full border-[#9CB633]/60 text-[#9CB633] hover:bg-[#9CB633]/10 hover:border-[#9CB633] gap-2 hidden md:flex">
               View All Work <ArrowUpRight size={16} />
             </Button>
           </Link>
@@ -390,7 +390,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/contact">
-                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full py-3 px-8 transition-all hover:scale-[1.02]">
+                <Button className="w-full bg-transparent hover:bg-[#9CB633]/10 text-[#9CB633] border border-[#9CB633]/60 hover:border-[#9CB633] rounded-full py-3 px-8 transition-all hover:scale-[1.02]">
                   Get Started
                 </Button>
               </Link>

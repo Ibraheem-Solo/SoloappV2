@@ -188,7 +188,7 @@ export default function Services() {
 
                 <div className="mt-8 pt-8 border-t border-white/10">
                   <Link href="/contact">
-                    <Button className="bg-white/15 hover:bg-white/25 text-white border border-white/20 rounded-full px-8 py-2.5 transition-all hover:scale-105">
+                    <Button className="bg-transparent hover:bg-[#9CB633]/10 text-[#9CB633] border border-[#9CB633]/60 hover:border-[#9CB633] rounded-full px-8 py-2.5 transition-all hover:scale-105">
                       Get a Quote for This Service
                     </Button>
                   </Link>
