@@ -664,90 +664,31 @@ export default function Home() {
             <p className="text-white/50 mt-3 text-lg max-w-xl mx-auto">A clear, structured process that keeps you informed and delivers results every time.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                step: "01",
-                title: "Discovery",
-                desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.",
-                icon: <MessageSquare size={26} />,
-                gradient: "from-violet-600/25 to-purple-900/20",
-                border: "border-violet-500/30",
-                glow: "shadow-violet-500/10",
-                iconBg: "bg-violet-500/20",
-                iconColor: "text-violet-300",
-                stepColor: "text-violet-400",
-                topBar: "from-violet-500 to-purple-600",
-              },
-              {
-                step: "02",
-                title: "Strategy",
-                desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",
-                icon: <BarChart3 size={26} />,
-                gradient: "from-blue-600/25 to-blue-900/20",
-                border: "border-blue-500/30",
-                glow: "shadow-blue-500/10",
-                iconBg: "bg-blue-500/20",
-                iconColor: "text-blue-300",
-                stepColor: "text-blue-400",
-                topBar: "from-blue-500 to-cyan-500",
-              },
-              {
-                step: "03",
-                title: "Design & Build",
-                desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.",
-                icon: <Palette size={26} />,
-                gradient: "from-fuchsia-600/25 to-pink-900/20",
-                border: "border-fuchsia-500/30",
-                glow: "shadow-fuchsia-500/10",
-                iconBg: "bg-fuchsia-500/20",
-                iconColor: "text-fuchsia-300",
-                stepColor: "text-fuchsia-400",
-                topBar: "from-fuchsia-500 to-pink-500",
-              },
-              {
-                step: "04",
-                title: "Launch & Growth",
-                desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.",
-                icon: <TrendingUp size={26} />,
-                gradient: "from-emerald-600/25 to-teal-900/20",
-                border: "border-emerald-500/30",
-                glow: "shadow-emerald-500/10",
-                iconBg: "bg-emerald-500/20",
-                iconColor: "text-emerald-300",
-                stepColor: "text-emerald-400",
-                topBar: "from-emerald-500 to-teal-400",
-              },
+              { step: "01", title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={26} /> },
+              { step: "02", title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",    icon: <BarChart3 size={26} /> },
+              { step: "03", title: "Design & Build",  desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.",             icon: <Palette size={26} /> },
+              { step: "04", title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.",           icon: <TrendingUp size={26} /> },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 36 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-2xl border ${item.border} bg-gradient-to-br ${item.gradient} backdrop-blur-md shadow-xl ${item.glow} overflow-hidden group hover:scale-[1.02] transition-transform duration-300`}
+                transition={{ delay: i * 0.1 }}
+                className="glass-panel p-8 rounded-2xl flex flex-col gap-5 group hover:border-purple-500/40 transition-colors"
               >
-                {/* Coloured top bar */}
-                <div className={`h-1 w-full bg-gradient-to-r ${item.topBar}`} />
-
-                <div className="p-7 flex flex-col gap-5">
-                  {/* Icon + step number row */}
-                  <div className="flex items-center justify-between">
-                    <div className={`w-12 h-12 rounded-xl ${item.iconBg} flex items-center justify-center ${item.iconColor} shrink-0`}>
-                      {item.icon}
-                    </div>
-                    <span className={`text-4xl font-black ${item.stepColor} opacity-40 leading-none select-none`}>{item.step}</span>
+                <div className="flex items-center justify-between">
+                  <div className="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 shrink-0 group-hover:bg-purple-500/30 transition-colors">
+                    {item.icon}
                   </div>
-
-                  {/* Text */}
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-white transition-colors">{item.title}</h3>
-                    <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
+                  <span className="text-4xl font-black text-purple-500/25 leading-none select-none">{item.step}</span>
                 </div>
-
-                {/* Subtle inner glow on hover */}
-                <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br ${item.gradient}`} />
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
