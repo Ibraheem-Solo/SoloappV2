@@ -198,9 +198,6 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Social links */}
-              <SocialLinks size="sm" className="mt-2" />
-
               {/* Stats */}
               <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
                 <div>
