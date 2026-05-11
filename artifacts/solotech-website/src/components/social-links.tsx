@@ -50,7 +50,7 @@ interface SocialLinksProps {
 }
 
 export default function SocialLinks({ size = "md", className = "" }: SocialLinksProps) {
-  const dim = size === "sm" ? "w-8 h-8 rounded-lg" : "w-9 h-9 rounded-xl";
+  const dim = size === "sm" ? "w-[34px] h-[34px] rounded-lg" : "w-[38px] h-[38px] rounded-lg";
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {SOCIALS.map((s) => (
