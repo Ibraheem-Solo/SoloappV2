@@ -815,7 +815,7 @@ export default function Home() {
           <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full sm:w-auto font-semibold transition-colors">
+              <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full sm:w-auto font-semibold border-0 transition-colors">
                 Start a Project
               </Button>
             </Link>

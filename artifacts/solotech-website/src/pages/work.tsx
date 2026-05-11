@@ -632,7 +632,7 @@ export default function Work() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base hover:scale-105 transition-transform">
+                <Button size="lg" className="bg-gradient-solotech text-white rounded-full px-10 py-3 text-base border-0 hover:scale-105 transition-transform">
                   Start a Project
                 </Button>
               </Link>
