@@ -192,7 +192,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/work">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base border-white/20 hover:bg-white/10">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base border-[#9CB633]/60 text-[#9CB633] hover:bg-[#9CB633]/10 hover:border-[#9CB633]">
                     View Our Work
                   </Button>
                 </Link>
