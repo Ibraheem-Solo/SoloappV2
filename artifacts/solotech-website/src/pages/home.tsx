@@ -744,7 +744,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#592C72]/20" />
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-[#9CB633]/8 pointer-events-none" />
         <div className="container mx-auto max-w-4xl relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#592C72] via-[#c084fc] to-[#9CB633]">Online?</span></h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
           <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact">
