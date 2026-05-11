@@ -5,6 +5,7 @@ import SocialLinks from "@/components/social-links";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import WhatsAppWidget from "@/components/whatsapp-widget";
+import CookieBanner from "@/components/cookie-banner";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -177,13 +178,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/40">
             <p>© {new Date().getFullYear()} Solotech Digital LLC. All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              <Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link>
+              <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Notice</Link>
+            </div>
           </div>
         </div>
       </footer>
 
       <WhatsAppWidget />
+      <CookieBanner />
     </div>
   );
 }
