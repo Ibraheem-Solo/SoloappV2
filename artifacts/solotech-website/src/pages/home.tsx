@@ -323,8 +323,10 @@ export default function Home() {
       </section>
 
       {/* LaunchPad Section */}
-      <section className="py-24 px-6 md:px-12 bg-black/40 relative">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-24 px-6 md:px-12 bg-black/40 relative overflow-hidden">
+        <div className="absolute top-[-30%] left-[20%] w-[60%] h-[80%] rounded-full bg-[#9CB633]/10 blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-[-20%] right-[10%] w-[40%] h-[60%] rounded-full bg-[#9CB633]/8 blur-[120px] pointer-events-none" />
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9CB633] inline-block" />
