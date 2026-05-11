@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight } from "lucide-react";
 import SeoHead from "@/components/seo-head";
@@ -18,15 +18,6 @@ const featuredProjects = [
     url: "https://alihsanuniversity.org",
   },
   {
-    title: "EJC Drilling Company",
-    client: "EJC Drilling Co.",
-    tag: "Web Design",
-    color: "from-blue-900/60 to-cyan-900/40",
-    accent: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-    image: `${BASE}portfolio/ejc-website.jpg`,
-    url: "https://ejcdrilling.com",
-  },
-  {
     title: "MJ's Building Essentials",
     client: "MJ's Building",
     tag: "Brand Identity",
@@ -41,6 +32,15 @@ const featuredProjects = [
     color: "from-yellow-900/50 to-purple-900/40",
     accent: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
     image: `${BASE}portfolio/regal-tv.jpg`,
+  },
+  {
+    title: "EJC Drilling Company",
+    client: "EJC Drilling Co.",
+    tag: "Web Design",
+    color: "from-blue-900/60 to-cyan-900/40",
+    accent: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    image: `${BASE}portfolio/ejc-website.jpg`,
+    url: "https://ejcdrilling.com",
   },
 ];
 
@@ -63,23 +63,54 @@ const proDetails = [
 
 function ScrollWorkSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [overflowPx, setOverflowPx] = useState(1200);
+
+  // Measure how many px the track overflows the viewport so we set exact section height
+  useEffect(() => {
+    const measure = () => {
+      if (!trackRef.current) return;
+      const trackW = trackRef.current.scrollWidth;
+      const vw = window.innerWidth;
+      // Visible area = vw minus horizontal padding (px-6 = 24px each side on mobile, px-12 = 48px on md+)
+      const padding = vw >= 768 ? 96 : 48;
+      const overflow = Math.max(0, trackW - (vw - padding));
+      setOverflowPx(overflow);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
-  // Translate cards from 0 → -(2 card widths + gaps) as scroll goes 0→1
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-52%"]);
+
+  // Spring smoothing — stiff enough to feel responsive, loose enough to glide
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 20,
+    restDelta: 0.001,
+  });
+
+  const x = useTransform(smoothProgress, [0, 1], [0, -overflowPx]);
 
   return (
-    <section ref={sectionRef} className="relative" style={{ height: "280vh" }}>
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center py-16 px-6 md:px-12">
+    // Section height = 100vh (visible) + overflow so sticky releases exactly when last card is flush right
+    <section
+      ref={sectionRef}
+      className="relative"
+      style={{ height: `calc(100vh + ${overflowPx}px)` }}
+    >
+      <div className="sticky top-0 h-screen flex flex-col justify-center py-14 overflow-hidden">
         {/* Header */}
-        <div className="container mx-auto max-w-7xl mb-10">
-          <div className="flex items-end justify-between">
+        <div className="px-6 md:px-12 mb-8">
+          <div className="container mx-auto max-w-7xl flex items-end justify-between">
             <div>
               <p className="text-purple-400 text-xs font-bold uppercase tracking-widest mb-3">Featured Work</p>
               <h2 className="text-4xl md:text-5xl font-bold text-white">Our Work</h2>
-              <p className="text-white/50 mt-2">Scroll to explore recent projects</p>
+              <p className="text-white/50 mt-2 text-sm">Scroll to explore recent projects</p>
             </div>
             <Link href="/work">
               <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 hidden md:flex">
@@ -89,73 +120,73 @@ function ScrollWorkSection() {
           </div>
         </div>
 
-        {/* Scroll progress bar */}
-        <div className="container mx-auto max-w-7xl mb-8">
-          <div className="w-full h-px bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"
-              style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-            />
+        {/* Progress bar */}
+        <div className="px-6 md:px-12 mb-7">
+          <div className="container mx-auto max-w-7xl">
+            <div className="w-full h-px bg-white/10 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-purple-500 to-blue-500 origin-left rounded-full"
+                style={{ scaleX: smoothProgress }}
+              />
+            </div>
           </div>
         </div>
 
-        {/* Cards — horizontally scroll driven by vertical scroll */}
-        <div className="container mx-auto max-w-7xl overflow-visible">
-          <motion.div className="flex gap-6" style={{ x }}>
-            {featuredProjects.map((project, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`shrink-0 w-[calc(50vw-3.5rem)] max-w-[580px] rounded-3xl overflow-hidden glass-panel group cursor-pointer border border-white/10 hover:border-purple-500/40 transition-all duration-300`}
-                style={{ minHeight: "380px" }}
-              >
-                {/* Image */}
-                <div className={`relative h-56 bg-gradient-to-br ${project.color} overflow-hidden`}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    onError={e => { (e.currentTarget as HTMLImageElement).style.opacity = "0.3"; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  {/* Tag badge */}
-                  <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${project.accent}`}>
-                    {project.tag}
+        {/* Cards track — clips at section edges, translates horizontally */}
+        <div className="px-6 md:px-12 overflow-visible">
+          <div className="container mx-auto max-w-7xl overflow-visible">
+            <motion.div
+              ref={trackRef}
+              className="flex gap-6"
+              style={{ x, willChange: "transform" }}
+            >
+              {featuredProjects.map((project, i) => (
+                <div
+                  key={i}
+                  className={`shrink-0 w-[calc(50vw-3rem)] md:w-[calc(50vw-4rem)] max-w-[600px] rounded-3xl overflow-hidden glass-panel group cursor-pointer border border-white/10 hover:border-purple-500/40 transition-colors duration-300`}
+                >
+                  {/* Image */}
+                  <div className={`relative h-60 bg-gradient-to-br ${project.color} overflow-hidden`}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      onError={e => { (e.currentTarget as HTMLImageElement).style.opacity = "0.3"; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${project.accent} backdrop-blur-sm`}>
+                      {project.tag}
+                    </div>
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/25 transition-colors"
+                        onClick={e => e.stopPropagation()}
+                      >
+                        <ArrowUpRight size={14} className="text-white" />
+                      </a>
+                    )}
                   </div>
-                  {/* Link icon */}
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/25 transition-colors"
-                      onClick={e => e.stopPropagation()}
-                    >
-                      <ArrowUpRight size={14} className="text-white" />
-                    </a>
-                  )}
+                  {/* Info */}
+                  <div className="p-6">
+                    <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{project.client}</p>
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                    <Link href="/work">
+                      <span className="text-sm text-purple-400 hover:text-purple-300 font-medium inline-flex items-center gap-1 transition-colors">
+                        View case study <ArrowUpRight size={14} />
+                      </span>
+                    </Link>
+                  </div>
                 </div>
-
-                {/* Info */}
-                <div className="p-6">
-                  <p className="text-white/40 text-xs uppercase tracking-wider mb-1">{project.client}</p>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">{project.title}</h3>
-                  <Link href="/work">
-                    <span className="text-sm text-purple-400 hover:text-purple-300 font-medium flex items-center gap-1 transition-colors">
-                      View case study <ArrowUpRight size={14} />
-                    </span>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Mobile CTA */}
-        <div className="container mx-auto max-w-7xl mt-8 md:hidden">
+        <div className="px-6 mt-8 md:hidden">
           <Link href="/work">
             <Button variant="outline" className="rounded-full border-white/20 hover:bg-white/10 gap-2 w-full">
               View All Work <ArrowUpRight size={16} />
