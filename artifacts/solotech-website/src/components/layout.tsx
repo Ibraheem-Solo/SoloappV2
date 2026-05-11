@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import WhatsAppWidget from "@/components/whatsapp-widget";
@@ -41,8 +41,33 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/20 blur-[120px] pointer-events-none" />
       <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600/20 blur-[120px] pointer-events-none" />
       
+      {/* Top info bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5">
+        <div className="container mx-auto px-6 md:px-12 py-2 flex items-center justify-between text-xs text-white/50">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+            </span>
+            <span className="text-white/60">We're online — ready to start your project</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="tel:+2207532757" className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+              <Phone size={11} />
+              <span>+220 753 2757</span>
+            </a>
+            <span className="hidden sm:block text-white/20">|</span>
+            <a href="mailto:info@solotechdigital.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Mail size={11} />
+              <span className="hidden md:inline">info@solotechdigital.com</span>
+              <span className="md:hidden">Email us</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-9 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
         }`}
       >
@@ -108,7 +133,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </AnimatePresence>
       </header>
 
-      <main className="flex-1 w-full z-10 pt-24">
+      <main className="flex-1 w-full z-10 pt-36">
         {children}
       </main>
 
