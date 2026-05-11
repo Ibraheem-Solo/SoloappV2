@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight } from "lucide-react";
 import SeoHead from "@/components/seo-head";
@@ -137,6 +137,94 @@ function WorkSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ProcessInfographic() {
+  const circleRef = useRef(null);
+  const inView = useInView(circleRef, { once: true, margin: "-80px" });
+  return (
+    <div ref={circleRef} className="flex flex-col items-center gap-5">
+      <div className="relative w-[460px] h-[460px]">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 460 460" fill="none">
+          <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.6"
+            initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
+          <motion.circle cx="230" cy="230" r="148" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="6 5"
+            initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
+          {[
+            { x1: 230, y1: 185, x2: 230, y2: 42 },
+            { x1: 275, y1: 230, x2: 418, y2: 230 },
+            { x1: 230, y1: 275, x2: 230, y2: 418 },
+            { x1: 185, y1: 230, x2: 42,  y2: 230 },
+          ].map((l, i) => (
+            <motion.line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
+              stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.5"
+              initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.75 + i * 0.08, ease: "easeOut" }} />
+          ))}
+        </svg>
+
+        {/* Center */}
+        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#592C72]/40 border-2 border-[#592C72] flex items-center justify-center z-20"
+          initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.1, ease: "backOut" }}>
+          <Zap size={28} className="text-[#9CB633]" />
+        </motion.div>
+
+        {/* 01 Discovery — top */}
+        <motion.div className="absolute top-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
+          initial={{ opacity: 0, y: -10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 1.0 }}>
+          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
+            <MessageSquare size={20} />
+          </div>
+          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Discovery</span>
+          <span className="text-[#9CB633] text-xs font-bold">01</span>
+        </motion.div>
+
+        {/* 02 Strategy — right */}
+        <motion.div className="absolute top-1/2 right-[6px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
+          initial={{ opacity: 0, x: 10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.5, delay: 1.1 }}>
+          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
+            <BarChart3 size={20} />
+          </div>
+          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Strategy</span>
+          <span className="text-[#9CB633] text-xs font-bold">02</span>
+        </motion.div>
+
+        {/* 03 Design & Build — bottom */}
+        <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
+          initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 1.2 }}>
+          <span className="text-[#9CB633] text-xs font-bold">03</span>
+          <span className="text-white text-base font-bold whitespace-nowrap mb-1">Design & Build</span>
+          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
+            <Palette size={20} />
+          </div>
+        </motion.div>
+
+        {/* 04 Launch & Growth — left */}
+        <motion.div className="absolute top-1/2 left-[6px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
+          initial={{ opacity: 0, x: -10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.5, delay: 1.3 }}>
+          <div className="w-12 h-12 rounded-full bg-[#592C72]/40 border border-[#592C72] flex items-center justify-center text-[#9CB633]">
+            <TrendingUp size={20} />
+          </div>
+          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Launch &</span>
+          <span className="text-white text-base font-bold whitespace-nowrap">Growth</span>
+          <span className="text-[#9CB633] text-xs font-bold">04</span>
+        </motion.div>
+      </div>
+
+      <motion.p className="text-white/40 text-sm text-center max-w-xs"
+        initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
+        transition={{ delay: 1.5, duration: 0.5 }}>
+        Our process is: <span className="text-white/65">Discovery, Strategy, Design & Build, Launch & Growth</span>
+      </motion.p>
+    </div>
   );
 }
 
@@ -682,72 +770,8 @@ export default function Home() {
               </ul>
             </motion.div>
 
-            {/* Right: circle infographic */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center gap-6"
-            >
-              <div className="relative w-[460px] h-[460px]">
-                {/* SVG rings + spokes */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 460 460">
-                  <circle cx="230" cy="230" r="214" fill="none" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.5" />
-                  <circle cx="230" cy="230" r="150" fill="none" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="6 4" />
-                  <line x1="230" y1="190" x2="230" y2="52" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
-                  <line x1="270" y1="230" x2="408" y2="230" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
-                  <line x1="230" y1="270" x2="230" y2="408" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
-                  <line x1="190" y1="230" x2="52" y2="230" stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.45" />
-                </svg>
-
-                {/* Center */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#592C72]/30 border-2 border-[#592C72] flex items-center justify-center z-10">
-                  <Zap size={28} className="text-[#9CB633]" />
-                </div>
-
-                {/* 01 Discovery — top */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
-                    <MessageSquare size={20} />
-                  </div>
-                  <span className="text-white text-sm font-bold whitespace-nowrap">Discovery</span>
-                  <span className="text-[#9CB633] text-xs font-bold">01</span>
-                </div>
-
-                {/* 02 Strategy — right */}
-                <div className="absolute top-1/2 right-3 -translate-y-1/2 flex flex-col items-center gap-1.5 z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
-                    <BarChart3 size={20} />
-                  </div>
-                  <span className="text-white text-sm font-bold whitespace-nowrap">Strategy</span>
-                  <span className="text-[#9CB633] text-xs font-bold">02</span>
-                </div>
-
-                {/* 03 Design & Build — bottom */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10">
-                  <span className="text-[#9CB633] text-xs font-bold">03</span>
-                  <span className="text-white text-sm font-bold whitespace-nowrap">Design & Build</span>
-                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
-                    <Palette size={20} />
-                  </div>
-                </div>
-
-                {/* 04 Launch & Growth — left */}
-                <div className="absolute top-1/2 left-3 -translate-y-1/2 flex flex-col items-center gap-1.5 z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#592C72]/35 border border-[#592C72]/80 flex items-center justify-center text-[#9CB633]">
-                    <TrendingUp size={20} />
-                  </div>
-                  <span className="text-white text-sm font-bold whitespace-nowrap">Launch &</span>
-                  <span className="text-white text-sm font-bold whitespace-nowrap">Growth</span>
-                  <span className="text-[#9CB633] text-xs font-bold">04</span>
-                </div>
-              </div>
-
-              {/* Caption below graphic */}
-              <p className="text-white/45 text-sm text-center max-w-xs">
-                Our process is: <span className="text-white/70">Discovery, Strategy, Design & Build, Launch & Growth</span>
-              </p>
-            </motion.div>
+            {/* Right: animated circle infographic */}
+            <ProcessInfographic />
 
           </div>
         </div>
