@@ -9,7 +9,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Mail, Phone, MessageCircle, Instagram, Facebook, Linkedin, Twitter, CheckCircle } from "lucide-react";
+import { MapPin, Mail, Phone, MessageCircle, CheckCircle } from "lucide-react";
+import SocialLinks from "@/components/social-links";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -38,8 +39,8 @@ const contactInfo = [
   {
     icon: <Mail size={22} />,
     label: "Email",
-    value: "hello@solotechdigital.com",
-    href: "mailto:hello@solotechdigital.com",
+    value: "info@solotechdigital.com",
+    href: "mailto:info@solotechdigital.com",
   },
   {
     icon: <Phone size={22} />,
@@ -55,12 +56,6 @@ const contactInfo = [
   },
 ];
 
-const socials = [
-  { icon: <Instagram size={20} />, label: "Instagram", href: "https://instagram.com/solotechdigital" },
-  { icon: <Facebook size={20} />, label: "Facebook", href: "https://facebook.com/solotechdigital" },
-  { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://linkedin.com/company/solotechdigital" },
-  { icon: <Twitter size={20} />, label: "Twitter/X", href: "https://twitter.com/solotechdigital" },
-];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -145,21 +140,7 @@ export default function Contact() {
 
                 <div className="border-t border-white/10 mt-8 pt-8">
                   <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-                  <div className="flex gap-3">
-                    {socials.map((s, i) => (
-                      <a
-                        key={i}
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.label}
-                        data-testid={`social-link-${s.label.toLowerCase()}`}
-                        className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/20 transition-all hover:scale-110"
-                      >
-                        {s.icon}
-                      </a>
-                    ))}
-                  </div>
+                  <SocialLinks size="sm" />
                 </div>
               </div>
 

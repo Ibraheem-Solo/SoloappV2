@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Target, Eye, Heart, Globe, Zap, Award } from "lucide-react";
 import SeoHead from "@/components/seo-head";
+import SocialLinks from "@/components/social-links";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -80,9 +81,10 @@ export default function About() {
               Africa's Next-Generation{" "}
               <span className="text-gradient">Creative Agency</span>
             </h1>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+            <p className="text-xl text-white/60 max-w-3xl mx-auto mb-8">
               We are a team of designers, developers, and storytellers united by one mission — to help African businesses compete and win in the digital age.
             </p>
+            <SocialLinks className="justify-center" />
           </motion.div>
         </div>
       </section>

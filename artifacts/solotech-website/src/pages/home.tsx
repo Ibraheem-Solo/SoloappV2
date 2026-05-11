@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight } from "lucide-react";
 import SeoHead from "@/components/seo-head";
+import SocialLinks from "@/components/social-links";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -196,6 +197,9 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
+
+              {/* Social links */}
+              <SocialLinks size="sm" className="mt-2" />
 
               {/* Stats */}
               <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
