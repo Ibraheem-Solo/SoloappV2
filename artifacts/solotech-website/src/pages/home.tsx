@@ -140,146 +140,82 @@ function WorkSection() {
   );
 }
 
-function HexNode({ icon: Icon, color, size = 72 }: { icon: React.ElementType; color: string; size?: number }) {
-  const r = size / 2 - 3;
-  const cx = size / 2, cy = size / 2;
-  const pts = Array.from({ length: 6 }, (_, i) => {
-    const a = (i * 60 - 90) * Math.PI / 180;
-    return `${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`;
-  }).join(" ");
-  return (
-    <div className="relative shrink-0" style={{ width: size, height: size }}>
-      <svg className="absolute inset-0" width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
-        <polygon points={pts} fill={`${color}12`} stroke={color} strokeWidth="1.5" />
-      </svg>
-      <div className="absolute inset-0 flex items-center justify-center" style={{ color }}>
-        <Icon size={26} />
-      </div>
-    </div>
-  );
-}
-
 function ProcessInfographic() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
-  const outerHex = "230,25 407,128 407,332 230,435 53,332 53,128";
-  const innerHex = "230,82 358,156 358,304 230,378 102,304 102,156";
-
-  const arcPath = (startDeg: number, endDeg: number, r: number, width: number) => {
-    const s = startDeg * Math.PI / 180, e = endDeg * Math.PI / 180;
-    const oR = r, iR = r - width;
-    const x1 = 230 + oR * Math.cos(s), y1 = 230 + oR * Math.sin(s);
-    const x2 = 230 + oR * Math.cos(e), y2 = 230 + oR * Math.sin(e);
-    const x3 = 230 + iR * Math.cos(e), y3 = 230 + iR * Math.sin(e);
-    const x4 = 230 + iR * Math.cos(s), y4 = 230 + iR * Math.sin(s);
-    return `M ${x1} ${y1} A ${oR} ${oR} 0 0 1 ${x2} ${y2} L ${x3} ${y3} A ${iR} ${iR} 0 0 0 ${x4} ${y4} Z`;
-  };
-
-  const centerHexPts = Array.from({ length: 6 }, (_, i) => {
-    const a = (i * 60 - 90) * Math.PI / 180;
-    return `${230 + 46 * Math.cos(a)},${230 + 46 * Math.sin(a)}`;
-  }).join(" ");
-
+  const circleRef = useRef(null);
+  const inView = useInView(circleRef, { once: true, margin: "-80px" });
   return (
-    <div ref={ref} className="flex flex-col items-center gap-5">
+    <div ref={circleRef} className="flex flex-col items-center gap-5">
       <div className="relative w-[460px] h-[460px] scale-[0.65] md:scale-100 origin-top -mb-[161px] md:mb-0">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 460 460" fill="none">
-          {/* Outer hexagonal ring */}
-          <motion.polygon points={outerHex} stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.55" fill="none"
+          <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.6"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.9, delay: 0.5 }} style={{ transformOrigin: "230px 230px" }} />
-
-          {/* Inner dashed hexagonal ring */}
-          <motion.polygon points={innerHex} stroke="#9CB633" strokeWidth="1" strokeOpacity="0.22" strokeDasharray="6 5" fill="none"
+            transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
+          <motion.circle cx="230" cy="230" r="148" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="6 5"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }} style={{ transformOrigin: "230px 230px" }} />
-
-          {/* Colored arc accents in each quadrant */}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
           {[
-            { start: -135, end: -45,  color: "#9CB633" },
-            { start: -45,  end:  45,  color: "#592C72" },
-            { start:  45,  end: 135,  color: "#9CB633" },
-            { start: 135,  end: 225,  color: "#592C72" },
-          ].map((arc, i) => (
-            <motion.path key={i} d={arcPath(arc.start, arc.end, 207, 10)} fill={arc.color} fillOpacity="0.18"
-              initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }} />
-          ))}
-
-          {/* Connector lines */}
-          {[
-            { x1: 230, y1: 185, x2: 230, y2: 58 },
-            { x1: 276, y1: 230, x2: 402, y2: 230 },
-            { x1: 230, y1: 275, x2: 230, y2: 402 },
-            { x1: 184, y1: 230, x2: 58,  y2: 230 },
+            { x1: 230, y1: 185, x2: 230, y2: 42 },
+            { x1: 275, y1: 230, x2: 418, y2: 230 },
+            { x1: 230, y1: 275, x2: 230, y2: 418 },
+            { x1: 185, y1: 230, x2: 42,  y2: 230 },
           ].map((l, i) => (
             <motion.line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
-              stroke={i % 2 === 0 ? "#9CB633" : "#592C72"} strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.55"
+              stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.5"
               initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 + i * 0.08 }} />
+              transition={{ duration: 0.6, delay: 0.75 + i * 0.08, ease: "easeOut" }} />
           ))}
-
-          {/* Accent dots at connection points */}
-          {[
-            { cx: 230, cy: 100, color: "#9CB633" },
-            { cx: 360, cy: 230, color: "#592C72" },
-            { cx: 230, cy: 360, color: "#9CB633" },
-            { cx: 100, cy: 230, color: "#592C72" },
-          ].map((d, i) => (
-            <motion.circle key={i} cx={d.cx} cy={d.cy} r={5} fill={d.color}
-              initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.35, delay: 1.0 + i * 0.08 }} style={{ transformOrigin: `${d.cx}px ${d.cy}px` }} />
-          ))}
-
-          {/* Center hexagon */}
-          <motion.polygon points={centerHexPts} fill="#592C72" fillOpacity="0.9" stroke="#9CB633" strokeWidth="1.5"
-            initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.1, ease: "backOut" }} style={{ transformOrigin: "230px 230px" }} />
         </svg>
 
-        {/* Center icon */}
-        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center"
+        {/* Center */}
+        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center z-20 shadow-lg shadow-[#592C72]/40"
           initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.1, ease: "backOut" }}>
-          <Zap size={32} className="text-[#9CB633]" />
+          <Zap size={34} className="text-[#9CB633]" />
         </motion.div>
 
         {/* 01 Discovery — top */}
-        <motion.div className="absolute top-[4px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
-          initial={{ opacity: 0, y: -12 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+        <motion.div className="absolute top-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
+          initial={{ opacity: 0, y: -10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.0 }}>
-          <HexNode icon={MessageSquare} color="#9CB633" />
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Discovery</span>
-          <span className="text-[#9CB633] text-xs font-bold tracking-widest">01</span>
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <MessageSquare size={26} />
+          </div>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Discovery</span>
+          <span className="text-[#9CB633] text-base font-bold">01</span>
         </motion.div>
 
         {/* 02 Strategy — right */}
-        <motion.div className="absolute top-1/2 right-[4px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
-          initial={{ opacity: 0, x: 12 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+        <motion.div className="absolute top-1/2 right-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
+          initial={{ opacity: 0, x: 10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.1 }}>
-          <HexNode icon={BarChart3} color="#592C72" />
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Strategy</span>
-          <span className="text-[#9CB633] text-xs font-bold tracking-widest">02</span>
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <BarChart3 size={26} />
+          </div>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Strategy</span>
+          <span className="text-[#9CB633] text-base font-bold">02</span>
         </motion.div>
 
         {/* 03 Design & Build — bottom */}
-        <motion.div className="absolute bottom-[4px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10"
-          initial={{ opacity: 0, y: 12 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+        <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
+          initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.2 }}>
-          <span className="text-[#9CB633] text-xs font-bold tracking-widest">03</span>
-          <span className="text-white text-base font-bold whitespace-nowrap mb-1">Design & Build</span>
-          <HexNode icon={Palette} color="#9CB633" />
+          <span className="text-[#9CB633] text-base font-bold">03</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap mb-1">Design & Build</span>
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <Palette size={26} />
+          </div>
         </motion.div>
 
         {/* 04 Launch & Growth — left */}
-        <motion.div className="absolute top-1/2 left-[4px] -translate-y-1/2 flex flex-col items-center gap-1 z-10"
-          initial={{ opacity: 0, x: -12 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+        <motion.div className="absolute top-1/2 left-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
+          initial={{ opacity: 0, x: -10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.3 }}>
-          <HexNode icon={TrendingUp} color="#592C72" />
-          <span className="text-white text-base font-bold whitespace-nowrap mt-1">Launch &</span>
-          <span className="text-white text-base font-bold whitespace-nowrap">Growth</span>
-          <span className="text-[#9CB633] text-xs font-bold tracking-widest">04</span>
+          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
+            <TrendingUp size={26} />
+          </div>
+          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Launch &</span>
+          <span className="text-white text-lg font-bold whitespace-nowrap">Growth</span>
+          <span className="text-[#9CB633] text-base font-bold">04</span>
         </motion.div>
       </div>
 
