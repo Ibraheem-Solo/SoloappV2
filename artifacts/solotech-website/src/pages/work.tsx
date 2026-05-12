@@ -55,8 +55,8 @@ interface EventFlyer {
 
 const eventFlyers: EventFlyer[] = [
   { title: "Qur'anic Recitation Program on JTV",          client: "Juwara TV (JTV) — The Gambia",                tags: ["Event Flyer", "TV Promo", "Islamic"],        image: `${BASE}events/event-01.jpg`, colSpan: 2 },
-  { title: "Tadabburul Al-Qur'an — Final Update",         client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-02.jpg`, rowSpan: 2 },
-  { title: "Tadabburul Al-Qur'an — Scholars Edition",     client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-03.jpg` },
+  { title: "Tadabburul Al-Qur'an — Scholars Edition",     client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-03.jpg`, rowSpan: 2 },
+  { title: "Tadabburul Al-Qur'an — Final Update",         client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-02.jpg` },
   { title: "Alif Boarding School — Graduation Ceremony",  client: "Alif Quranic Boarding School",               tags: ["Event Flyer", "Graduation", "Education"],    image: `${BASE}events/event-04.jpg` },
   { title: "Plant the Qur'an in Your Heart — Reciters",   client: "SPOT Project",                               tags: ["Event Flyer", "Qur'an", "Competition"],      image: `${BASE}events/event-05.jpg` },
   { title: "Plant the Qur'an — Dr Lo Topic",              client: "SPOT Project",                               tags: ["Event Flyer", "Islamic", "Arabic"],           image: `${BASE}events/event-06.jpg` },
