@@ -295,9 +295,142 @@ function Lightbox({
   );
 }
 
+function SalonLightbox({
+  item,
+  index,
+  total,
+  onClose,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+}: {
+  item: SalonImage;
+  index: number;
+  total: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
+}) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft" && hasPrev) onPrev();
+      if (e.key === "ArrowRight" && hasNext) onNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <motion.div
+      key="salon-lightbox-backdrop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/88 backdrop-blur-md" />
+
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, scale: 0.92, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative z-10 w-full max-w-5xl max-h-[90vh] flex flex-col md:flex-row rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Image panel */}
+        <div className="relative md:w-3/5 flex-shrink-0 bg-[#0d0d1a] flex items-center justify-center min-h-[280px] md:min-h-0">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-contain max-h-[60vh] md:max-h-[90vh]"
+          />
+          <button
+            onClick={(e) => { e.stopPropagation(); onPrev(); }}
+            disabled={!hasPrev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/80 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); onNext(); }}
+            disabled={!hasNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/80 transition-all disabled:opacity-20 disabled:cursor-not-allowed"
+          >
+            <ChevronRight size={20} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white/60 text-xs border border-white/10">
+            {index + 1} / {total}
+          </div>
+        </div>
+
+        {/* Info panel */}
+        <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
+          <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
+              Print Design
+            </span>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+            >
+              <X size={16} />
+            </button>
+          </div>
+
+          <div className="px-6 py-5 flex flex-col gap-4 flex-1">
+            <div>
+              <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-1">Lima's Glow Elegance Shine</p>
+              <h2 className="text-2xl font-bold text-white leading-snug">{item.title}</h2>
+            </div>
+
+            <div>
+              <p className="text-white/35 text-xs font-medium uppercase tracking-widest mb-2">Services</p>
+              <div className="flex flex-wrap gap-2">
+                {item.tags.map((tag, i) => (
+                  <span key={i} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/55 text-xs">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-auto pt-4">
+              <Link href="/contact">
+                <button
+                  onClick={onClose}
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-white/15 text-white/70 text-sm font-medium hover:bg-white/8 hover:text-white transition-all"
+                >
+                  Start a Similar Project <ArrowRight size={15} />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/25 text-xs hidden md:block">
+        ← → to navigate · Esc to close
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Work() {
   const [active, setActive] = useState<Category>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [salonIndex, setSalonIndex] = useState<number | null>(null);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
@@ -313,6 +446,15 @@ export default function Work() {
   }, [filtered.length]);
 
   const lightboxProject = lightboxIndex !== null ? filtered[lightboxIndex] : null;
+
+  const openSalon = useCallback((i: number) => setSalonIndex(i), []);
+  const closeSalon = useCallback(() => setSalonIndex(null), []);
+  const prevSalon = useCallback(() => {
+    setSalonIndex((i) => (i !== null && i > 0 ? i - 1 : i));
+  }, []);
+  const nextSalon = useCallback(() => {
+    setSalonIndex((i) => (i !== null && i < salonImages.length - 1 ? i + 1 : i));
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -334,6 +476,18 @@ export default function Work() {
             hasNext={lightboxIndex < filtered.length - 1}
             index={lightboxIndex}
             total={filtered.length}
+          />
+        )}
+        {salonIndex !== null && (
+          <SalonLightbox
+            item={salonImages[salonIndex]}
+            index={salonIndex}
+            total={salonImages.length}
+            onClose={closeSalon}
+            onPrev={prevSalon}
+            onNext={nextSalon}
+            hasPrev={salonIndex > 0}
+            hasNext={salonIndex < salonImages.length - 1}
           />
         )}
       </AnimatePresence>
@@ -503,6 +657,7 @@ export default function Work() {
                   gridColumn: item.colSpan === 2 ? "span 2" : "span 1",
                   gridRow: item.rowSpan === 2 ? "span 2" : "span 1",
                 }}
+                onClick={() => openSalon(i)}
               >
                 <img
                   src={item.image}
@@ -525,15 +680,12 @@ export default function Work() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={item.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                  <button
+                    onClick={(e) => { e.stopPropagation(); openSalon(i); }}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold hover:bg-[#9CB633] transition-colors duration-200"
                   >
                     View Full Poster <ArrowUpRight size={12} />
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
