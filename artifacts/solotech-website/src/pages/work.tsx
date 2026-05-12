@@ -855,7 +855,7 @@ export default function Work() {
       <section className="py-4 px-6 md:px-12 pb-24">
         <div className="container mx-auto max-w-6xl">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mb-10">
-            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Print Design</p>
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Event Design</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Event Flyers</h2>
             <p className="text-white/45 text-sm mt-2">Recent Designs — Most Recent First</p>
           </motion.div>
