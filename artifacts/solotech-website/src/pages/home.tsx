@@ -385,6 +385,7 @@ export default function Home() {
               { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University"                   },
               { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
               { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
+              { src: `${import.meta.env.BASE_URL}client-spot-project.jpg`,   name: "SPOT Project"                          },
             ].map((logo, i) => (
               <div
                 key={`${setIdx}-${i}`}
