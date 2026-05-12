@@ -44,6 +44,32 @@ const salonImages: SalonImage[] = [
   { title: "Make-Up Services",              tags: ["Makeup", "Gold Theme", "Print"],        image: `${BASE}salon-4.jpg` },
 ];
 
+interface EventFlyer {
+  title: string;
+  client: string;
+  tags: string[];
+  image: string;
+  colSpan?: 2;
+  rowSpan?: 2;
+}
+
+const eventFlyers: EventFlyer[] = [
+  { title: "Qur'anic Recitation Program on JTV",          client: "Juwara TV (JTV) — The Gambia",                tags: ["Event Flyer", "TV Promo", "Islamic"],        image: `${BASE}events/event-01.jpg`, colSpan: 2 },
+  { title: "Tadabburul Al-Qur'an — Final Update",         client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-02.jpg`, rowSpan: 2 },
+  { title: "Tadabburul Al-Qur'an — Scholars Edition",     client: "Young Talented Gambian Reciters × Rihla",    tags: ["Event Flyer", "Conference", "Qur'an"],       image: `${BASE}events/event-03.jpg` },
+  { title: "Alif Boarding School — Graduation Ceremony",  client: "Alif Quranic Boarding School",               tags: ["Event Flyer", "Graduation", "Education"],    image: `${BASE}events/event-04.jpg` },
+  { title: "Plant the Qur'an in Your Heart — Reciters",   client: "SPOT Project",                               tags: ["Event Flyer", "Qur'an", "Competition"],      image: `${BASE}events/event-05.jpg` },
+  { title: "Plant the Qur'an — Dr Lo Topic",              client: "SPOT Project",                               tags: ["Event Flyer", "Islamic", "Arabic"],           image: `${BASE}events/event-06.jpg` },
+  { title: "Islamic Conference — Masjid Quba Youth",      client: "Shabab Masjid Quba",                         tags: ["Event Flyer", "Conference", "Arabic"],        image: `${BASE}events/event-07.jpg` },
+  { title: "Sukuta Week 2025 — 7th Edition",              client: "Sukuta VDC",                                 tags: ["Event Flyer", "Community", "Sports"],         image: `${BASE}events/event-08.jpg` },
+  { title: "Dunya to Deen Conference",                    client: "Muslim Hussain Foundation",                  tags: ["Event Flyer", "Conference", "Islamic"],       image: `${BASE}events/event-09.jpg` },
+  { title: "Alif Boarding School — Grand Opening",        client: "Alif Quranic Boarding School",               tags: ["Event Flyer", "Grand Opening", "Education"],  image: `${BASE}events/event-10.jpg` },
+  { title: "Annual Islamic Conference — Fawzaan Center",  client: "Fawzaan Quranic Memorization Center",        tags: ["Event Flyer", "Conference", "Islamic"],       image: `${BASE}events/event-11.jpg`, colSpan: 2 },
+  { title: "Voilez-Vous Group Seminars — Conference",     client: "Voilez-Vous × United Islamic Association",  tags: ["Event Flyer", "Conference", "Gambia"],        image: `${BASE}events/event-12.jpg`, rowSpan: 2 },
+  { title: "Keneba Students Union — Annual Workshop",     client: "Keneba Students Union × JTV",                tags: ["Event Flyer", "Workshop", "Education"],       image: `${BASE}events/event-13.jpg` },
+  { title: "Kids Quranic Competition — 3rd Edition",      client: "Huffaz in the Gambia (HITG)",                tags: ["Event Flyer", "Competition", "Children"],     image: `${BASE}events/event-14.jpg` },
+];
+
 const projects: Project[] = [
   {
     title: "Al-Ihsan University Website",
@@ -427,10 +453,121 @@ function SalonLightbox({
   );
 }
 
+function EventFlyerLightbox({
+  item,
+  index,
+  total,
+  onClose,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext,
+}: {
+  item: EventFlyer;
+  index: number;
+  total: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  hasPrev: boolean;
+  hasNext: boolean;
+}) {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft" && hasPrev) onPrev();
+      if (e.key === "ArrowRight" && hasNext) onNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose, onPrev, onNext, hasPrev, hasNext]);
+
+  return (
+    <motion.div
+      key="event-lightbox-backdrop"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/88 backdrop-blur-md" />
+
+      <motion.div
+        key={item.title}
+        initial={{ opacity: 0, scale: 0.92, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="relative z-10 w-full max-w-5xl max-h-[90vh] flex flex-col md:flex-row rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative md:w-3/5 flex-shrink-0 bg-[#0d0d1a] flex items-center justify-center min-h-[280px] md:min-h-0">
+          <img src={item.image} alt={item.title} className="w-full h-full object-contain max-h-[60vh] md:max-h-[90vh]" />
+          <button onClick={(e) => { e.stopPropagation(); onPrev(); }} disabled={!hasPrev}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/80 transition-all disabled:opacity-20 disabled:cursor-not-allowed">
+            <ChevronLeft size={20} />
+          </button>
+          <button onClick={(e) => { e.stopPropagation(); onNext(); }} disabled={!hasNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-black/80 transition-all disabled:opacity-20 disabled:cursor-not-allowed">
+            <ChevronRight size={20} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white/60 text-xs border border-white/10">
+            {index + 1} / {total}
+          </div>
+        </div>
+
+        <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
+          <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
+              Event Flyer
+            </span>
+            <button onClick={onClose} className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all">
+              <X size={16} />
+            </button>
+          </div>
+
+          <div className="px-6 py-5 flex flex-col gap-4 flex-1">
+            <div>
+              <p className="text-white/40 text-xs font-medium uppercase tracking-widest mb-1">{item.client}</p>
+              <h2 className="text-2xl font-bold text-white leading-snug">{item.title}</h2>
+            </div>
+            <div>
+              <p className="text-white/35 text-xs font-medium uppercase tracking-widest mb-2">Services</p>
+              <div className="flex flex-wrap gap-2">
+                {item.tags.map((tag, i) => (
+                  <span key={i} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/55 text-xs">{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div className="mt-auto pt-4">
+              <Link href="/contact">
+                <button onClick={onClose} className="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-white/15 text-white/70 text-sm font-medium hover:bg-white/8 hover:text-white transition-all">
+                  Start a Similar Project <ArrowRight size={15} />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/25 text-xs hidden md:block">
+        ← → to navigate · Esc to close
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Work() {
   const [active, setActive] = useState<Category>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [salonIndex, setSalonIndex] = useState<number | null>(null);
+  const [eventIndex, setEventIndex] = useState<number | null>(null);
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
@@ -454,6 +591,15 @@ export default function Work() {
   }, []);
   const nextSalon = useCallback(() => {
     setSalonIndex((i) => (i !== null && i < salonImages.length - 1 ? i + 1 : i));
+  }, []);
+
+  const openEvent = useCallback((i: number) => setEventIndex(i), []);
+  const closeEvent = useCallback(() => setEventIndex(null), []);
+  const prevEvent = useCallback(() => {
+    setEventIndex((i) => (i !== null && i > 0 ? i - 1 : i));
+  }, []);
+  const nextEvent = useCallback(() => {
+    setEventIndex((i) => (i !== null && i < eventFlyers.length - 1 ? i + 1 : i));
   }, []);
 
   return (
@@ -488,6 +634,18 @@ export default function Work() {
             onNext={nextSalon}
             hasPrev={salonIndex > 0}
             hasNext={salonIndex < salonImages.length - 1}
+          />
+        )}
+        {eventIndex !== null && (
+          <EventFlyerLightbox
+            item={eventFlyers[eventIndex]}
+            index={eventIndex}
+            total={eventFlyers.length}
+            onClose={closeEvent}
+            onPrev={prevEvent}
+            onNext={nextEvent}
+            hasPrev={eventIndex > 0}
+            hasNext={eventIndex < eventFlyers.length - 1}
           />
         )}
       </AnimatePresence>
@@ -685,6 +843,62 @@ export default function Work() {
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold hover:bg-[#9CB633] transition-colors duration-200"
                   >
                     View Full Poster <ArrowUpRight size={12} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Event Flyers Gallery */}
+      <section className="py-4 px-6 md:px-12 pb-24">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mb-10">
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Print Design</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Event Flyers</h2>
+            <p className="text-white/45 text-sm mt-2">Recent Designs — Most Recent First</p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid grid-cols-2 md:grid-cols-3 gap-3"
+            style={{ gridAutoRows: "260px" }}
+          >
+            {eventFlyers.map((item, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-xl group cursor-pointer"
+                style={{
+                  gridColumn: item.colSpan === 2 ? "span 2" : "span 1",
+                  gridRow: item.rowSpan === 2 ? "span 2" : "span 1",
+                }}
+                onClick={() => openEvent(i)}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#592C72]/60 group-hover:shadow-[inset_0_0_50px_rgba(89,44,114,0.3)] transition-all duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">{item.client}</p>
+                  <p className="text-white font-bold text-sm leading-snug mb-3">{item.title}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {item.tags.map((tag, j) => (
+                      <span key={j} className="px-2 py-0.5 rounded-full bg-[#9CB633]/20 border border-[#9CB633]/30 text-[#9CB633] text-xs font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); openEvent(i); }}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black text-xs font-semibold hover:bg-[#9CB633] transition-colors duration-200"
+                  >
+                    View Full Flyer <ArrowUpRight size={12} />
                   </button>
                 </div>
               </div>
