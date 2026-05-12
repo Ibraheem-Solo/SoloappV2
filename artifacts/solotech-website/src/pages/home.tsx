@@ -181,7 +181,7 @@ function ProcessInfographic() {
             <MessageSquare size={26} />
           </div>
           <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Discovery</span>
-          <span className="text-[#9CB633] text-sm font-bold">01</span>
+          <span className="text-[#9CB633] text-base font-bold">01</span>
         </motion.div>
 
         {/* 02 Strategy — right */}
@@ -192,14 +192,14 @@ function ProcessInfographic() {
             <BarChart3 size={26} />
           </div>
           <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Strategy</span>
-          <span className="text-[#9CB633] text-sm font-bold">02</span>
+          <span className="text-[#9CB633] text-base font-bold">02</span>
         </motion.div>
 
         {/* 03 Design & Build — bottom */}
         <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.2 }}>
-          <span className="text-[#9CB633] text-sm font-bold">03</span>
+          <span className="text-[#9CB633] text-base font-bold">03</span>
           <span className="text-white text-lg font-bold whitespace-nowrap mb-1">Design & Build</span>
           <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
             <Palette size={26} />
@@ -215,7 +215,7 @@ function ProcessInfographic() {
           </div>
           <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Launch &</span>
           <span className="text-white text-lg font-bold whitespace-nowrap">Growth</span>
-          <span className="text-[#9CB633] text-sm font-bold">04</span>
+          <span className="text-[#9CB633] text-base font-bold">04</span>
         </motion.div>
       </div>
 
@@ -742,10 +742,10 @@ export default function Home() {
 
               <ul className="divide-y divide-white/8">
                 {[
-                  { step: "01", title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need.", icon: <MessageSquare size={18} /> },
-                  { step: "02", title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results.",    icon: <BarChart3 size={18} /> },
-                  { step: "03", title: "Design & Build",  desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time.",             icon: <Palette size={18} /> },
-                  { step: "04", title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time.",           icon: <TrendingUp size={18} /> },
+                  { title: "Discovery",       desc: "We learn about your business, goals, and audience to make sure everything we build is aligned with what you need." },
+                  { title: "Strategy",        desc: "We plan the right approach — choosing the tools, platforms, and design direction that will drive real results."    },
+                  { title: "Design & Build",  desc: "We bring your vision to life with pixel-perfect design and clean, fast development — always on time."             },
+                  { title: "Launch & Growth", desc: "We go live, then stay close — monitoring performance and helping your digital presence grow over time."           },
                 ].map((item, i) => (
                   <motion.li
                     key={i}
@@ -753,16 +753,11 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-5 py-6"
+                    className="flex items-start gap-3 py-4"
                   >
-                    <div className="w-10 h-10 rounded-full border border-[#592C72] bg-[#592C72]/20 flex items-center justify-center text-[#9CB633] shrink-0 mt-0.5">
-                      {item.icon}
-                    </div>
+                    <span className="text-[#9CB633] text-lg leading-none mt-1 shrink-0">•</span>
                     <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[#9CB633]/50 text-xs font-bold">{item.step}</span>
-                        <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                      </div>
+                      <h3 className="text-lg font-bold text-white mb-0.5">{item.title}</h3>
                       <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.li>
