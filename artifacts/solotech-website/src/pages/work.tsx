@@ -11,7 +11,7 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-type Category = "All" | "Web" | "Brand" | "Salon";
+type Category = "All" | "Web" | "Brand";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -25,8 +25,24 @@ interface Project {
   image: string;
   imageBg?: string;
   url?: string;
-  colSpan?: 1 | 2;
 }
+
+interface SalonImage {
+  title: string;
+  tags: string[];
+  image: string;
+  colSpan?: 2;
+  rowSpan?: 2;
+}
+
+const salonImages: SalonImage[] = [
+  { title: "Beauty Install — Hair Poster",  tags: ["Braiding", "Frontal Install", "Print"], image: `${BASE}salon-2.jpg`, colSpan: 2, rowSpan: 2 },
+  { title: "Get Makeup That Shine",         tags: ["Makeup", "Nail Fixing", "Print"],       image: `${BASE}salon-3.jpg` },
+  { title: "Make-Up Services",              tags: ["Makeup", "Gold Theme", "Print"],        image: `${BASE}salon-4.jpg` },
+  { title: "Braiding & Tatoo",              tags: ["Braiding", "Henna", "Print"],           image: `${BASE}salon-5.jpg`, colSpan: 2 },
+  { title: "Posters Installed In-Situ",     tags: ["Print", "Installation"],                image: `${BASE}salon-6.jpg`, rowSpan: 2 },
+  { title: "Salon Entrance Display",        tags: ["Print", "Installation", "Photo"],       image: `${BASE}salon-1.jpg` },
+];
 
 const projects: Project[] = [
   {
@@ -112,65 +128,14 @@ const projects: Project[] = [
     tags: ["Logo", "Education", "Branding"],
     image: `${BASE}portfolio/alif-badge.jpg`,
   },
-  {
-    title: "Beauty Install — Hair Services Poster",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Promotional print poster for hair braiding, frontal install, haircut and dyeing services. Warm gold tones with bold salon branding.",
-    tags: ["Print Design", "Poster", "Salon"],
-    image: `${BASE}salon-2.jpg`,
-    colSpan: 2,
-  },
-  {
-    title: "Get Makeup That Shine — Poster",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Elegant A3 poster showcasing makeup, nail fixing, and lash services — featuring a stunning model in traditional Gambian dress.",
-    tags: ["Print Design", "Poster", "Makeup"],
-    image: `${BASE}salon-3.jpg`,
-  },
-  {
-    title: "Make-Up Services Poster",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Gold-accented salon poster with multiple makeup looks, bold circular model frame, and strong call-to-action layout.",
-    tags: ["Print Design", "Poster", "Makeup"],
-    image: `${BASE}salon-4.jpg`,
-  },
-  {
-    title: "Braiding & Tatoo — Poster",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Pink-themed poster for braiding and henna/tatoo services with real model photography and detailed grid of hairstyle samples.",
-    tags: ["Print Design", "Poster", "Braiding"],
-    image: `${BASE}salon-5.jpg`,
-    colSpan: 2,
-  },
-  {
-    title: "Salon In-Situ — Posters Installed",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Photo of two printed posters installed at the physical salon location in Sanyang WCR — real-world print delivered.",
-    tags: ["Print Design", "Installation", "Photo"],
-    image: `${BASE}salon-6.jpg`,
-  },
-  {
-    title: "Poster Display — Salon Entrance",
-    client: "Lima's Glow Elegance Shine",
-    category: "Salon",
-    desc: "Braiding & tatoo poster printed and displayed at the salon entrance alongside the beauty salon interior — print in action.",
-    tags: ["Print Design", "Installation", "Photo"],
-    image: `${BASE}salon-1.jpg`,
-  },
 ];
 
-const categories: Category[] = ["All", "Web", "Brand", "Salon"];
+const categories: Category[] = ["All", "Web", "Brand"];
 
 const categoryCounts: Record<string, number> = {
   All: projects.length,
   Web: projects.filter((p) => p.category === "Web").length,
   Brand: projects.filter((p) => p.category === "Brand").length,
-  Salon: projects.filter((p) => p.category === "Salon").length,
 };
 
 function Lightbox({
@@ -450,7 +415,7 @@ export default function Work() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
-                  className={`glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer${project.colSpan === 2 ? " md:col-span-2" : ""}`}
+                  className="glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
                   onClick={() => openLightbox(i)}
                 >
                   {/* Image */}
@@ -510,6 +475,59 @@ export default function Work() {
               ))}
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Print Design — Salon Poster Gallery */}
+      <section className="py-4 px-6 md:px-12 pb-24">
+        <div className="container mx-auto max-w-6xl">
+          {/* Heading */}
+          <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mb-10">
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Print Design</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Salon Poster</h2>
+            <p className="text-white/45 text-sm mt-2">Lima's Glow Elegance Shine — Sanyang WCR</p>
+          </motion.div>
+
+          {/* Gallery grid */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="grid grid-cols-2 md:grid-cols-3 gap-3"
+            style={{ gridAutoRows: "260px" }}
+          >
+            {salonImages.map((item, i) => (
+              <div
+                key={i}
+                className="relative overflow-hidden rounded-xl group cursor-pointer"
+                style={{
+                  gridColumn: item.colSpan === 2 ? "span 2" : "span 1",
+                  gridRow: item.rowSpan === 2 ? "span 2" : "span 1",
+                }}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Glow dark overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                {/* Purple glow ring */}
+                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#592C72]/70 group-hover:shadow-[inset_0_0_40px_rgba(89,44,114,0.35)] transition-all duration-400" />
+                {/* Info */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-350">
+                  <p className="text-white font-semibold text-sm leading-snug mb-2">{item.title}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {item.tags.map((tag, j) => (
+                      <span key={j} className="px-2 py-0.5 rounded-full bg-[#9CB633]/20 border border-[#9CB633]/30 text-[#9CB633] text-xs font-medium">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
