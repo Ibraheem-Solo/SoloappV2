@@ -264,9 +264,10 @@ export default function Home() {
                 <span className="text-white/90">Launch Your Website in 24 Hours</span>
               </div>
 
-              <h1 className="text-7xl md:text-8xl xl:text-9xl font-bold tracking-[0.03em] mb-6 leading-[0.95]">
-                Web, Media &amp; Branding<br />
-                That Helps <span className="text-gradient">Businesses Grow</span>
+              <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-[0.03em] mb-6 leading-[1.05]">
+                Web, Media &amp;<br />
+                Branding That Helps<br />
+                <span className="text-gradient">Businesses Grow</span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/65 max-w-xl mb-10 leading-relaxed">
