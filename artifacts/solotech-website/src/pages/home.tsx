@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight } from "lucide-react";
+import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 import SocialLinks from "@/components/social-links";
 
@@ -755,7 +755,9 @@ export default function Home() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-start gap-3 py-4"
                   >
-                    <span className="text-[#9CB633] text-lg leading-none mt-1 shrink-0">•</span>
+                    <div className="w-5 h-5 rounded border border-[#9CB633] bg-[#9CB633]/15 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check size={12} className="text-[#9CB633]" strokeWidth={3} />
+                    </div>
                     <div>
                       <h3 className="text-lg font-bold text-white mb-0.5">{item.title}</h3>
                       <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
