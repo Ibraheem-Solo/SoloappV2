@@ -37,11 +37,11 @@ interface SalonImage {
 
 const salonImages: SalonImage[] = [
   { title: "Beauty Install — Hair Poster",  tags: ["Braiding", "Frontal Install", "Print"], image: `${BASE}salon-2.jpg`, colSpan: 2, rowSpan: 2 },
+  { title: "Posters Installed In-Situ",     tags: ["Print", "Installation"],                image: `${BASE}salon-6.jpg`, rowSpan: 2 },
+  { title: "Braiding & Tatoo",              tags: ["Braiding", "Henna", "Print"],           image: `${BASE}salon-5.jpg`, colSpan: 2 },
+  { title: "Salon Entrance Display",        tags: ["Print", "Installation", "Photo"],       image: `${BASE}salon-1.jpg`, rowSpan: 2 },
   { title: "Get Makeup That Shine",         tags: ["Makeup", "Nail Fixing", "Print"],       image: `${BASE}salon-3.jpg` },
   { title: "Make-Up Services",              tags: ["Makeup", "Gold Theme", "Print"],        image: `${BASE}salon-4.jpg` },
-  { title: "Braiding & Tatoo",              tags: ["Braiding", "Henna", "Print"],           image: `${BASE}salon-5.jpg`, colSpan: 2 },
-  { title: "Posters Installed In-Situ",     tags: ["Print", "Installation"],                image: `${BASE}salon-6.jpg`, rowSpan: 2 },
-  { title: "Salon Entrance Display",        tags: ["Print", "Installation", "Photo"],       image: `${BASE}salon-1.jpg` },
 ];
 
 const projects: Project[] = [
