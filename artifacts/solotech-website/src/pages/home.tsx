@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 import SocialLinks from "@/components/social-links";
-import GlobeBackground from "@/components/globe-background";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -305,8 +304,6 @@ export default function Home() {
 
             {/* Right — Person image absolutely anchored to bottom */}
             <div className="relative hidden lg:block">
-              {/* Globe — centred behind person */}
-              <GlobeBackground />
               {/* Subtle ring at bottom centre */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-[#592C72]/15 border border-[#592C72]/30 blur-sm" />
 
