@@ -245,8 +245,6 @@ export default function Home() {
       />
       {/* Hero Section */}
       <section className="relative min-h-[92vh] px-6 md:px-12 overflow-hidden">
-        {/* Globe background */}
-        <GlobeBackground />
         {/* Purple glow */}
         <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/20 blur-[120px] rounded-full pointer-events-none" />
 
@@ -307,6 +305,8 @@ export default function Home() {
 
             {/* Right — Person image absolutely anchored to bottom */}
             <div className="relative hidden lg:block">
+              {/* Globe — centred behind person */}
+              <GlobeBackground />
               {/* Subtle ring at bottom centre */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-[#592C72]/15 border border-[#592C72]/30 blur-sm" />
 
