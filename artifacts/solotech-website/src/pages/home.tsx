@@ -755,7 +755,7 @@ export default function Home() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-start gap-3 py-4"
                   >
-                    <div className="w-5 h-5 rounded border border-[#9CB633] bg-[#9CB633]/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-5 h-5 rounded-full border border-[#9CB633] bg-[#9CB633]/15 flex items-center justify-center shrink-0 mt-0.5">
                       <Check size={12} className="text-[#9CB633]" strokeWidth={3} />
                     </div>
                     <div>
