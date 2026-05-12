@@ -386,6 +386,7 @@ export default function Home() {
               { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
               { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
               { src: `${import.meta.env.BASE_URL}client-spot-project.jpg`,   name: "SPOT Project"                          },
+              { src: `${import.meta.env.BASE_URL}client-plant-quran.jpg`,    name: "Plant the Qur'an in Your Heart"        },
             ].map((logo, i) => (
               <div
                 key={`${setIdx}-${i}`}
