@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 import SocialLinks from "@/components/social-links";
+import GlobeBackground from "@/components/globe-background";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -244,10 +245,10 @@ export default function Home() {
       />
       {/* Hero Section */}
       <section className="relative min-h-[92vh] px-6 md:px-12 overflow-hidden">
-        {/* Space background */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-luminosity" />
+        {/* Globe background */}
+        <GlobeBackground />
         {/* Purple glow */}
-        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/25 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/20 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto max-w-7xl h-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[92vh]">
