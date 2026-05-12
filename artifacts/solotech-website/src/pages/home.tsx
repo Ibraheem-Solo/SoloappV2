@@ -244,16 +244,6 @@ export default function Home() {
       />
       {/* Hero Section */}
       <section className="relative min-h-[92vh] px-6 md:px-12 overflow-hidden">
-        {/* Grid lines */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(156,182,51,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(156,182,51,0.07) 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-            zIndex: 0,
-          }}
-        />
         {/* Purple glow */}
         <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/20 blur-[120px] rounded-full pointer-events-none" />
 
