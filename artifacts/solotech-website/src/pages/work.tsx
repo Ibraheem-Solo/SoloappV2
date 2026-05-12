@@ -11,7 +11,7 @@ const fadeUp = {
   viewport: { once: true },
 };
 
-type Category = "All" | "Web" | "Brand";
+type Category = "All" | "Web" | "Brand" | "Salon";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -25,6 +25,7 @@ interface Project {
   image: string;
   imageBg?: string;
   url?: string;
+  colSpan?: 1 | 2;
 }
 
 const projects: Project[] = [
@@ -111,14 +112,65 @@ const projects: Project[] = [
     tags: ["Logo", "Education", "Branding"],
     image: `${BASE}portfolio/alif-badge.jpg`,
   },
+  {
+    title: "Beauty Install — Hair Services Poster",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Promotional print poster for hair braiding, frontal install, haircut and dyeing services. Warm gold tones with bold salon branding.",
+    tags: ["Print Design", "Poster", "Salon"],
+    image: `${BASE}salon-2.jpg`,
+    colSpan: 2,
+  },
+  {
+    title: "Get Makeup That Shine — Poster",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Elegant A3 poster showcasing makeup, nail fixing, and lash services — featuring a stunning model in traditional Gambian dress.",
+    tags: ["Print Design", "Poster", "Makeup"],
+    image: `${BASE}salon-3.jpg`,
+  },
+  {
+    title: "Make-Up Services Poster",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Gold-accented salon poster with multiple makeup looks, bold circular model frame, and strong call-to-action layout.",
+    tags: ["Print Design", "Poster", "Makeup"],
+    image: `${BASE}salon-4.jpg`,
+  },
+  {
+    title: "Braiding & Tatoo — Poster",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Pink-themed poster for braiding and henna/tatoo services with real model photography and detailed grid of hairstyle samples.",
+    tags: ["Print Design", "Poster", "Braiding"],
+    image: `${BASE}salon-5.jpg`,
+    colSpan: 2,
+  },
+  {
+    title: "Salon In-Situ — Posters Installed",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Photo of two printed posters installed at the physical salon location in Sanyang WCR — real-world print delivered.",
+    tags: ["Print Design", "Installation", "Photo"],
+    image: `${BASE}salon-6.jpg`,
+  },
+  {
+    title: "Poster Display — Salon Entrance",
+    client: "Lima's Glow Elegance Shine",
+    category: "Salon",
+    desc: "Braiding & tatoo poster printed and displayed at the salon entrance alongside the beauty salon interior — print in action.",
+    tags: ["Print Design", "Installation", "Photo"],
+    image: `${BASE}salon-1.jpg`,
+  },
 ];
 
-const categories: Category[] = ["All", "Web", "Brand"];
+const categories: Category[] = ["All", "Web", "Brand", "Salon"];
 
 const categoryCounts: Record<string, number> = {
   All: projects.length,
   Web: projects.filter((p) => p.category === "Web").length,
   Brand: projects.filter((p) => p.category === "Brand").length,
+  Salon: projects.filter((p) => p.category === "Salon").length,
 };
 
 function Lightbox({
@@ -398,7 +450,7 @@ export default function Work() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
-                  className="glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
+                  className={`glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer${project.colSpan === 2 ? " md:col-span-2" : ""}`}
                   onClick={() => openLightbox(i)}
                 >
                   {/* Image */}
