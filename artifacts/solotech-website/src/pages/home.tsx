@@ -362,7 +362,7 @@ export default function Home() {
       <section className="py-14 border-y border-white/[0.06] overflow-hidden relative" style={{ background: "rgba(0,0,0,0.5)" }}>
         <div className="text-center mb-10">
           <p className="text-white/20 text-[10px] font-semibold uppercase tracking-[0.35em]">
-            Trusted by organisations across The Gambia &amp; West Africa
+            Trusted by organisations across The Gambia &amp; beyond
           </p>
         </div>
 
