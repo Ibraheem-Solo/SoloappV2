@@ -337,8 +337,30 @@ export default function Store() {
       {/* ── HERO ── */}
       <section className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-[#592C72]/20 blur-[100px] pointer-events-none animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-56 h-56 rounded-full bg-[#9CB633]/15 blur-[80px] pointer-events-none animate-pulse" style={{ animationDelay: "1s" }} />
+        <motion.div
+          animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0], scale: [1, 1.15, 0.95, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[10%] left-[8%] w-96 h-96 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(89,44,114,0.55) 0%, rgba(89,44,114,0.1) 60%, transparent 80%)", filter: "blur(60px)" }}
+        />
+        <motion.div
+          animate={{ x: [0, -50, 30, 0], y: [0, 40, -20, 0], scale: [1, 0.9, 1.2, 1] }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+          className="absolute bottom-[5%] right-[5%] w-80 h-80 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(156,182,51,0.45) 0%, rgba(156,182,51,0.08) 60%, transparent 80%)", filter: "blur(55px)" }}
+        />
+        <motion.div
+          animate={{ x: [0, 30, -40, 0], y: [0, -20, 35, 0], scale: [1, 1.2, 0.85, 1] }}
+          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute top-[40%] right-[15%] w-64 h-64 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(89,44,114,0.35) 0%, transparent 70%)", filter: "blur(50px)" }}
+        />
+        <motion.div
+          animate={{ x: [0, -25, 15, 0], y: [0, 30, -40, 0], scale: [0.9, 1.1, 1, 0.9] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[30%] left-[10%] w-52 h-52 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(156,182,51,0.3) 0%, transparent 70%)", filter: "blur(45px)" }}
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
