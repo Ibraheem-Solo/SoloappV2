@@ -195,8 +195,8 @@ export default function FixIT() {
 
           {/* Timeline steps */}
           <div className="relative">
-            {/* Connecting line — desktop */}
-            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-[#592C72]/50 to-transparent" />
+            {/* Connecting line — desktop, behind steps */}
+            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px z-0 bg-gradient-to-r from-transparent via-[#592C72]/50 to-transparent" />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -245,15 +245,15 @@ export default function FixIT() {
                   key={s.step}
                   {...fadeUp}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative flex flex-col items-center text-center lg:items-center lg:text-center group"
+                  className="relative z-10 flex flex-col items-center text-center lg:items-center lg:text-center group"
                 >
                   {/* Step number + icon */}
                   <div className="relative mb-5">
                     {/* Glow behind icon */}
                     <div className="absolute inset-0 rounded-2xl blur-xl pointer-events-none"
                       style={{ background: s.glow }} />
-                    <div className={`relative w-20 h-20 rounded-2xl border flex items-center justify-center ${s.accent} group-hover:scale-105 transition-transform duration-300`}
-                      style={{ boxShadow: `0 0 24px ${s.glow}` }}>
+                    <div className={`relative w-20 h-20 rounded-2xl border flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ${s.accent}`}
+                      style={{ backgroundColor: '#0d0d1a', boxShadow: `0 0 24px ${s.glow}` }}>
                       {s.icon}
                     </div>
                     {/* Step badge */}
