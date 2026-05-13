@@ -15,6 +15,7 @@ import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
 import Store from "@/pages/store";
 import FixIT from "@/pages/fixit";
+import Academy from "@/pages/academy";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/store" component={Store} />
         <Route path="/services/fixit" component={FixIT} />
+        <Route path="/academy" component={Academy} />
         <Route path="/terms" component={Terms} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />

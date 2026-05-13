@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check, Monitor, Settings } from "lucide-react";
+import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check, Monitor, Settings, BookOpen, Code2, Layout, Sparkles, GraduationCap } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 import SocialLinks from "@/components/social-links";
 
@@ -804,6 +804,151 @@ export default function Home() {
                   transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
                   className={`absolute ${card.pos} px-4 py-2.5 rounded-xl border ${card.color} backdrop-blur-sm`}
                   style={{ background: "rgba(10,10,20,0.85)" }}
+                >
+                  <div className="text-white/40 text-[10px] font-medium uppercase tracking-wide">{card.label}</div>
+                  <div className="text-white font-bold text-base">{card.value}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Academy Featured Section ── */}
+      <section className="py-24 px-6 md:px-12 relative overflow-hidden">
+        {/* Background orbs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(156,182,51,0.14) 0%, transparent 70%)", filter: "blur(80px)" }} />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(80px)" }} />
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            {/* LEFT — Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex flex-col gap-7"
+            >
+              <div className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border border-[#9CB633]/30 bg-[#9CB633]/8">
+                <BookOpen size={12} className="text-[#9CB633]" />
+                <span className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Solotech Academy</span>
+                <span className="ml-1 text-[10px] bg-[#9CB633]/20 text-[#9CB633] px-2 py-0.5 rounded-full font-semibold">✦ Now Enrolling</span>
+              </div>
+
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  Learn Digital Skills<br />for the Future
+                </h2>
+                <p className="text-white/55 text-lg leading-relaxed">
+                  Solotech Academy empowers students, creators, and future innovators with practical digital skills in coding, design, marketing, AI tools, multimedia, and content creation.
+                </p>
+              </div>
+
+              {/* Course highlight pills */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { icon: <Code2 size={15} />, label: "Coding & Web Dev" },
+                  { icon: <Layout size={15} />, label: "WordPress Design" },
+                  { icon: <Sparkles size={15} />, label: "AI Tools" },
+                  { icon: <TrendingUp size={15} />, label: "Digital Marketing" },
+                  { icon: <Paintbrush size={15} />, label: "Graphic Design" },
+                  { icon: <Camera size={15} />, label: "Content Creation" },
+                ].map((f, i) => (
+                  <motion.div
+                    key={f.label}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.07 }}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/8 bg-white/[0.03] hover:border-[#9CB633]/40 hover:bg-[#9CB633]/5 transition-all duration-300 group"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
+                      {f.icon}
+                    </div>
+                    <span className="text-white/65 text-sm font-medium group-hover:text-white transition-colors">{f.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/academy">
+                  <Button className="bg-gradient-to-r from-[#9CB633] to-[#592C72] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                    Explore Academy <ArrowUpRight size={16} />
+                  </Button>
+                </Link>
+                <a href={`https://wa.me/2207532757?text=${encodeURIComponent("Hi Solotech Academy! I'd like to enrol in a course.")}`} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-7 py-3 font-semibold h-auto gap-2">
+                    <GraduationCap size={15} className="text-[#9CB633]" /> Enroll Now
+                  </Button>
+                </a>
+              </div>
+
+              <p className="text-white/25 text-xs tracking-wider">Practical skills · Creative learning · Future-ready training</p>
+            </motion.div>
+
+            {/* RIGHT — Futuristic visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+              className="relative flex items-center justify-center min-h-[400px]"
+            >
+              {/* Pulsing rings */}
+              {[300, 240, 180].map((size, i) => (
+                <motion.div
+                  key={size}
+                  animate={{ scale: [1, 1.05 + i * 0.02, 1], opacity: [0.28 - i * 0.04, 0.5 - i * 0.04, 0.28 - i * 0.04] }}
+                  transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.7 }}
+                  className="absolute rounded-full pointer-events-none"
+                  style={{
+                    width: size, height: size,
+                    border: `1px solid ${i % 2 === 0 ? "rgba(156,182,51,0.28)" : "rgba(89,44,114,0.38)"}`,
+                    boxShadow: `0 0 ${30 + i * 10}px ${i % 2 === 0 ? "rgba(156,182,51,0.07)" : "rgba(89,44,114,0.1)"}`,
+                  }}
+                />
+              ))}
+
+              {/* Central graduation cap */}
+              <div className="relative z-10 w-24 h-24 rounded-2xl flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, rgba(156,182,51,0.35), rgba(89,44,114,0.35))", border: "1px solid rgba(156,182,51,0.35)", boxShadow: "0 0 50px rgba(156,182,51,0.2), 0 0 20px rgba(89,44,114,0.2)" }}>
+                <GraduationCap size={44} className="text-[#9CB633]" />
+              </div>
+
+              {/* Orbiting skill icons */}
+              {[
+                { icon: <Code2 size={15} />, pos: "top-8 left-10", delay: 0 },
+                { icon: <Paintbrush size={15} />, pos: "top-8 right-10", delay: 0.5 },
+                { icon: <Sparkles size={15} />, pos: "bottom-8 left-10", delay: 1 },
+                { icon: <Camera size={15} />, pos: "bottom-8 right-10", delay: 1.5 },
+              ].map((o, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ y: [0, i % 2 === 0 ? -8 : 8, 0] }}
+                  transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: o.delay }}
+                  className={`absolute ${o.pos} w-10 h-10 rounded-xl flex items-center justify-center text-[#9CB633]`}
+                  style={{ background: "rgba(8,8,18,0.92)", border: "1px solid rgba(156,182,51,0.3)", boxShadow: "0 0 18px rgba(156,182,51,0.12)" }}
+                >
+                  {o.icon}
+                </motion.div>
+              ))}
+
+              {/* Floating stat cards */}
+              {[
+                { label: "Programs", value: "6+", pos: "top-4 right-2", color: "border-[#9CB633]/30" },
+                { label: "Skill Level", value: "All Levels", pos: "bottom-4 left-2", color: "border-[#592C72]/40" },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.label}
+                  animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
+                  transition={{ duration: 3.5 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                  className={`absolute ${card.pos} px-4 py-2.5 rounded-xl border ${card.color} backdrop-blur-sm`}
+                  style={{ background: "rgba(10,10,20,0.88)" }}
                 >
                   <div className="text-white/40 text-[10px] font-medium uppercase tracking-wide">{card.label}</div>
                   <div className="text-white font-bold text-base">{card.value}</div>
