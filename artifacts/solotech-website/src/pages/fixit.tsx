@@ -88,7 +88,7 @@ const trustPoints = [
   {
     icon: <Zap size={24} />,
     title: "Fast Response",
-    desc: "We respond quickly and work efficiently — minimizing downtime and disruption.",
+    desc: "Service delivered to your doorstep.",
   },
   {
     icon: <Shield size={24} />,
