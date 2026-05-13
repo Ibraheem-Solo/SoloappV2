@@ -448,7 +448,7 @@ export default function Store() {
             {[
               { step: "01", title: "Pick Your Item", desc: "Browse the store, choose your colour and size, then tap the WhatsApp button.", icon: <ShoppingBag size={20} /> },
               { step: "02", title: "Chat With Us", desc: "We'll confirm your order, share a payment link, and give you a delivery estimate.", icon: <MessageCircle size={20} /> },
-              { step: "03", title: "Receive & Enjoy", desc: "Your order is prepared and delivered. Custom orders ship within 5–10 business days.", icon: <Package size={20} /> },
+              { step: "03", title: "Receive & Enjoy", desc: "Your order is prepared and ready for collection or local delivery within 1–3 business days.", icon: <Package size={20} /> },
             ].map((item, i) => (
               <FadeIn key={item.step} delay={i * 0.1}>
                 <div className="relative rounded-2xl border border-white/8 bg-white/[0.02] p-8 flex flex-col gap-5">
