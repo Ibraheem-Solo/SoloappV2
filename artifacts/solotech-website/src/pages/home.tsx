@@ -1212,13 +1212,13 @@ export default function Home() {
               {[300, 240, 180].map((size, i) => (
                 <motion.div
                   key={size}
-                  animate={{ scale: [1, 1.05 + i * 0.02, 1], opacity: [0.28 - i * 0.04, 0.5 - i * 0.04, 0.28 - i * 0.04] }}
+                  animate={{ scale: [1, 1.05 + i * 0.02, 1], opacity: [0.29 - i * 0.04, 0.51 - i * 0.04, 0.29 - i * 0.04] }}
                   transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.7 }}
                   className="absolute rounded-full pointer-events-none"
                   style={{
                     width: size, height: size,
-                    border: `1px solid ${i % 2 === 0 ? "rgba(156,182,51,0.28)" : "rgba(89,44,114,0.38)"}`,
-                    boxShadow: `0 0 ${30 + i * 10}px ${i % 2 === 0 ? "rgba(156,182,51,0.07)" : "rgba(89,44,114,0.1)"}`,
+                    border: `2px solid ${i % 2 === 0 ? "rgba(156,182,51,0.29)" : "rgba(89,44,114,0.39)"}`,
+                    boxShadow: `0 0 ${30 + i * 10}px ${i % 2 === 0 ? "rgba(156,182,51,0.08)" : "rgba(89,44,114,0.11)"}`,
                   }}
                 />
               ))}
