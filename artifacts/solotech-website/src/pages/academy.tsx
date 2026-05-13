@@ -436,7 +436,7 @@ export default function Academy() {
 
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 md:px-12">
-        <div className="container mx-auto max-w-3xl text-center">
+        <div className="container mx-auto max-w-6xl text-center">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
             <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-[#592C72]/20 to-[#9CB633]/10 p-14 overflow-hidden">
               {/* Orbs */}

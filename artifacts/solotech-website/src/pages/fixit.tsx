@@ -392,30 +392,34 @@ export default function FixIT() {
         </div>
       </section>
       {/* ── FINAL CTA ── */}
-      <section className="py-24 px-6 md:px-12 relative overflow-hidden bg-gradient-to-br from-[#592C72]/20 to-[#9CB633]/10 border-t border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-[#592C72]/30 blur-[80px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#9CB633]/12 blur-[80px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#592C72]/15 blur-[80px] rounded-full pointer-events-none" />
-        <div className="container mx-auto max-w-3xl text-center relative z-10">
+      <section className="py-24 px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl text-center">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
-            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Get Help Now</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Need Immediate Assistance?</h2>
-            <p className="text-white/50 mb-8 text-lg">Our team is ready to help you solve technical issues quickly and professionally.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
-                  <MessageCircle size={18} />
-                  Request Support
-                </Button>
-              </a>
-              <a href={waLink("Hi! I'd like to chat with Solotech FixIT.")} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2">
-                  Chat on WhatsApp
-                  <ArrowUpRight size={16} />
-                </Button>
-              </a>
+            <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-[#592C72]/20 to-[#9CB633]/10 p-14 overflow-hidden">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-32 bg-[#592C72]/35 blur-[70px] pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#9CB633]/15 blur-[60px] rounded-full pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#592C72]/15 blur-[60px] rounded-full pointer-events-none" />
+              <div className="relative z-10">
+                <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Get Help Now</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Need Immediate Assistance?</h2>
+                <p className="text-white/50 mb-8 text-lg">Our team is ready to help you solve technical issues quickly and professionally.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                      <MessageCircle size={18} />
+                      Request Support
+                    </Button>
+                  </a>
+                  <a href={waLink("Hi! I'd like to chat with Solotech FixIT.")} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2">
+                      Chat on WhatsApp
+                      <ArrowUpRight size={16} />
+                    </Button>
+                  </a>
+                </div>
+                <p className="mt-6 text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
+              </div>
             </div>
-            <p className="mt-6 text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
           </motion.div>
         </div>
       </section>

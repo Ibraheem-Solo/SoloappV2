@@ -527,7 +527,7 @@ export default function Store() {
 
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 md:px-12">
-        <div className="container mx-auto max-w-3xl text-center">
+        <div className="container mx-auto max-w-6xl text-center">
           <FadeIn>
             <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-[#592C72]/20 to-[#9CB633]/10 p-14 overflow-hidden">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#592C72]/30 blur-[60px] pointer-events-none" />
