@@ -716,10 +716,10 @@ export default function Home() {
 
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                  Modern Tech Support<br />&amp; Digital Solutions
+                  Modern Tech Support<br />To Your Doorstep
                 </h2>
                 <p className="text-white/55 text-lg leading-relaxed">
-                  From website troubleshooting and technical support to digital setup and maintenance, Solotech FixIT helps businesses and individuals stay productive, connected, and online.
+                  Solotech FixIT delivers tech support, troubleshooting, setup, and digital assistance right to your doorstep — keeping businesses and individuals productive, connected, and online.
                 </p>
               </div>
 

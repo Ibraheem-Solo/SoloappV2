@@ -112,7 +112,7 @@ export default function FixIT() {
     <>
       <SeoHead
         path="/services/fixit"
-        title="Solotech FixIT — Modern Tech Support & Digital Solutions"
+        title="Solotech FixIT — Modern Tech Support To Your Doorstep"
         description="Fast and reliable technical support, troubleshooting, website fixes, digital setup, and modern IT solutions for businesses and individuals in The Gambia."
       />
       {/* ── HERO ── */}
@@ -154,13 +154,13 @@ export default function FixIT() {
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.95] tracking-tight">
-            Modern Tech Support<br />
+            Modern Tech Support<br />To Your Doorstep<br />
             <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               for Businesses & Individuals
             </span>
           </h1>
 
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">We help businesses, brands, and individuals solve technical problems quickly through reliable support, troubleshooting, maintenance, and digital assistance. Bring Support to Your Doorstep!</p>
+          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">We deliver tech support, troubleshooting, maintenance, and digital assistance right to your doorstep — so you can stay productive, connected, and online without the hassle.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink("Hi Solotech FixIT! I need technical support.")} target="_blank" rel="noopener noreferrer">
