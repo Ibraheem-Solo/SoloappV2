@@ -196,7 +196,7 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — desktop, behind steps */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] h-px z-0 bg-gradient-to-r from-transparent via-[#592C72]/60 to-transparent" style={{ top: '3rem' }} />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, transparent, #592C72 20%, #9CB633 50%, #592C72 80%, transparent)', boxShadow: '0 0 8px 2px rgba(89,44,114,0.5), 0 0 18px 4px rgba(156,182,51,0.25)' }} />
 
             {/* Glowing connector dots — one per step */}
             {[
