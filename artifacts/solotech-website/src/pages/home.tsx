@@ -392,13 +392,13 @@ export default function Home() {
               <div
                 key={`${setIdx}-${i}`}
                 title={logo.name}
-                className="shrink-0 flex items-center justify-center"
+                className="shrink-0 flex items-center justify-center h-20"
                 style={{ marginRight: "4rem" }}
               >
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-20 w-auto max-w-[180px] object-contain"
+                  className="h-full w-auto object-contain"
                   style={{
                     filter: "grayscale(1) brightness(0.6) contrast(1.1)",
                     transition: "filter 0.3s ease",
