@@ -257,7 +257,7 @@ export default function FixIT() {
                       {s.icon}
                     </div>
                     {/* Step badge */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#592C72] border border-[#9CB633]/40 flex items-center justify-center text-[9px] font-black text-white">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#9CB633] flex items-center justify-center text-[9px] font-black text-[#0d0d1a]">
                       {s.step}
                     </div>
                     {/* Left connector dot — where line arrives (all except first) */}
