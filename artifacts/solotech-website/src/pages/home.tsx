@@ -793,7 +793,7 @@ export default function Home() {
             >
               <div className="flex flex-col gap-4">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Who We Work With</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">Built for Ambitious <span style={{ background: "linear-gradient(135deg, #592C72 0%, #9CB633 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Brands</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">Built for Ambitious <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Brands</span></h2>
                 <p className="text-white/50 text-lg leading-relaxed">
                   We partner with businesses, startups, organizations, and individuals looking to build powerful digital presence and stand out in a competitive world.
                 </p>
