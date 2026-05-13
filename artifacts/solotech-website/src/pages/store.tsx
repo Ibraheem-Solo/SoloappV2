@@ -401,21 +401,6 @@ export default function Store() {
           </div>
         </motion.div>
 
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-            className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1.5"
-          >
-            <div className="w-1 h-2 rounded-full bg-[#9CB633]/60" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* ── CATEGORY PILLS ── */}
