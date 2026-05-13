@@ -379,7 +379,7 @@ export default function Home() {
           {/* 3 identical sets — animation moves exactly 1/3 (–33.33%), seamlessly looping */}
           {[...Array(3)].flatMap((_, setIdx) =>
             [
-              { src: `${import.meta.env.BASE_URL}client-alif.png`,            name: "Alif Qur'anic Boarding School",        scale: 0.55, opacity: 0.45 },
+              { src: `${import.meta.env.BASE_URL}client-alif.png`,            name: "Alif Qur'anic Boarding School",        scale: 0.55, opacity: 0.45, hoverSrc: `${import.meta.env.BASE_URL}client-alif-color.png` },
               { src: `${import.meta.env.BASE_URL}client-gambia-islamic.png`,  name: "Gambia Islamic Institute"              },
               { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.png`,   name: "Inicio Ubuntu Health & Wealth Network" },
               { src: `${import.meta.env.BASE_URL}client-alihsan.png`,         name: "Al-Ihsan University"                   },
@@ -405,8 +405,14 @@ export default function Home() {
                     filter: "grayscale(1) brightness(0.6) contrast(1.1)",
                     transition: "filter 0.3s ease",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(0) brightness(1) contrast(1)")}
-                  onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.6) contrast(1.1)")}
+                  onMouseEnter={e => {
+                    if (logo.hoverSrc) e.currentTarget.src = logo.hoverSrc;
+                    e.currentTarget.style.filter = "grayscale(0) brightness(1) contrast(1)";
+                  }}
+                  onMouseLeave={e => {
+                    if (logo.hoverSrc) e.currentTarget.src = logo.src;
+                    e.currentTarget.style.filter = "grayscale(1) brightness(0.6) contrast(1.1)";
+                  }}
                 />
               </div>
             ))
