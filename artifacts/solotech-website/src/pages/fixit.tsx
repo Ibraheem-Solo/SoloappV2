@@ -196,7 +196,7 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — solid green, desktop only */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.45), 0 0 14px 4px rgba(156,182,51,0.2)' }} />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', backgroundColor: '#9CB633', opacity: 0.45 }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -263,19 +263,19 @@ export default function FixIT() {
                     {/* Left connector dot — where line arrives (all except first) */}
                     {i > 0 && (
                       <motion.div
-                        className="hidden lg:block absolute z-20 w-2.5 h-2.5 rounded-full"
-                        style={{ top: 'calc(50% - 5px)', left: '-5px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.8)' }}
-                        animate={{ opacity: [0.4, 1, 0.4], scale: [0.8, 1.3, 0.8] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.35, ease: 'easeInOut' }}
+                        className="hidden lg:block absolute z-20 w-2 h-2 rounded-full bg-[#9CB633]/60"
+                        style={{ top: 'calc(50% - 4px)', left: '-4px' }}
+                        animate={{ opacity: [0.4, 0.9, 0.4] }}
+                        transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.35, ease: 'easeInOut' }}
                       />
                     )}
                     {/* Right connector dot — where line departs (all except last) */}
                     {i < 4 && (
                       <motion.div
-                        className="hidden lg:block absolute z-20 w-2.5 h-2.5 rounded-full"
-                        style={{ top: 'calc(50% - 5px)', right: '-5px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.8)' }}
-                        animate={{ opacity: [0.4, 1, 0.4], scale: [0.8, 1.3, 0.8] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.35 + 0.17, ease: 'easeInOut' }}
+                        className="hidden lg:block absolute z-20 w-2 h-2 rounded-full bg-[#9CB633]/60"
+                        style={{ top: 'calc(50% - 4px)', right: '-4px' }}
+                        animate={{ opacity: [0.4, 0.9, 0.4] }}
+                        transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.35 + 0.17, ease: 'easeInOut' }}
                       />
                     )}
                   </div>
