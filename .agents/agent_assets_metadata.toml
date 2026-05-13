@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "IICT7DINcbXYfXzf_kTMj"
+uri = "file://artifacts/solotech-website/public/store-hoodie.png"
+type = "image"
+title = "black hoodie product mockup"
+
+[[generated]]
+id = "Rtpvov7trxMmF4gyB2k0h"
+uri = "file://artifacts/solotech-website/public/store-tshirt.png"
+type = "image"
+title = "black tshirt product mockup"
+
+[[generated]]
+id = "2-GsLYnx7bsBZC1yU75oA"
+uri = "file://artifacts/solotech-website/public/store-tote.png"
+type = "image"
+title = "canvas tote bag mockup"
+
+[[generated]]
+id = "eXlNypOHP7AqaNglmu67x"
+uri = "file://artifacts/solotech-website/public/store-mug.png"
+type = "image"
+title = "matte black mug mockup"
+
+[[generated]]
+id = "89E6Qha-UPcvvL6w5inlu"
+uri = "file://artifacts/solotech-website/public/store-cap.png"
+type = "image"
+title = "black snapback cap mockup"

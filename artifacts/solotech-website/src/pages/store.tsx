@@ -22,6 +22,7 @@ const originals = [
     tagline: "Signature heavyweight pullover",
     price: "D850",
     badge: "Bestseller",
+    image: `${BASE}store-hoodie.png`,
     icon: <Shirt size={28} />,
     colors: ["#1a1a1a", "#592C72", "#9CB633"],
     colorNames: ["Midnight Black", "Deep Purple", "Lime Edition"],
@@ -36,6 +37,7 @@ const originals = [
     tagline: "Oversized graphic tee",
     price: "D450",
     badge: "New",
+    image: `${BASE}store-tshirt.png`,
     icon: <Shirt size={28} />,
     colors: ["#0d0d0d", "#ffffff", "#592C72"],
     colorNames: ["Black", "White", "Purple"],
@@ -50,6 +52,7 @@ const originals = [
     tagline: "Heavy-duty carry",
     price: "D250",
     badge: null,
+    image: `${BASE}store-tote.png`,
     icon: <ShoppingBag size={28} />,
     colors: ["#e8dcc8", "#1a1a1a"],
     colorNames: ["Natural", "Black"],
@@ -64,6 +67,7 @@ const originals = [
     tagline: "Studio ceramic mug",
     price: "D200",
     badge: null,
+    image: `${BASE}store-mug.png`,
     icon: <Coffee size={28} />,
     colors: ["#0d0d0d", "#ffffff"],
     colorNames: ["Matte Black", "Ceramic White"],
@@ -78,6 +82,7 @@ const originals = [
     tagline: "6-panel structured cap",
     price: "D350",
     badge: "Limited",
+    image: `${BASE}store-cap.png`,
     icon: <Sparkles size={28} />,
     colors: ["#1a1a1a", "#592C72"],
     colorNames: ["Black", "Purple"],
@@ -166,16 +171,16 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
         </div>
       )}
 
-      {/* Icon area */}
-      <div className="relative z-10 flex items-center justify-center h-44 border-b border-white/5">
-        <motion.div
-          animate={{ scale: hovered ? 1.12 : 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="w-20 h-20 rounded-2xl flex items-center justify-center text-[#9CB633]"
-          style={{ background: `radial-gradient(circle, ${product.glowColor}25 0%, transparent 70%)` }}
-        >
-          {product.icon}
-        </motion.div>
+      {/* Image area */}
+      <div className="relative z-10 h-52 border-b border-white/5 overflow-hidden">
+        <motion.img
+          src={product.image}
+          alt={product.name}
+          animate={{ scale: hovered ? 1.06 : 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
