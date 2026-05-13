@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check } from "lucide-react";
+import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, Star, Zap, Award, Heart, Globe, Quote, ChevronDown, X, Shield, Headphones, Globe2, Palette, MessageSquare, BarChart3, RefreshCw, Lock, ArrowUpRight, Check, Monitor, Settings } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 import SocialLinks from "@/components/social-links";
 
@@ -685,6 +685,132 @@ export default function Home() {
                 <p className="text-white/60">{service.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FixIT Featured Section */}
+      <section className="py-24 px-6 md:px-12 relative overflow-hidden bg-black/30">
+        {/* Background orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(80px)" }} />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(156,182,51,0.12) 0%, transparent 70%)", filter: "blur(80px)" }} />
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            {/* LEFT — Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex flex-col gap-7"
+            >
+              <div className="inline-flex items-center gap-2 w-fit px-4 py-1.5 rounded-full border border-[#9CB633]/30 bg-[#9CB633]/8">
+                <Zap size={12} className="text-[#9CB633]" />
+                <span className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Solotech FixIT</span>
+                <span className="ml-1 text-[10px] bg-[#9CB633]/20 text-[#9CB633] px-2 py-0.5 rounded-full font-semibold">⚡ Fast Support</span>
+              </div>
+
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                  Modern Tech Support<br />&amp; Digital Solutions
+                </h2>
+                <p className="text-white/55 text-lg leading-relaxed">
+                  From website troubleshooting and technical support to digital setup and maintenance, Solotech FixIT helps businesses and individuals stay productive, connected, and online.
+                </p>
+              </div>
+
+              {/* Feature pills */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { icon: <Globe size={16} />, label: "Website Fixes" },
+                  { icon: <Monitor size={16} />, label: "Device Support" },
+                  { icon: <Settings size={16} />, label: "Digital Setup" },
+                  { icon: <Headphones size={16} />, label: "Tech Assistance" },
+                ].map((f, i) => (
+                  <motion.div
+                    key={f.label}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.08 }}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/8 bg-white/[0.03] hover:border-[#9CB633]/40 hover:bg-[#9CB633]/5 transition-all duration-300 group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/30 transition-colors">
+                      {f.icon}
+                    </div>
+                    <span className="text-white/70 text-sm font-medium group-hover:text-white transition-colors">{f.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/services/fixit">
+                  <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                    Explore FixIT <ArrowUpRight size={16} />
+                  </Button>
+                </Link>
+                <a href={`https://wa.me/2207532757?text=${encodeURIComponent("Hi Solotech FixIT! I need technical support.")}`} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-7 py-3 font-semibold h-auto gap-2">
+                    <MessageSquare size={15} className="text-[#9CB633]" /> Request Support
+                  </Button>
+                </a>
+              </div>
+
+              <p className="text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
+            </motion.div>
+
+            {/* RIGHT — Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+              className="relative flex items-center justify-center"
+            >
+              {/* Outer glow ring */}
+              <motion.div
+                animate={{ scale: [1, 1.04, 1], opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute w-80 h-80 rounded-full pointer-events-none"
+                style={{ border: "1px solid rgba(156,182,51,0.25)", boxShadow: "0 0 60px rgba(156,182,51,0.1)" }}
+              />
+              <motion.div
+                animate={{ scale: [1, 1.06, 1], opacity: [0.25, 0.45, 0.25] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute w-64 h-64 rounded-full pointer-events-none"
+                style={{ border: "1px solid rgba(89,44,114,0.35)", boxShadow: "0 0 40px rgba(89,44,114,0.15)" }}
+              />
+
+              {/* Central icon */}
+              <div className="relative z-10 w-28 h-28 rounded-2xl flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.4), rgba(156,182,51,0.2))", border: "1px solid rgba(156,182,51,0.3)", boxShadow: "0 0 40px rgba(89,44,114,0.3)" }}>
+                <Shield size={48} className="text-[#9CB633]" />
+              </div>
+
+              {/* Floating stat cards */}
+              {[
+                { label: "Response Time", value: "< 1hr", pos: "top-4 left-4", color: "border-[#9CB633]/30" },
+                { label: "Issues Resolved", value: "100%", pos: "top-4 right-4", color: "border-[#592C72]/40" },
+                { label: "Support Types", value: "6+", pos: "bottom-4 left-8", color: "border-[#592C72]/40" },
+                { label: "Satisfaction", value: "⭐ 5.0", pos: "bottom-4 right-8", color: "border-[#9CB633]/30" },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.label}
+                  animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
+                  transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
+                  className={`absolute ${card.pos} px-4 py-2.5 rounded-xl border ${card.color} backdrop-blur-sm`}
+                  style={{ background: "rgba(10,10,20,0.85)" }}
+                >
+                  <div className="text-white/40 text-[10px] font-medium uppercase tracking-wide">{card.label}</div>
+                  <div className="text-white font-bold text-base">{card.value}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
           </div>
         </div>
       </section>

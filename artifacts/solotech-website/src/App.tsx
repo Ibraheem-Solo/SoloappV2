@@ -14,6 +14,7 @@ import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
 import Store from "@/pages/store";
+import FixIT from "@/pages/fixit";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ function Router() {
         <Route path="/work" component={Work} />
         <Route path="/contact" component={Contact} />
         <Route path="/store" component={Store} />
+        <Route path="/services/fixit" component={FixIT} />
         <Route path="/terms" component={Terms} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />

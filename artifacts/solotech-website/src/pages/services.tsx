@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
+import { Code, Paintbrush, Share2, Camera, TrendingUp, CheckCircle, ArrowRight, Wrench, Zap } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 
 const fadeUp = {
@@ -196,6 +196,47 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* FixIT Featured Card */}
+      <section className="py-6 px-6 md:px-12 pb-16">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.1 }}
+            className="relative rounded-3xl overflow-hidden border border-[#9CB633]/25 hover:border-[#9CB633]/50 transition-all duration-300 group"
+            style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.2) 0%, rgba(10,10,20,0.9) 50%, rgba(156,182,51,0.1) 100%)" }}
+          >
+            {/* Glow */}
+            <div className="absolute top-0 left-0 w-72 h-72 rounded-full pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity"
+              style={{ background: "radial-gradient(circle, rgba(89,44,114,0.5) 0%, transparent 70%)", filter: "blur(60px)" }} />
+            <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full pointer-events-none opacity-30 group-hover:opacity-50 transition-opacity"
+              style={{ background: "radial-gradient(circle, rgba(156,182,51,0.4) 0%, transparent 70%)", filter: "blur(60px)" }} />
+
+            <div className="relative z-10 p-10 flex flex-col md:flex-row items-center gap-8 justify-between">
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
+                  style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.5), rgba(156,182,51,0.3))", border: "1px solid rgba(156,182,51,0.35)" }}>
+                  <Wrench size={32} className="text-[#9CB633]" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h2 className="text-2xl font-bold text-white">Solotech FixIT</h2>
+                    <span className="text-[10px] bg-[#9CB633]/20 text-[#9CB633] px-2 py-0.5 rounded-full font-bold border border-[#9CB633]/30 flex items-center gap-1">
+                      <Zap size={9} /> Fast Support
+                    </span>
+                  </div>
+                  <p className="text-white/60 max-w-xl">Fast and reliable technical support, troubleshooting, website fixes, digital setup, and modern IT solutions for businesses and individuals.</p>
+                </div>
+              </div>
+              <Link href="/services/fixit" className="shrink-0">
+                <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2 whitespace-nowrap">
+                  Explore FixIT <ArrowRight size={16} />
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
