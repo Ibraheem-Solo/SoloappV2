@@ -355,12 +355,6 @@ export default function Store() {
           className="absolute top-[40%] right-[15%] w-64 h-64 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(89,44,114,0.35) 0%, transparent 70%)", filter: "blur(50px)" }}
         />
-        <motion.div
-          animate={{ x: [0, -25, 15, 0], y: [0, 30, -40, 0], scale: [0.9, 1.1, 1, 0.9] }}
-          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-[30%] left-[10%] w-52 h-52 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(156,182,51,0.3) 0%, transparent 70%)", filter: "blur(45px)" }}
-        />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
