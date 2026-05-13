@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import {
   Wrench, Monitor, Wifi, MessageCircle, ArrowUpRight, Zap,
   Shield, Headphones, CheckCircle, Settings, Globe, Clock,
-  ChevronRight, Cpu, ServerCrash, LifeBuoy, PlugZap
+  ChevronRight, Cpu, ServerCrash, LifeBuoy, PlugZap,
+  Laptop, MapPin, AlertTriangle, ThumbsUp
 } from "lucide-react";
 import SeoHead from "@/components/seo-head";
 
@@ -180,6 +181,118 @@ export default function FixIT() {
           <p className="mt-6 text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
         </motion.div>
       </section>
+      {/* ── CASE SCENARIO ── */}
+      <section className="py-24 px-6 md:px-12 bg-black/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(89,44,114,0.15) 0%, transparent 70%)", filter: "blur(80px)" }} />
+
+        <div className="container mx-auto max-w-5xl relative z-10">
+          <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="text-center mb-16">
+            <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-3">Real Scenario</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Here's How It Works</h2>
+            <p className="text-white/50 text-lg max-w-xl mx-auto">Your device breaks down. We come to you. Simple as that.</p>
+          </motion.div>
+
+          {/* Timeline steps */}
+          <div className="relative">
+            {/* Connecting line — desktop */}
+            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-[#592C72]/50 to-transparent" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
+              {[
+                {
+                  icon: <AlertTriangle size={26} />,
+                  step: "01",
+                  title: "Device Malfunctions",
+                  desc: "Your laptop, phone, or any device breaks down, slows up, or stops working.",
+                  accent: "bg-red-500/10 border-red-500/30 text-red-400",
+                  glow: "rgba(239,68,68,0.12)",
+                },
+                {
+                  icon: <Globe size={26} />,
+                  step: "02",
+                  title: "Visit Our Website",
+                  desc: "Go to solotechdigital.com and head to Solotech FixIT — contact support in seconds.",
+                  accent: "bg-blue-500/10 border-blue-500/30 text-blue-400",
+                  glow: "rgba(59,130,246,0.12)",
+                },
+                {
+                  icon: <Wrench size={26} />,
+                  step: "03",
+                  title: "Request a Fix",
+                  desc: "Tell us the problem via WhatsApp or our contact form. We respond fast.",
+                  accent: "bg-[#592C72]/20 border-[#592C72]/40 text-[#9CB633]",
+                  glow: "rgba(89,44,114,0.18)",
+                },
+                {
+                  icon: <MapPin size={26} />,
+                  step: "04",
+                  title: "We Come to You",
+                  desc: "A Solotech FixIT technician visits your location at a time that works for you.",
+                  accent: "bg-[#9CB633]/10 border-[#9CB633]/30 text-[#9CB633]",
+                  glow: "rgba(156,182,51,0.12)",
+                },
+                {
+                  icon: <ThumbsUp size={26} />,
+                  step: "05",
+                  title: "Fixed or Replaced",
+                  desc: "We fix it on the spot, or give you an honest recommendation for repair or replacement.",
+                  accent: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400",
+                  glow: "rgba(16,185,129,0.12)",
+                },
+              ].map((s, i) => (
+                <motion.div
+                  key={s.step}
+                  {...fadeUp}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="relative flex flex-col items-center text-center lg:items-center lg:text-center group"
+                >
+                  {/* Step number + icon */}
+                  <div className="relative mb-5">
+                    {/* Glow behind icon */}
+                    <div className="absolute inset-0 rounded-2xl blur-xl pointer-events-none"
+                      style={{ background: s.glow }} />
+                    <div className={`relative w-20 h-20 rounded-2xl border flex items-center justify-center ${s.accent} group-hover:scale-105 transition-transform duration-300`}
+                      style={{ boxShadow: `0 0 24px ${s.glow}` }}>
+                      {s.icon}
+                    </div>
+                    {/* Step badge */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#592C72] border border-[#9CB633]/40 flex items-center justify-center text-[9px] font-black text-white">
+                      {s.step}
+                    </div>
+                  </div>
+
+                  <h3 className="text-white font-bold text-base mb-2 leading-snug">{s.title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed max-w-[180px] lg:max-w-none">{s.desc}</p>
+
+                  {/* Arrow between steps — mobile only */}
+                  {i < 4 && (
+                    <div className="lg:hidden mt-4 text-[#592C72]/50 text-2xl">↓</div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA strip */}
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 p-6 rounded-2xl border border-white/8 bg-white/[0.02]"
+          >
+            <div className="flex items-center gap-3">
+              <Laptop size={20} className="text-[#9CB633] shrink-0" />
+              <p className="text-white/60 text-sm">Device broken? Don't stress — <span className="text-white font-semibold">we come to you.</span></p>
+            </div>
+            <a href={waLink("Hi Solotech FixIT! My device has a problem and I need support.")} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                <MessageCircle size={15} /> Request a Fix Now
+              </Button>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── SUPPORT SERVICES ── */}
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl">
