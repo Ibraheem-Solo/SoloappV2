@@ -181,11 +181,12 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-        {/* Logo watermark */}
+        {/* Logo on product */}
         <img
           src={`${BASE}logo.png`}
           alt="Solotech Digital"
-          className="absolute bottom-3 left-3 h-7 w-auto opacity-80 drop-shadow-lg"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-14 w-auto opacity-70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+          style={{ mixBlendMode: "screen" }}
         />
       </div>
 
