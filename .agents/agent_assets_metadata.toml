@@ -54,3 +54,15 @@ id = "5l32NfxLJFhHJEIR2aTtC"
 uri = "file://artifacts/solotech-website/public/store-custom-packaging.png"
 type = "image"
 title = "branded packaging mockup"
+
+[[generated]]
+id = "2GbPAqTKcaNGzFnKyMHuo"
+uri = "file://artifacts/solotech-website/public/store-polo.png"
+type = "image"
+title = "black polo shirt product mockup"
+
+[[generated]]
+id = "3WjOpQ9av4oXpfF7jKgD3"
+uri = "file://artifacts/solotech-website/public/store-african.png"
+type = "image"
+title = "african cultural wear product mockup"
