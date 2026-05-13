@@ -438,10 +438,19 @@ export default function Academy() {
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl text-center">
           <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
-            <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-[#592C72]/20 to-[#9CB633]/10 p-14 overflow-hidden">
-              {/* Orbs */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-32 bg-[#592C72]/35 blur-[70px] pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#9CB633]/15 blur-[60px] rounded-full pointer-events-none" />
+            <div
+              className="relative rounded-3xl overflow-hidden p-14"
+              style={{
+                background: 'linear-gradient(135deg, rgba(89,44,114,0.18) 0%, rgba(255,255,255,0.04) 50%, rgba(156,182,51,0.10) 100%)',
+                backdropFilter: 'blur(48px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(48px) saturate(180%)',
+                border: '1px solid rgba(255,255,255,0.10)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 48px rgba(0,0,0,0.35)',
+              }}
+            >
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+              <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#592C72]/25 blur-[60px] pointer-events-none" />
+              <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
 
               <div className="relative z-10">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Start Learning</p>
