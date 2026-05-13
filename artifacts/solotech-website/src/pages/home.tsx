@@ -379,7 +379,7 @@ export default function Home() {
           {/* 3 identical sets — animation moves exactly 1/3 (–33.33%), seamlessly looping */}
           {[...Array(3)].flatMap((_, setIdx) =>
             [
-              { src: `${import.meta.env.BASE_URL}client-alif.png`,            name: "Alif Qur'anic Boarding School"         },
+              { src: `${import.meta.env.BASE_URL}client-alif.png`,            name: "Alif Qur'anic Boarding School",        scale: 0.55, opacity: 0.45 },
               { src: `${import.meta.env.BASE_URL}client-gambia-islamic.png`,  name: "Gambia Islamic Institute"              },
               { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.png`,   name: "Inicio Ubuntu Health & Wealth Network" },
               { src: `${import.meta.env.BASE_URL}client-alihsan.png`,         name: "Al-Ihsan University"                   },
@@ -398,8 +398,10 @@ export default function Home() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-full w-auto object-contain"
+                  className="w-auto object-contain"
                   style={{
+                    height: `${(logo.scale ?? 1) * 100}%`,
+                    opacity: logo.opacity ?? 1,
                     filter: "grayscale(1) brightness(0.6) contrast(1.1)",
                     transition: "filter 0.3s ease",
                   }}
