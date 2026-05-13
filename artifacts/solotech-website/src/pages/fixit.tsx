@@ -196,49 +196,80 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — desktop, behind steps */}
-            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-px z-0 bg-gradient-to-r from-transparent via-[#592C72]/50 to-transparent" />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] h-px z-0 bg-gradient-to-r from-transparent via-[#592C72]/60 to-transparent" style={{ top: '3rem' }} />
+
+            {/* Glowing connector dots — one per step */}
+            {[
+              { pos: "10%", color: "#ef4444", glow: "rgba(239,68,68,0.7)" },
+              { pos: "30%", color: "#3b82f6", glow: "rgba(59,130,246,0.7)" },
+              { pos: "50%", color: "#9CB633", glow: "rgba(156,182,51,0.8)" },
+              { pos: "70%", color: "#9CB633", glow: "rgba(156,182,51,0.8)" },
+              { pos: "90%", color: "#10b981", glow: "rgba(16,185,129,0.7)" },
+            ].map((dot, i) => (
+              <motion.div
+                key={i}
+                className="hidden lg:block absolute z-20 w-3 h-3 rounded-full"
+                style={{
+                  top: 'calc(3rem - 6px)',
+                  left: dot.pos,
+                  transform: 'translateX(-50%)',
+                  backgroundColor: dot.color,
+                  boxShadow: `0 0 8px 2px ${dot.glow}, 0 0 16px 4px ${dot.glow}`,
+                }}
+                animate={{
+                  opacity: [0.35, 1, 0.35],
+                  scale: [0.75, 1.25, 0.75],
+                  boxShadow: [
+                    `0 0 4px 1px ${dot.glow}`,
+                    `0 0 14px 5px ${dot.glow}`,
+                    `0 0 4px 1px ${dot.glow}`,
+                  ],
+                }}
+                transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.38, ease: "easeInOut" }}
+              />
+            ))}
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
                 {
-                  icon: <AlertTriangle size={26} />,
+                  icon: <AlertTriangle size={30} />,
                   step: "01",
                   title: "Device Malfunctions",
                   desc: "Your laptop, phone, or any device breaks down, slows up, or stops working.",
-                  accent: "bg-red-500/10 border-red-500/30 text-red-400",
-                  glow: "rgba(239,68,68,0.12)",
+                  accent: "border-red-500/30 text-red-400",
+                  glow: "rgba(239,68,68,0.15)",
                 },
                 {
-                  icon: <Globe size={26} />,
+                  icon: <Globe size={30} />,
                   step: "02",
                   title: "Visit Our Website",
                   desc: "Go to solotechdigital.com and head to Solotech FixIT — contact support in seconds.",
-                  accent: "bg-blue-500/10 border-blue-500/30 text-blue-400",
-                  glow: "rgba(59,130,246,0.12)",
+                  accent: "border-blue-500/30 text-blue-400",
+                  glow: "rgba(59,130,246,0.15)",
                 },
                 {
-                  icon: <Wrench size={26} />,
+                  icon: <Wrench size={30} />,
                   step: "03",
                   title: "Request a Fix",
                   desc: "Tell us the problem via WhatsApp or our contact form. We respond fast.",
-                  accent: "bg-[#592C72]/20 border-[#592C72]/40 text-[#9CB633]",
-                  glow: "rgba(89,44,114,0.18)",
+                  accent: "border-[#592C72]/40 text-[#9CB633]",
+                  glow: "rgba(89,44,114,0.22)",
                 },
                 {
-                  icon: <MapPin size={26} />,
+                  icon: <MapPin size={30} />,
                   step: "04",
                   title: "We Come to You",
                   desc: "A Solotech FixIT technician visits your location at a time that works for you.",
-                  accent: "bg-[#9CB633]/10 border-[#9CB633]/30 text-[#9CB633]",
-                  glow: "rgba(156,182,51,0.12)",
+                  accent: "border-[#9CB633]/30 text-[#9CB633]",
+                  glow: "rgba(156,182,51,0.15)",
                 },
                 {
-                  icon: <ThumbsUp size={26} />,
+                  icon: <ThumbsUp size={30} />,
                   step: "05",
                   title: "Fixed or Replaced",
                   desc: "We fix it on the spot, or give you an honest recommendation for repair or replacement.",
-                  accent: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400",
-                  glow: "rgba(16,185,129,0.12)",
+                  accent: "border-emerald-500/30 text-emerald-400",
+                  glow: "rgba(16,185,129,0.15)",
                 },
               ].map((s, i) => (
                 <motion.div
@@ -252,8 +283,8 @@ export default function FixIT() {
                     {/* Glow behind icon */}
                     <div className="absolute inset-0 rounded-2xl blur-xl pointer-events-none"
                       style={{ background: s.glow }} />
-                    <div className={`relative w-20 h-20 rounded-2xl border flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ${s.accent}`}
-                      style={{ backgroundColor: '#0d0d1a', boxShadow: `0 0 24px ${s.glow}` }}>
+                    <div className={`relative w-24 h-24 rounded-2xl border flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ${s.accent}`}
+                      style={{ backgroundColor: '#0d0d1a', boxShadow: `0 0 28px ${s.glow}` }}>
                       {s.icon}
                     </div>
                     {/* Step badge */}
