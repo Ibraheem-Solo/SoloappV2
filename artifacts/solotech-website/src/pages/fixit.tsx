@@ -221,7 +221,7 @@ export default function FixIT() {
                   step: "03",
                   title: "Request a Fix",
                   desc: "Tell us the problem via WhatsApp or our contact form. We respond fast.",
-                  accent: "border-[#592C72]/40 text-[#9CB633]",
+                  accent: "border-[#592C72]/40 text-purple-400",
                   glow: "rgba(89,44,114,0.22)",
                 },
                 {
