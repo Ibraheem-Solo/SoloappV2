@@ -181,12 +181,18 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-        {/* Logo on product */}
+        {/* Logo — embroidered chest placement */}
         <img
           src={`${BASE}logo.png`}
           alt="Solotech Digital"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-14 w-auto opacity-70 drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
-          style={{ mixBlendMode: "screen" }}
+          className="absolute left-1/2 -translate-x-1/2 h-8 w-auto"
+          style={{
+            top: "38%",
+            opacity: 0.88,
+            filter:
+              "drop-shadow(0px 1px 0px rgba(0,0,0,0.55)) drop-shadow(0px -1px 0px rgba(255,255,255,0.08)) drop-shadow(1px 0px 0px rgba(0,0,0,0.3)) drop-shadow(-1px 0px 0px rgba(0,0,0,0.3)) saturate(0.85) contrast(1.08)",
+            mixBlendMode: "screen",
+          }}
         />
       </div>
 
