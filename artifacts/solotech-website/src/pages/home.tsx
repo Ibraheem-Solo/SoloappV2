@@ -379,7 +379,7 @@ export default function Home() {
           {/* 3 identical sets — animation moves exactly 1/3 (–33.33%), seamlessly looping */}
           {[...Array(3)].flatMap((_, setIdx) =>
             [
-              { src: `${import.meta.env.BASE_URL}client-alif-color.png`,       name: "Alif Qur'anic Boarding School"         },
+              { src: `${import.meta.env.BASE_URL}client-alif.png`,              name: "Alif Qur'anic Boarding School"         },
               { src: `${import.meta.env.BASE_URL}client-gambia-islamic.png`,  name: "Gambia Islamic Institute"              },
               { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.png`,   name: "Inicio Ubuntu Health & Wealth Network" },
               { src: `${import.meta.env.BASE_URL}client-alihsan.png`,         name: "Al-Ihsan University"                   },
