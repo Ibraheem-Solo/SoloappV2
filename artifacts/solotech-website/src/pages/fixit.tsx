@@ -195,39 +195,8 @@ export default function FixIT() {
 
           {/* Timeline steps */}
           <div className="relative">
-            {/* Connecting line — desktop, behind steps */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, transparent, #592C72 20%, #9CB633 50%, #592C72 80%, transparent)', boxShadow: '0 0 8px 2px rgba(89,44,114,0.5), 0 0 18px 4px rgba(156,182,51,0.25)' }} />
-
-            {/* Glowing connector dots — one per step */}
-            {[
-              { pos: "10%", color: "#ef4444", glow: "rgba(239,68,68,0.7)" },
-              { pos: "30%", color: "#3b82f6", glow: "rgba(59,130,246,0.7)" },
-              { pos: "50%", color: "#9CB633", glow: "rgba(156,182,51,0.8)" },
-              { pos: "70%", color: "#9CB633", glow: "rgba(156,182,51,0.8)" },
-              { pos: "90%", color: "#10b981", glow: "rgba(16,185,129,0.7)" },
-            ].map((dot, i) => (
-              <motion.div
-                key={i}
-                className="hidden lg:block absolute z-20 w-3 h-3 rounded-full"
-                style={{
-                  top: 'calc(3rem - 6px)',
-                  left: dot.pos,
-                  transform: 'translateX(-50%)',
-                  backgroundColor: dot.color,
-                  boxShadow: `0 0 8px 2px ${dot.glow}, 0 0 16px 4px ${dot.glow}`,
-                }}
-                animate={{
-                  opacity: [0.35, 1, 0.35],
-                  scale: [0.75, 1.25, 0.75],
-                  boxShadow: [
-                    `0 0 4px 1px ${dot.glow}`,
-                    `0 0 14px 5px ${dot.glow}`,
-                    `0 0 4px 1px ${dot.glow}`,
-                  ],
-                }}
-                transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.38, ease: "easeInOut" }}
-              />
-            ))}
+            {/* Connecting line — solid green, desktop only */}
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.45), 0 0 14px 4px rgba(156,182,51,0.2)' }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -291,6 +260,24 @@ export default function FixIT() {
                     <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#592C72] border border-[#9CB633]/40 flex items-center justify-center text-[9px] font-black text-white">
                       {s.step}
                     </div>
+                    {/* Left connector dot — where line arrives (all except first) */}
+                    {i > 0 && (
+                      <motion.div
+                        className="hidden lg:block absolute z-20 w-2.5 h-2.5 rounded-full"
+                        style={{ top: 'calc(50% - 5px)', left: '-5px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.8)' }}
+                        animate={{ opacity: [0.4, 1, 0.4], scale: [0.8, 1.3, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.35, ease: 'easeInOut' }}
+                      />
+                    )}
+                    {/* Right connector dot — where line departs (all except last) */}
+                    {i < 4 && (
+                      <motion.div
+                        className="hidden lg:block absolute z-20 w-2.5 h-2.5 rounded-full"
+                        style={{ top: 'calc(50% - 5px)', right: '-5px', backgroundColor: '#9CB633', boxShadow: '0 0 6px 2px rgba(156,182,51,0.8)' }}
+                        animate={{ opacity: [0.4, 1, 0.4], scale: [0.8, 1.3, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.35 + 0.17, ease: 'easeInOut' }}
+                      />
+                    )}
                   </div>
 
                   <h3 className="text-white font-bold text-base mb-2 leading-snug">{s.title}</h3>
