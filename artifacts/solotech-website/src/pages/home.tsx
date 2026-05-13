@@ -1120,6 +1120,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="px-6 md:px-12">
+        <div className="container mx-auto max-w-6xl">
+          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        </div>
+      </div>
+
       {/* ── Academy Featured Section ── */}
       <section className="py-24 px-6 md:px-12 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
