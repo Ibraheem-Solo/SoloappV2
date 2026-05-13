@@ -1085,23 +1085,37 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-6 md:px-12 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#592C72]/20" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-[#9CB633]/8 pointer-events-none" />
-        <div className="container mx-auto max-w-4xl relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
-          <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact">
-              <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full sm:w-auto font-semibold border-0 transition-colors">
-                Start a Project
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-[#9CB633]/40 text-white/80 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/50 backdrop-blur-sm transition-colors">
-                Launch My Website
-              </Button>
-            </Link>
+      <section className="py-24 px-6 md:px-12 text-center">
+        <div className="container mx-auto max-w-6xl">
+          <div
+            className="relative rounded-3xl overflow-hidden p-14"
+            style={{
+              background: 'linear-gradient(135deg, rgba(89,44,114,0.18) 0%, rgba(255,255,255,0.04) 50%, rgba(156,182,51,0.10) 100%)',
+              backdropFilter: 'blur(48px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(48px) saturate(180%)',
+              border: '1px solid rgba(255,255,255,0.10)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 48px rgba(0,0,0,0.35)',
+            }}
+          >
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+            <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#592C72]/25 blur-[60px] pointer-events-none" />
+            <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
+            <div className="relative z-10">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
+              <p className="text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full sm:w-auto font-semibold border-0 transition-colors">
+                    Start a Project
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full sm:w-auto border-[#9CB633]/40 text-white/80 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/50 backdrop-blur-sm transition-colors">
+                    Launch My Website
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
