@@ -115,7 +115,6 @@ export default function FixIT() {
         title="Solotech FixIT — Modern Tech Support & Digital Solutions"
         description="Fast and reliable technical support, troubleshooting, website fixes, digital setup, and modern IT solutions for businesses and individuals in The Gambia."
       />
-
       {/* ── HERO ── */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-24">
         {/* Orbs */}
@@ -161,9 +160,7 @@ export default function FixIT() {
             </span>
           </h1>
 
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            We help businesses, brands, and individuals solve technical problems quickly through reliable support, troubleshooting, maintenance, and digital assistance.
-          </p>
+          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">We help businesses, brands, and individuals solve technical problems quickly through reliable support, troubleshooting, maintenance, and digital assistance. Bring Support to Your Doorstep!</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink("Hi Solotech FixIT! I need technical support.")} target="_blank" rel="noopener noreferrer">
@@ -183,7 +180,6 @@ export default function FixIT() {
           <p className="mt-6 text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
         </motion.div>
       </section>
-
       {/* ── SUPPORT SERVICES ── */}
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl">
@@ -216,7 +212,6 @@ export default function FixIT() {
           </div>
         </div>
       </section>
-
       {/* ── HOW FIXIT WORKS ── */}
       <section className="py-24 px-6 md:px-12 bg-black/30">
         <div className="container mx-auto max-w-5xl">
@@ -251,7 +246,6 @@ export default function FixIT() {
           </div>
         </div>
       </section>
-
       {/* ── WHY CHOOSE FIXIT ── */}
       <section className="py-24 px-6 md:px-12 relative overflow-hidden">
         {/* Background orb */}
@@ -284,7 +278,6 @@ export default function FixIT() {
           </div>
         </div>
       </section>
-
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-3xl text-center">
