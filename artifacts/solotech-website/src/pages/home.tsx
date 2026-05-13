@@ -386,7 +386,7 @@ export default function Home() {
               { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
               { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
               { src: `${import.meta.env.BASE_URL}client-spot-project.png`,   name: "SPOT Project"                          },
-              { src: `${import.meta.env.BASE_URL}client-plant-quran.png`,    name: "Plant the Qur'an in Your Heart"        },
+              { src: `${import.meta.env.BASE_URL}client-plant-quran.png`,    name: "Plant the Qur'an in Your Heart",  scale: 1.6 },
               { src: `${import.meta.env.BASE_URL}client-hitg.png`,           name: "Hufaaz in the Gambia"                  },
             ].map((logo, i) => (
               <div
