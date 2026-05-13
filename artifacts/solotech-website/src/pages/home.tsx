@@ -861,7 +861,7 @@ export default function Home() {
                     src={`${BASE}founder-ibraheem.png`}
                     alt="Ibraheem Al Jatta — Founder & Creative Director"
                     className="w-full object-cover"
-                    style={{ maxHeight: "380px", objectPosition: "top" }}
+                    style={{ width: "100%", height: "auto" }}
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
                     style={{ background: "linear-gradient(to top, rgba(8,8,12,0.95) 0%, transparent 100%)" }} />
