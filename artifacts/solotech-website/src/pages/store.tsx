@@ -96,24 +96,28 @@ const originals = [
 const customServices = [
   {
     icon: <Package size={22} />,
+    image: `${BASE}store-custom-merch.png`,
     title: "Company Merchandise",
     desc: "Branded apparel, bags, and accessories for your entire team. Minimum order: 10 units.",
     tag: "From D3,500",
   },
   {
     icon: <Star size={22} />,
+    image: `${BASE}store-custom-event.png`,
     title: "Event Branding Kits",
     desc: "Custom event merch packages — T-shirts, banners, lanyards, programs. Delivered on time.",
     tag: "Custom Quote",
   },
   {
     icon: <Gift size={22} />,
+    image: `${BASE}store-custom-gifts.png`,
     title: "Corporate Gift Sets",
     desc: "Premium curated gift sets for clients, partners, and employees. Personalised packaging included.",
     tag: "From D1,200",
   },
   {
     icon: <ShoppingBag size={22} />,
+    image: `${BASE}store-custom-packaging.png`,
     title: "Branded Packaging",
     desc: "Custom boxes, bags, tissue paper, stickers, and labels for your products. Minimum: 50 units.",
     tag: "Custom Quote",
@@ -246,25 +250,48 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
 }
 
 function CustomServiceCard({ service, delay }: { service: typeof customServices[0]; delay: number }) {
+  const [hovered, setHovered] = useState(false);
   return (
     <FadeIn delay={delay}>
-      <div className="group relative rounded-2xl border border-white/8 bg-white/[0.03] hover:border-[#592C72]/50 hover:bg-[#592C72]/5 transition-all duration-300 p-6 flex flex-col gap-4 h-full">
-        <div className="w-11 h-11 rounded-xl bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] group-hover:bg-[#592C72]/30 transition-colors duration-300">
-          {service.icon}
+      <motion.div
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="group relative rounded-2xl border border-white/8 bg-white/[0.03] hover:border-[#592C72]/50 transition-all duration-300 flex flex-col h-full overflow-hidden"
+      >
+        {/* Image */}
+        <div className="relative h-44 overflow-hidden border-b border-white/5">
+          <motion.img
+            src={service.image}
+            alt={service.title}
+            animate={{ scale: hovered ? 1.06 : 1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+          <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-3 left-3 h-6 w-auto opacity-75 drop-shadow-lg" />
         </div>
-        <div>
-          <h3 className="text-white font-bold text-lg mb-2">{service.title}</h3>
-          <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+
+        {/* Content */}
+        <div className="p-5 flex flex-col gap-3 flex-1">
+          <div className="w-9 h-9 rounded-xl bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] group-hover:bg-[#592C72]/30 transition-colors duration-300">
+            {service.icon}
+          </div>
+          <div>
+            <h3 className="text-white font-bold text-base mb-1">{service.title}</h3>
+            <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+          </div>
+          <div className="mt-auto flex items-center justify-between pt-2">
+            <span className="text-[#9CB633] text-xs font-semibold">{service.tag}</span>
+            <a href={whatsappLink(service.title)} target="_blank" rel="noopener noreferrer">
+              <button className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-lg transition-all duration-200">
+                Enquire <ArrowUpRight size={11} />
+              </button>
+            </a>
+          </div>
         </div>
-        <div className="mt-auto flex items-center justify-between">
-          <span className="text-[#9CB633] text-xs font-semibold">{service.tag}</span>
-          <a href={whatsappLink(service.title)} target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-lg transition-all duration-200">
-              Enquire <ArrowUpRight size={11} />
-            </button>
-          </a>
-        </div>
-      </div>
+      </motion.div>
     </FadeIn>
   );
 }

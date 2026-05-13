@@ -30,3 +30,27 @@ id = "89E6Qha-UPcvvL6w5inlu"
 uri = "file://artifacts/solotech-website/public/store-cap.png"
 type = "image"
 title = "black snapback cap mockup"
+
+[[generated]]
+id = "2RVAa4PwqpkCvPqMaGUNo"
+uri = "file://artifacts/solotech-website/public/store-custom-merch.png"
+type = "image"
+title = "company merchandise flat lay"
+
+[[generated]]
+id = "9btrXD9n6vtoWqTme6qiz"
+uri = "file://artifacts/solotech-website/public/store-custom-event.png"
+type = "image"
+title = "event branding kit mockup"
+
+[[generated]]
+id = "ZMVS3OLaT0sy3kzTdi_-C"
+uri = "file://artifacts/solotech-website/public/store-custom-gifts.png"
+type = "image"
+title = "corporate gift set mockup"
+
+[[generated]]
+id = "5l32NfxLJFhHJEIR2aTtC"
+uri = "file://artifacts/solotech-website/public/store-custom-packaging.png"
+type = "image"
+title = "branded packaging mockup"
