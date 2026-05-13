@@ -13,6 +13,7 @@ import Work from "@/pages/work";
 import Contact from "@/pages/contact";
 import Terms from "@/pages/terms";
 import Privacy from "@/pages/privacy";
+import Store from "@/pages/store";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/work" component={Work} />
         <Route path="/contact" component={Contact} />
+        <Route path="/store" component={Store} />
         <Route path="/terms" component={Terms} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
