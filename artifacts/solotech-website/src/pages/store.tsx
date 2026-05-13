@@ -181,15 +181,13 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+        <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-3 left-3 h-6 w-auto opacity-75 drop-shadow-lg" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 p-6 flex flex-col gap-4 flex-1">
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-[#9CB633] text-[10px] font-bold uppercase tracking-widest">{product.tagline}</p>
-            <img src={`${BASE}logo.png`} alt="Solotech Digital" className="h-5 w-auto opacity-70" />
-          </div>
+          <p className="text-[#9CB633] text-[10px] font-bold uppercase tracking-widest mb-1">{product.tagline}</p>
           <h3 className="text-white text-xl font-bold">{product.name}</h3>
           <p className="text-white/50 text-sm mt-2 leading-relaxed">{product.description}</p>
         </div>
