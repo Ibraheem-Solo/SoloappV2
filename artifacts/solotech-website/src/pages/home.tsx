@@ -778,117 +778,128 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Who We Work With + Founder Split Section */}
       <section className="py-28 px-6 md:px-12 overflow-hidden">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-            {/* Left — photo */}
+            {/* LEFT — Who We Work With */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative flex justify-center lg:justify-start"
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex flex-col gap-8"
             >
-              {/* Glow behind image */}
-              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-30"
-                style={{ background: "radial-gradient(circle at 50% 60%, #592C72 0%, #9CB633 70%, transparent 100%)" }} />
+              <div className="flex flex-col gap-4">
+                <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Who We Work With</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">Built for Ambitious Brands</h2>
+                <p className="text-white/50 text-lg leading-relaxed">
+                  We partner with businesses, startups, organizations, and individuals looking to build powerful digital presence and stand out in a competitive world.
+                </p>
+              </div>
 
-              {/* Floating accent rings */}
-              <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full border border-[#9CB633]/20" />
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full border border-[#592C72]/30" />
+              <ul className="flex flex-col gap-3">
+                {[
+                  { icon: Globe2,      label: "Small & Medium-Sized Businesses (SMEs)" },
+                  { icon: Zap,         label: "Startups & Emerging Brands"             },
+                  { icon: Heart,       label: "NGOs & Impact Organizations"            },
+                  { icon: Award,       label: "Entrepreneurs & Founders"               },
+                  { icon: Share2,      label: "Personal Brands & Creators"             },
+                  { icon: TrendingUp,  label: "B2B & Consumer-Focused Companies"       },
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.07 }}
+                    className="group flex items-center gap-4 p-4 rounded-xl border border-white/8 hover:border-[#592C72]/50 hover:bg-[#592C72]/8 transition-all duration-300 cursor-default"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-[#592C72]/15 border border-[#592C72]/25 flex items-center justify-center shrink-0 group-hover:bg-[#592C72]/25 transition-colors">
+                      <item.icon size={16} className="text-[#9CB633]" />
+                    </div>
+                    <span className="text-white/75 text-sm font-medium group-hover:text-white transition-colors">{item.label}</span>
+                  </motion.li>
+                ))}
+              </ul>
 
-              {/* Photo frame */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
-                className="relative rounded-2xl overflow-hidden shadow-2xl shadow-[#592C72]/25 max-w-sm w-full"
-                style={{ border: "1px solid rgba(89,44,114,0.3)" }}
-              >
-                <img
-                  src={`${BASE}founder-ibraheem.png`}
-                  alt="Ibraheem Al Jatta — Founder"
-                  className="w-full h-auto object-cover"
-                />
-                {/* Subtle overlay gradient at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                  style={{ background: "linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 100%)" }} />
-              </motion.div>
-            </motion.div>
-
-            {/* Right — text */}
-            <div className="flex flex-col gap-6">
-              <motion.p
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-[#9CB633] text-xs font-bold uppercase tracking-widest"
-              >
-                Meet the Founder
-              </motion.p>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl font-bold text-white leading-tight"
-              >
-                Building Digital Experiences<br className="hidden md:block" /> With Purpose
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="text-white/55 text-lg leading-relaxed"
-              >
-                Solotech Digital was founded with a vision to help businesses, brands, and
-                organizations create meaningful digital presence through creativity, technology,
-                and strategy.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.35 }}
-                className="text-white/55 text-lg leading-relaxed"
-              >
-                From websites and branding to multimedia storytelling, we focus on building
-                digital experiences that are modern, impactful, and built for growth.
-              </motion.p>
-
-              {/* Quote */}
-              <motion.blockquote
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="border-l-2 border-[#9CB633] pl-5 italic text-white/70 text-base"
-              >
-                "We believe every brand deserves a digital presence that feels world-class."
-              </motion.blockquote>
-
-              {/* Founder identity */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.45 }}
-                className="flex items-center gap-4 pt-2"
-              >
-                <div className="w-10 h-px bg-[#592C72]" />
-                <div>
-                  <p className="text-white font-bold text-lg leading-tight">Ibraheem Al Jatta</p>
-                  <p className="text-[#9CB633] text-sm">Founder & Creative Director</p>
-                </div>
-              </motion.div>
-
-              {/* CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ delay: 0.52 }}
-                className="pt-2"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
               >
                 <Link href="/contact">
-                  <Button className="bg-[#592C72] hover:bg-[#6d3589] text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2 group">
-                    Start a Project
+                  <Button variant="outline" className="border-[#9CB633]/50 text-[#9CB633] hover:bg-[#9CB633]/10 hover:border-[#9CB633] rounded-full px-8 py-3 font-semibold flex items-center gap-2 group">
+                    Book a Free Consultation
                     <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Button>
                 </Link>
               </motion.div>
-            </div>
+            </motion.div>
+
+            {/* RIGHT — Founder Profile */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative"
+            >
+              {/* Card */}
+              <div className="relative rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(89,44,114,0.3)", background: "rgba(89,44,114,0.06)" }}>
+
+                {/* Photo */}
+                <div className="relative overflow-hidden">
+                  {/* Glow */}
+                  <div className="absolute inset-0 opacity-25 pointer-events-none"
+                    style={{ background: "radial-gradient(ellipse at 50% 100%, #592C72 0%, transparent 70%)" }} />
+                  <motion.img
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.5 }}
+                    src={`${BASE}founder-ibraheem.png`}
+                    alt="Ibraheem Al Jatta — Founder & Creative Director"
+                    className="w-full object-cover"
+                    style={{ maxHeight: "380px", objectPosition: "top" }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+                    style={{ background: "linear-gradient(to top, rgba(8,8,12,0.95) 0%, transparent 100%)" }} />
+                </div>
+
+                {/* Text content inside card */}
+                <div className="px-7 pb-7 pt-2 flex flex-col gap-5">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Meet the Founder</p>
+                    <h3 className="text-2xl font-bold text-white leading-snug">Building Digital Experiences With Purpose</h3>
+                  </div>
+
+                  <p className="text-white/55 text-sm leading-relaxed">
+                    Solotech Digital was founded with a vision to help businesses, brands, and organizations create meaningful digital experiences through creativity, technology, and strategy.
+                  </p>
+
+                  <blockquote className="border-l-2 border-[#9CB633] pl-4 italic text-white/60 text-sm">
+                    "We believe every brand deserves a digital presence that feels world-class."
+                  </blockquote>
+
+                  <div className="flex items-center justify-between gap-4 pt-1">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-px bg-[#592C72]" />
+                      <div>
+                        <p className="text-white font-bold text-base leading-tight">Ibraheem Al Jatta</p>
+                        <p className="text-[#9CB633] text-xs">Founder & Creative Director</p>
+                      </div>
+                    </div>
+                    <Link href="/contact">
+                      <Button size="sm" className="bg-[#592C72] hover:bg-[#6d3589] text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group shrink-0">
+                        Start a Project
+                        <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
           </div>
         </div>
