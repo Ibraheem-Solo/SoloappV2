@@ -181,6 +181,12 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+        {/* Logo watermark */}
+        <img
+          src={`${BASE}logo.png`}
+          alt="Solotech Digital"
+          className="absolute bottom-3 left-3 h-7 w-auto opacity-80 drop-shadow-lg"
+        />
       </div>
 
       {/* Content */}
@@ -298,7 +304,7 @@ export default function Store() {
             Solotech Store
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6" style={{ letterSpacing: "0.02em" }}>
             Creative{" "}
             <span
               style={{
