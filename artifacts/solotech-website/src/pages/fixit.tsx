@@ -21,9 +21,9 @@ const fadeUp = {
 
 const supportServices = [
   {
-    icon: <ServerCrash size={28} />,
-    title: "Website Troubleshooting",
-    desc: "Fast diagnosis and fixes for broken pages, slow load times, errors, and downtime.",
+    icon: <Laptop size={28} />,
+    title: "Laptops & Mobiles",
+    desc: "Repair, troubleshooting, and servicing for laptops, smartphones, and tablets.",
     color: "hover:border-[#592C72]/60",
     accent: "bg-[#592C72]/15 border-[#592C72]/30 text-[#9CB633]",
   },
