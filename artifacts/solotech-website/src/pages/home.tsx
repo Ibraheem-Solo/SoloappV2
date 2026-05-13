@@ -379,15 +379,15 @@ export default function Home() {
           {/* 3 identical sets — animation moves exactly 1/3 (–33.33%), seamlessly looping */}
           {[...Array(3)].flatMap((_, setIdx) =>
             [
-              { src: `${import.meta.env.BASE_URL}client-alif.jpg`,            name: "Alif Qur'anic Boarding School"         },
-              { src: `${import.meta.env.BASE_URL}client-gambia-islamic.jpg`,  name: "Gambia Islamic Institute"              },
-              { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.jpg`,   name: "Inicio Ubuntu Health & Wealth Network" },
-              { src: `${import.meta.env.BASE_URL}client-alihsan.jpg`,         name: "Al-Ihsan University"                   },
+              { src: `${import.meta.env.BASE_URL}client-alif.png`,            name: "Alif Qur'anic Boarding School"         },
+              { src: `${import.meta.env.BASE_URL}client-gambia-islamic.png`,  name: "Gambia Islamic Institute"              },
+              { src: `${import.meta.env.BASE_URL}client-inicio-ubuntu.png`,   name: "Inicio Ubuntu Health & Wealth Network" },
+              { src: `${import.meta.env.BASE_URL}client-alihsan.png`,         name: "Al-Ihsan University"                   },
               { src: `${import.meta.env.BASE_URL}client-halal.png`,           name: "Halal Organic Products"                },
               { src: `${import.meta.env.BASE_URL}client-greenafrique.png`,    name: "Greenafrique"                          },
-              { src: `${import.meta.env.BASE_URL}client-spot-project.jpg`,   name: "SPOT Project"                          },
-              { src: `${import.meta.env.BASE_URL}client-plant-quran.jpg`,    name: "Plant the Qur'an in Your Heart"        },
-              { src: `${import.meta.env.BASE_URL}client-hitg.jpg`,           name: "Hufaaz in the Gambia"                  },
+              { src: `${import.meta.env.BASE_URL}client-spot-project.png`,   name: "SPOT Project"                          },
+              { src: `${import.meta.env.BASE_URL}client-plant-quran.png`,    name: "Plant the Qur'an in Your Heart"        },
+              { src: `${import.meta.env.BASE_URL}client-hitg.png`,           name: "Hufaaz in the Gambia"                  },
             ].map((logo, i) => (
               <div
                 key={`${setIdx}-${i}`}
@@ -398,13 +398,13 @@ export default function Home() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-14 w-auto max-w-[140px] object-contain"
+                  className="h-20 w-auto max-w-[180px] object-contain"
                   style={{
-                    filter: "grayscale(1) brightness(0.55) contrast(1.1)",
+                    filter: "grayscale(1) brightness(0.6) contrast(1.1)",
                     transition: "filter 0.3s ease",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.75) contrast(1.1)")}
-                  onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.55) contrast(1.1)")}
+                  onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(0) brightness(1) contrast(1)")}
+                  onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) brightness(0.6) contrast(1.1)")}
                 />
               </div>
             ))
