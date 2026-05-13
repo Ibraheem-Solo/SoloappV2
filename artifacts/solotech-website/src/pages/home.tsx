@@ -361,7 +361,7 @@ export default function Home() {
       {/* Client Logos Marquee */}
       <section className="py-14 border-y border-white/[0.06] overflow-hidden relative" style={{ background: "rgba(0,0,0,0.5)" }}>
         <div className="text-center mb-10">
-          <p className="text-white/20 font-semibold uppercase tracking-[0.35em] text-[12px]">
+          <p className="text-white/20 font-semibold tracking-[0.35em] text-[12px]">
             Trusted by organisations across The Gambia &amp; beyond
           </p>
         </div>
