@@ -117,7 +117,7 @@ export default function FixIT() {
         description="Fast and reliable technical support, troubleshooting, website fixes, digital setup, and modern IT solutions for businesses and individuals in The Gambia."
       />
       {/* ── HERO ── */}
-      <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-24">
+      <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-24 pb-16">
         {/* Orbs */}
         <motion.div
           animate={{ x: [0, 30, -20, 0], y: [0, -40, 25, 0], scale: [1, 1.15, 0.9, 1] }}
@@ -154,8 +154,8 @@ export default function FixIT() {
             <span className="ml-1 text-[10px] bg-[#9CB633]/20 text-[#9CB633] px-2 py-0.5 rounded-full font-semibold">⚡ Fast Support</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[0.95] tracking-[0.01em]">
-            Modern Tech Support<br />To Your Doorstep<br />
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-[0.01em]">
+            Modern Tech Support To Your Doorstep{" "}
             <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               for Businesses & Individuals
             </span>
@@ -432,15 +432,15 @@ export default function FixIT() {
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Get Help Now</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Need Immediate Assistance?</h2>
                 <p className="text-white/50 mb-8 text-lg">Our team is ready to help you solve technical issues quickly and professionally.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-xs mx-auto md:max-w-none">
+                  <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer" className="md:flex-none">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
                       <MessageCircle size={18} />
                       Request Support
                     </Button>
                   </a>
-                  <a href={waLink("Hi! I'd like to chat with Solotech FixIT.")} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2">
+                  <a href={waLink("Hi! I'd like to chat with Solotech FixIT.")} target="_blank" rel="noopener noreferrer" className="md:flex-none">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2 w-full">
                       Chat on WhatsApp
                       <ArrowUpRight size={16} />
                     </Button>
