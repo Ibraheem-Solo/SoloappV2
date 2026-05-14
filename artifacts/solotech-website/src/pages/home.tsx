@@ -760,7 +760,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <p className="text-white/25 text-xs tracking-wider">Fast response · Reliable support · Modern solutions</p>
+              <p className="text-white/25 text-[10px] md:text-xs tracking-wide">Fast response · Reliable support · Modern solutions</p>
             </motion.div>
 
             {/* RIGHT — Visual */}
@@ -769,44 +769,45 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center min-h-[340px] md:min-h-[380px]"
             >
-              {/* Outer glow ring */}
+              {/* Outer ring */}
               <motion.div
                 animate={{ scale: [1, 1.04, 1], opacity: [0.4, 0.7, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute w-80 h-80 rounded-full pointer-events-none"
-                style={{ border: "1px solid rgba(156,182,51,0.25)", boxShadow: "0 0 60px rgba(156,182,51,0.1)" }}
+                className="absolute w-56 h-56 md:w-80 md:h-80 rounded-full pointer-events-none"
+                style={{ border: "2px solid rgba(156,182,51,0.25)", boxShadow: "0 0 60px rgba(156,182,51,0.1)" }}
               />
+              {/* Inner ring */}
               <motion.div
                 animate={{ scale: [1, 1.06, 1], opacity: [0.25, 0.45, 0.25] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute w-64 h-64 rounded-full pointer-events-none"
-                style={{ border: "1px solid rgba(89,44,114,0.35)", boxShadow: "0 0 40px rgba(89,44,114,0.15)" }}
+                className="absolute w-40 h-40 md:w-56 md:h-56 rounded-full pointer-events-none"
+                style={{ border: "2px solid rgba(89,44,114,0.35)", boxShadow: "0 0 40px rgba(89,44,114,0.15)" }}
               />
 
               {/* Central icon */}
-              <div className="relative z-10 w-28 h-28 rounded-2xl flex items-center justify-center"
+              <div className="relative z-10 w-24 h-24 md:w-28 md:h-28 rounded-2xl flex items-center justify-center"
                 style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.4), rgba(156,182,51,0.2))", border: "1px solid rgba(156,182,51,0.3)", boxShadow: "0 0 40px rgba(89,44,114,0.3)" }}>
-                <Shield size={48} className="text-[#9CB633]" />
+                <Shield size={40} className="text-[#9CB633] md:w-12 md:h-12" />
               </div>
 
-              {/* Floating stat cards */}
+              {/* Floating stat cards — spaced to not overflow on mobile */}
               {[
-                { label: "Response Time", value: "< 1hr", pos: "top-4 left-4", color: "border-[#9CB633]/30" },
-                { label: "Issues Resolved", value: "100%", pos: "top-4 right-4", color: "border-[#592C72]/40" },
-                { label: "Support Types", value: "6+", pos: "bottom-4 left-8", color: "border-[#592C72]/40" },
-                { label: "Satisfaction", value: "⭐ 5.0", pos: "bottom-4 right-8", color: "border-[#9CB633]/30" },
+                { label: "Response Time", value: "< 1hr",  pos: "top-2 left-2 md:top-4 md:left-0",     color: "border-[#9CB633]/30" },
+                { label: "Issues Resolved", value: "100%", pos: "top-2 right-2 md:top-4 md:right-0",   color: "border-[#592C72]/40" },
+                { label: "Support Types", value: "6+",     pos: "bottom-2 left-2 md:bottom-4 md:left-4", color: "border-[#592C72]/40" },
+                { label: "Satisfaction", value: "⭐ 5.0",  pos: "bottom-2 right-2 md:bottom-4 md:right-4", color: "border-[#9CB633]/30" },
               ].map((card, i) => (
                 <motion.div
                   key={card.label}
-                  animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
+                  animate={{ y: [0, i % 2 === 0 ? -5 : 5, 0] }}
                   transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
-                  className={`absolute ${card.pos} px-4 py-2.5 rounded-xl border ${card.color} backdrop-blur-sm`}
-                  style={{ background: "rgba(10,10,20,0.85)" }}
+                  className={`absolute ${card.pos} px-3 py-2 md:px-4 md:py-2.5 rounded-xl border ${card.color} backdrop-blur-sm`}
+                  style={{ background: "rgba(10,10,20,0.88)" }}
                 >
-                  <div className="text-white/40 text-[10px] font-medium uppercase tracking-wide">{card.label}</div>
-                  <div className="text-white font-bold text-base">{card.value}</div>
+                  <div className="text-white/40 text-[9px] md:text-[10px] font-medium uppercase tracking-wide">{card.label}</div>
+                  <div className="text-white font-bold text-sm md:text-base">{card.value}</div>
                 </motion.div>
               ))}
             </motion.div>
