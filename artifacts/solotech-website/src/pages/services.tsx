@@ -12,6 +12,7 @@ const fadeUp = {
 
 const services = [
   {
+    id: "web-design",
     icon: <Code size={36} />,
     title: "Web Design & Development",
     tagline: "Websites designed to convert visitors into paying customers.",
@@ -29,6 +30,7 @@ const services = [
     deliverables: ["Complete website (all pages)", "Mobile responsive design", "Basic SEO setup", "1 month of post-launch support", "Source files & documentation"],
   },
   {
+    id: "branding",
     icon: <Paintbrush size={36} />,
     title: "Branding & Graphic Design",
     tagline: "Identities that make your brand impossible to forget.",
@@ -46,6 +48,7 @@ const services = [
     deliverables: ["Primary & secondary logo (all formats)", "Color palette & typography", "Brand guidelines PDF", "Business cards & letterhead", "Social media templates"],
   },
   {
+    id: "social-media",
     icon: <Share2 size={36} />,
     title: "Social Media Management",
     tagline: "Content that builds communities and drives engagement.",
@@ -63,6 +66,7 @@ const services = [
     deliverables: ["Monthly content calendar", "Branded post designs", "Captions and hashtags", "Analytics report", "Platform management"],
   },
   {
+    id: "photography",
     icon: <Camera size={36} />,
     title: "Photography & Videography",
     tagline: "Visual storytelling that captivates and converts.",
@@ -80,6 +84,7 @@ const services = [
     deliverables: ["High-resolution edited photos", "Edited video files (multiple formats)", "Raw footage archive", "Licensed music where applicable", "Social-ready cut-downs"],
   },
   {
+    id: "digital-marketing",
     icon: <TrendingUp size={36} />,
     title: "Digital Marketing",
     tagline: "Campaigns that bring the right customers to your door.",
@@ -131,9 +136,10 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={i}
+              id={service.id}
               {...fadeUp}
               transition={{ delay: i * 0.05 }}
-              className={`glass-panel rounded-3xl overflow-hidden border border-white/5 ${service.borderColor} transition-all duration-300`}
+              className={`glass-panel rounded-3xl overflow-hidden border border-white/5 ${service.borderColor} transition-all duration-300 scroll-mt-24`}
             >
               <div className={`bg-gradient-to-r ${service.color} p-10`}>
                 <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">

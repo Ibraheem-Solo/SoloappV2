@@ -151,7 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t border-white/5 bg-black/50 z-10 relative">
         <div className="container mx-auto px-6 md:px-12 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
             <div className="col-span-1 md:col-span-2">
               <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Solotech Digital" className="h-14 w-auto mb-6 brightness-0 invert" />
               <p className="text-white/60 max-w-md mb-6">
@@ -162,11 +162,47 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-3">
-                {NAV_LINKS.map(link => (
+                {[
+                  { label: "About Us", href: "/about" },
+                  { label: "Our Work", href: "/work" },
+                  { label: "Academy", href: "/academy" },
+                  { label: "Store", href: "/store" },
+                ].map(link => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-white/60 hover:text-white transition-colors">
                       {link.label}
                     </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Services</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "Web Design & Development", id: "web-design" },
+                  { label: "Branding & Graphic Design", id: "branding" },
+                  { label: "Social Media Management", id: "social-media" },
+                  { label: "Photography & Videography", id: "photography" },
+                  { label: "Digital Marketing", id: "digital-marketing" },
+                ].map(service => (
+                  <li key={service.id}>
+                    <a
+                      href={`/services#${service.id}`}
+                      className="text-white/60 hover:text-white transition-colors"
+                      onClick={e => {
+                        e.preventDefault();
+                        const target = document.getElementById(service.id);
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth", block: "start" });
+                          window.history.pushState(null, "", `/services#${service.id}`);
+                        } else {
+                          window.location.href = `/services#${service.id}`;
+                        }
+                      }}
+                    >
+                      {service.label}
+                    </a>
                   </li>
                 ))}
               </ul>
