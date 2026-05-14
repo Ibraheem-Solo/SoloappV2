@@ -143,31 +143,43 @@ function WorkSection() {
 function ProcessInfographic() {
   const circleRef = useRef(null);
   const inView = useInView(circleRef, { once: true, margin: "-80px" });
+
+  const nodeStyle = {
+    background: "rgba(10,10,20,0.88)",
+    backdropFilter: "blur(12px)",
+    WebkitBackdropFilter: "blur(12px)",
+  };
+
   return (
     <div ref={circleRef} className="flex flex-col items-center gap-5">
       <div className="relative w-[460px] h-[460px] scale-[0.65] md:scale-100 origin-top -mb-[161px] md:mb-0">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 460 460" fill="none">
-          <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.6"
+          {/* Outer orbit ring */}
+          <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.45"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
-          <motion.circle cx="230" cy="230" r="148" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="6 5"
+          {/* Inner dashed ring */}
+          <motion.circle cx="230" cy="230" r="148" stroke="#9CB633" strokeWidth="1" strokeOpacity="0.20" strokeDasharray="5 4"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
+          {/* Spoke lines */}
           {[
-            { x1: 230, y1: 185, x2: 230, y2: 42 },
-            { x1: 275, y1: 230, x2: 418, y2: 230 },
-            { x1: 230, y1: 275, x2: 230, y2: 418 },
-            { x1: 185, y1: 230, x2: 42,  y2: 230 },
+            { x1: 230, y1: 182, x2: 230, y2: 42 },
+            { x1: 278, y1: 230, x2: 418, y2: 230 },
+            { x1: 230, y1: 278, x2: 230, y2: 418 },
+            { x1: 182, y1: 230, x2: 42,  y2: 230 },
           ].map((l, i) => (
             <motion.line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}
-              stroke="#592C72" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.5"
+              stroke="#9CB633" strokeWidth="1" strokeDasharray="3 4" strokeOpacity="0.22"
               initial={{ pathLength: 0, opacity: 0 }} animate={inView ? { pathLength: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.75 + i * 0.08, ease: "easeOut" }} />
           ))}
         </svg>
 
-        {/* Center */}
-        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center z-20 shadow-lg shadow-[#592C72]/40"
+        {/* Center icon — matches FixIT shield style */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-2xl flex items-center justify-center z-20"
+          style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.45), rgba(156,182,51,0.18))", border: "1px solid rgba(156,182,51,0.28)", boxShadow: "0 0 40px rgba(89,44,114,0.35), 0 0 16px rgba(156,182,51,0.12)" }}
           initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.1, ease: "backOut" }}>
           <Zap size={34} className="text-[#9CB633]" />
@@ -177,32 +189,35 @@ function ProcessInfographic() {
         <motion.div className="absolute top-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, y: -10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.0 }}>
-          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
-            <MessageSquare size={26} />
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-[#9CB633]"
+            style={{ ...nodeStyle, border: "1px solid rgba(156,182,51,0.30)" }}>
+            <MessageSquare size={22} />
           </div>
-          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Discovery</span>
-          <span className="text-[#9CB633] text-base font-bold">01</span>
+          <span className="text-white text-sm font-bold whitespace-nowrap mt-1">Discovery</span>
+          <span className="text-[#9CB633] text-xs font-bold tracking-widest">01</span>
         </motion.div>
 
         {/* 02 Strategy — right */}
         <motion.div className="absolute top-1/2 right-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, x: 10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.1 }}>
-          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
-            <BarChart3 size={26} />
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-[#9CB633]"
+            style={{ ...nodeStyle, border: "1px solid rgba(89,44,114,0.45)" }}>
+            <BarChart3 size={22} />
           </div>
-          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Strategy</span>
-          <span className="text-[#9CB633] text-base font-bold">02</span>
+          <span className="text-white text-sm font-bold whitespace-nowrap mt-1">Strategy</span>
+          <span className="text-[#9CB633] text-xs font-bold tracking-widest">02</span>
         </motion.div>
 
         {/* 03 Design & Build — bottom */}
         <motion.div className="absolute bottom-[6px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, y: 10 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.2 }}>
-          <span className="text-[#9CB633] text-base font-bold">03</span>
-          <span className="text-white text-lg font-bold whitespace-nowrap mb-1">Design & Build</span>
-          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
-            <Palette size={26} />
+          <span className="text-[#9CB633] text-xs font-bold tracking-widest">03</span>
+          <span className="text-white text-sm font-bold whitespace-nowrap mb-1">Design & Build</span>
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-[#9CB633]"
+            style={{ ...nodeStyle, border: "1px solid rgba(156,182,51,0.30)" }}>
+            <Palette size={22} />
           </div>
         </motion.div>
 
@@ -210,19 +225,20 @@ function ProcessInfographic() {
         <motion.div className="absolute top-1/2 left-[6px] -translate-y-1/2 flex flex-col items-center gap-1.5 z-10"
           initial={{ opacity: 0, x: -10 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 1.3 }}>
-          <div className="w-16 h-16 rounded-full bg-[#592C72] border-2 border-[#592C72] flex items-center justify-center text-[#9CB633] shadow-lg shadow-[#592C72]/30">
-            <TrendingUp size={26} />
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-[#9CB633]"
+            style={{ ...nodeStyle, border: "1px solid rgba(89,44,114,0.45)" }}>
+            <TrendingUp size={22} />
           </div>
-          <span className="text-white text-lg font-bold whitespace-nowrap mt-1">Launch &</span>
-          <span className="text-white text-lg font-bold whitespace-nowrap">Growth</span>
-          <span className="text-[#9CB633] text-base font-bold">04</span>
+          <span className="text-white text-sm font-bold whitespace-nowrap mt-1">Launch &</span>
+          <span className="text-white text-sm font-bold whitespace-nowrap">Growth</span>
+          <span className="text-[#9CB633] text-xs font-bold tracking-widest">04</span>
         </motion.div>
       </div>
 
-      <motion.p className="text-white/40 text-sm text-center max-w-xs"
+      <motion.p className="text-white/35 text-xs text-center max-w-xs tracking-wide"
         initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 1.5, duration: 0.5 }}>
-        Our process is: <span className="text-white/65">Discovery, Strategy, Design & Build, Launch & Growth</span>
+        Our process is: <span className="text-white/55">Discovery · Strategy · Design & Build · Launch & Growth</span>
       </motion.p>
     </div>
   );
