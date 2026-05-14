@@ -1025,7 +1025,7 @@ export default function Home() {
                     "We believe every brand deserves a digital presence that feels world-class."
                   </blockquote>
 
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-1">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-px bg-[#592C72] shrink-0" />
                       <div>
@@ -1033,7 +1033,7 @@ export default function Home() {
                         <p className="text-[#9CB633] text-xs">Founder & Creative Director</p>
                       </div>
                     </div>
-                    <Link href="/contact">
+                    <Link href="/contact" className="sm:w-fit flex justify-center">
                       <Button size="sm" className="bg-[#592C72] hover:bg-[#6d3589] text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group w-fit">
                         Start a Project
                         <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
