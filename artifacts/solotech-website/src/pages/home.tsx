@@ -1025,16 +1025,16 @@ export default function Home() {
                     "We believe every brand deserves a digital presence that feels world-class."
                   </blockquote>
 
-                  <div className="flex items-center justify-between gap-4 pt-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-px bg-[#592C72]" />
+                      <div className="w-8 h-px bg-[#592C72] shrink-0" />
                       <div>
                         <p className="text-white font-bold text-base leading-tight">Ibraheem Al Jatta</p>
                         <p className="text-[#9CB633] text-xs">Founder & Creative Director</p>
                       </div>
                     </div>
                     <Link href="/contact">
-                      <Button size="sm" className="bg-[#592C72] hover:bg-[#6d3589] text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group shrink-0">
+                      <Button size="sm" className="bg-[#592C72] hover:bg-[#6d3589] text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group w-fit">
                         Start a Project
                         <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </Button>
