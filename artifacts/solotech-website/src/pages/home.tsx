@@ -1118,7 +1118,7 @@ export default function Home() {
             <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#592C72]/25 blur-[60px] pointer-events-none" />
             <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
               <p className="text-xl md:text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
               <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-sm mx-auto sm:max-w-none">
                 <Link href="/contact" className="flex-1 sm:flex-none">
