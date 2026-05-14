@@ -546,13 +546,15 @@ export default function Store() {
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Ready to Order?</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Something in mind?</h2>
                 <p className="text-white/50 mb-8 text-lg">Whether it's a single hoodie or 500 corporate kits — we're just a message away.</p>
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
-                    <MessageCircle size={18} />
-                    Message Us on WhatsApp
-                    <ArrowUpRight size={16} />
-                  </Button>
-                </a>
+                <div className="flex justify-center">
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer" className="w-full max-w-xs sm:w-auto">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full sm:w-auto">
+                      <MessageCircle size={18} />
+                      Message Us on WhatsApp
+                      <ArrowUpRight size={16} />
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>

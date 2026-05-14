@@ -456,15 +456,15 @@ export default function Academy() {
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Start Learning</p>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Start Your Digital Journey Today</h2>
                 <p className="text-white/50 mb-8 text-lg">Join Solotech Academy and gain the skills to create, innovate, and succeed in the digital world.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href={waLink("Hi Solotech Academy! I'd like to enrol in a course.")} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-sm mx-auto sm:max-w-none">
+                  <a href={waLink("Hi Solotech Academy! I'd like to enrol in a course.")} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
                       <MessageCircle size={18} />
                       Enroll Now
                     </Button>
                   </a>
-                  <a href={waLink("Hi! I have a question about Solotech Academy.")} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2">
+                  <a href={waLink("Hi! I have a question about Solotech Academy.")} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none">
+                    <Button variant="outline" className="border-white/20 text-white hover:bg-white/8 hover:border-white/40 rounded-full px-10 py-4 text-base font-semibold h-auto gap-2 w-full">
                       Contact Academy
                       <ArrowUpRight size={16} />
                     </Button>
