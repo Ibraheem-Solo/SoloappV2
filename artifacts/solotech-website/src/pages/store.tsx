@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ShoppingBag, MessageCircle, Package, Shirt, Coffee, Gift, Star, ArrowUpRight, ChevronDown, Sparkles } from "lucide-react";
+import { ShoppingBag, MessageCircle, Package, Shirt, Coffee, Gift, Star, ArrowUpRight, ChevronDown, Sparkles, X, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SeoHead from "@/components/seo-head";
 
@@ -164,90 +164,140 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
+function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-white/60 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all"
+      >
+        <X size={20} />
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 function ProductCard({ product }: { product: typeof originals[0] }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[1] ?? product.sizes[0] : null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const orderLabel = `${product.name}${selectedColor !== null ? ` — ${product.colorNames[selectedColor]}` : ""}${selectedSize ? `, Size ${selectedSize}` : ""}`;
 
-  return (
-    <div className="group relative flex flex-col rounded-xl overflow-hidden border border-white/10 bg-[#0d0818] hover:border-white/20 transition-colors duration-200">
+  const activeColor = product.colors[selectedColor];
+  const isNeutral = ["#1a1a1a", "#0d0d0d", "#ffffff", "#f0ece3"].includes(activeColor);
 
-      {/* Badge */}
-      {product.badge && (
-        <div className="absolute top-3 left-3 z-10">
-          <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-[#9CB633] text-black">
-            {product.badge}
-          </span>
-        </div>
+  return (
+    <>
+      {lightboxOpen && (
+        <ImageLightbox src={product.image} alt={product.name} onClose={() => setLightboxOpen(false)} />
       )}
 
-      {/* Image area */}
-      <div className="relative h-48 sm:h-52 bg-[#100c1e] overflow-hidden flex-shrink-0">
-        <img
-          src={product.image}
-          alt={product.name}
-          className={`w-full h-full object-cover ${product.imgPosition ?? "object-center"} group-hover:scale-[1.03] transition-transform duration-500 ease-out`}
-        />
-        <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-2.5 right-2.5 h-5 w-auto opacity-50" />
-      </div>
+      <div className="group relative flex flex-col rounded-xl overflow-hidden border border-white/10 bg-[#0d0818] hover:border-white/20 transition-colors duration-200">
 
-      {/* Content */}
-      <div className="flex flex-col gap-3 p-4 flex-1">
-        {/* Name + tagline */}
-        <div>
-          <p className="text-white/40 text-[10px] uppercase tracking-widest mb-0.5">{product.tagline}</p>
-          <h3 className="text-white text-base font-semibold leading-snug">{product.name}</h3>
-          <p className="text-white/40 text-xs mt-1 leading-relaxed line-clamp-2">{product.description}</p>
-        </div>
-
-        {/* Color swatches */}
-        <div className="flex items-center gap-2">
-          <span className="text-white/35 text-xs shrink-0">{product.colorNames[selectedColor]}</span>
-          <div className="flex gap-1.5">
-            {product.colors.map((color, i) => (
-              <button
-                key={i}
-                onClick={() => setSelectedColor(i)}
-                title={product.colorNames[i]}
-                className={`w-5 h-5 rounded-full border transition-all duration-150 ${selectedColor === i ? "border-[#9CB633] ring-1 ring-[#9CB633]/40 ring-offset-1 ring-offset-[#0d0818]" : "border-white/20 hover:border-white/50"}`}
-                style={{ backgroundColor: color }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Sizes */}
-        {product.sizes && (
-          <div className="flex flex-wrap gap-1">
-            {product.sizes.map((size) => (
-              <button
-                key={size}
-                onClick={() => setSelectedSize(size)}
-                className={`px-2.5 py-0.5 rounded text-[11px] font-medium border transition-all duration-150 ${
-                  selectedSize === size
-                    ? "border-[#9CB633] text-[#9CB633] bg-[#9CB633]/10"
-                    : "border-white/12 text-white/45 hover:border-white/35 hover:text-white/70"
-                }`}
-              >
-                {size}
-              </button>
-            ))}
+        {/* Badge */}
+        {product.badge && (
+          <div className="absolute top-3 left-3 z-10">
+            <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-[#9CB633] text-black">
+              {product.badge}
+            </span>
           </div>
         )}
 
-        {/* Price + CTA */}
-        <div className="mt-auto flex items-center justify-between gap-2 pt-3 border-t border-white/8">
-          <span className="text-white font-bold text-lg leading-none">{product.price}</span>
-          <a href={whatsappLink(orderLabel)} target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center gap-1.5 bg-[#9CB633] hover:bg-[#b5d13d] active:scale-95 text-black font-semibold rounded-lg transition-all duration-150 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1.5">
-              <MessageCircle size={12} className="shrink-0" />
-              <span className="hidden xs:inline">Order on </span>WhatsApp
-            </button>
-          </a>
+        {/* Image area — click to open lightbox */}
+        <div
+          className="relative h-64 sm:h-72 bg-[#100c1e] overflow-hidden flex-shrink-0 cursor-zoom-in"
+          onClick={() => setLightboxOpen(true)}
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          />
+          {/* Color tint overlay — only for non-neutral / non-dark colors */}
+          {!isNeutral && (
+            <div
+              className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+              style={{
+                backgroundColor: activeColor,
+                opacity: 0.22,
+                mixBlendMode: "color",
+              }}
+            />
+          )}
+          {/* Expand hint */}
+          <div className="absolute bottom-2 right-2 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <Maximize2 size={10} className="text-white/70" />
+            <span className="text-white/60 text-[9px]">View</span>
+          </div>
+          <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-2.5 right-2.5 h-5 w-auto opacity-40" />
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col gap-3 p-4 flex-1">
+          <div>
+            <p className="text-white/40 text-[10px] uppercase tracking-widest mb-0.5">{product.tagline}</p>
+            <h3 className="text-white text-base font-semibold leading-snug">{product.name}</h3>
+            <p className="text-white/40 text-xs mt-1 leading-relaxed line-clamp-2">{product.description}</p>
+          </div>
+
+          {/* Color swatches */}
+          <div className="flex items-center gap-2">
+            <span className="text-white/35 text-xs shrink-0">{product.colorNames[selectedColor]}</span>
+            <div className="flex gap-1.5">
+              {product.colors.map((color, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedColor(i)}
+                  title={product.colorNames[i]}
+                  className={`w-5 h-5 rounded-full border transition-all duration-150 ${selectedColor === i ? "border-[#9CB633] ring-1 ring-[#9CB633]/40 ring-offset-1 ring-offset-[#0d0818] scale-110" : "border-white/20 hover:border-white/50"}`}
+                  style={{ backgroundColor: color }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Sizes */}
+          {product.sizes && (
+            <div className="flex flex-wrap gap-1">
+              {product.sizes.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`px-2.5 py-0.5 rounded text-[11px] font-medium border transition-all duration-150 ${
+                    selectedSize === size
+                      ? "border-[#9CB633] text-[#9CB633] bg-[#9CB633]/10"
+                      : "border-white/12 text-white/45 hover:border-white/35 hover:text-white/70"
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Price + CTA */}
+          <div className="mt-auto flex items-center justify-between gap-2 pt-3 border-t border-white/8">
+            <span className="text-white font-bold text-lg leading-none">{product.price}</span>
+            <a href={whatsappLink(orderLabel)} target="_blank" rel="noopener noreferrer">
+              <button className="flex items-center gap-1.5 bg-[#9CB633] hover:bg-[#b5d13d] active:scale-95 text-black font-semibold rounded-lg transition-all duration-150 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1.5">
+                <MessageCircle size={12} className="shrink-0" />
+                <span className="hidden xs:inline">Order on </span>WhatsApp
+              </button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
