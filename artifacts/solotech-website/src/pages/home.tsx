@@ -535,24 +535,21 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-3xl flex flex-col overflow-hidden"
+              className="relative rounded-3xl flex flex-col overflow-hidden -mt-4"
               style={{
-                background: "linear-gradient(160deg, rgba(55,20,90,0.95) 0%, rgba(15,6,35,0.98) 55%, rgba(35,12,65,0.95) 100%)",
-                border: "1px solid rgba(138,80,200,0.38)",
-                boxShadow: "0 0 0 1px rgba(89,44,114,0.18), 0 0 60px rgba(89,44,114,0.18), inset 0 1px 0 rgba(200,150,255,0.14)",
+                background: "linear-gradient(160deg, rgba(55,20,90,0.97) 0%, rgba(15,6,35,0.99) 55%, rgba(35,12,65,0.97) 100%)",
+                border: "1px solid rgba(160,80,220,0.45)",
+                boxShadow: "0 0 0 1px rgba(120,50,180,0.22), 0 0 70px rgba(100,30,160,0.45), 0 0 140px rgba(89,44,114,0.25), inset 0 1px 0 rgba(200,150,255,0.18)",
               }}
             >
               {/* Top glowing stroke — brighter on pro */}
-              <div className="absolute top-0 left-6 right-6 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(180,120,255,0.85), transparent)" }} />
-              {/* Corner glow */}
-              <div className="absolute top-0 right-0 w-56 h-56 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(138,80,200,0.22) 0%, transparent 70%)", filter: "blur(35px)" }} />
-              {/* Bottom subtle glow */}
-              <div className="absolute bottom-0 left-0 w-40 h-40 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
-
-              {/* Popular badge — gradient pill */}
-              <div className="absolute top-5 right-5 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white" style={{ boxShadow: "0 0 16px rgba(156,182,51,0.25)" }}>
-                Popular
-              </div>
+              <div className="absolute top-0 left-6 right-6 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(200,120,255,0.95), transparent)" }} />
+              {/* Deep purple neon — top-right bloom */}
+              <div className="absolute -top-10 -right-10 w-64 h-64 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(140,50,200,0.55) 0%, rgba(100,30,160,0.28) 40%, transparent 70%)", filter: "blur(30px)" }} />
+              {/* Deep purple neon — centre ambient */}
+              <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 40%, rgba(100,30,160,0.18) 0%, transparent 65%)", filter: "blur(20px)" }} />
+              {/* Bottom corner glow */}
+              <div className="absolute bottom-0 left-0 w-48 h-48 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(120,40,180,0.30) 0%, transparent 70%)", filter: "blur(28px)" }} />
 
               <div className="relative z-10 p-8 flex flex-col flex-1">
                 <h3 className="text-2xl font-bold mb-1 text-white/90">
