@@ -150,7 +150,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="whatsapp-cta"
-                className="glass-panel p-6 rounded-2xl flex items-center gap-4 border-green-500/30 hover:border-green-500/60 transition-all hover:-translate-y-0.5 block"
+                className="glass-panel p-6 rounded-2xl flex items-center gap-4 border-[#9CB633]/30 hover:border-[#9CB633]/60 transition-all hover:-translate-y-0.5 block"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#25D366]/20 flex items-center justify-center text-[#25D366] shrink-0">
                   <MessageCircle size={24} />
@@ -171,8 +171,8 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-16"
                   >
-                    <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle size={40} className="text-green-400" />
+                    <div className="w-20 h-20 rounded-full bg-[#9CB633]/20 flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle size={40} className="text-[#9CB633]" />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-4">Message Sent!</h3>
                     <p className="text-white/60 text-lg">

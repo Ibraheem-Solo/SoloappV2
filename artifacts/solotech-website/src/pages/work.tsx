@@ -295,7 +295,7 @@ function Lightbox({
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#592C72] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#592C72] to-[#7a3d9e] text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
                   Visit Live Site <ArrowUpRight size={15} />
                 </a>
@@ -758,8 +758,8 @@ export default function Work() {
                     {/* External link indicator for web projects */}
                     {project.url && (
                       <div className="absolute top-3 right-3">
-                        <div className="w-7 h-7 rounded-full bg-green-500/20 backdrop-blur-sm flex items-center justify-center border border-green-500/30">
-                          <ExternalLink size={13} className="text-green-400" />
+                        <div className="w-7 h-7 rounded-full bg-[#9CB633]/20 backdrop-blur-sm flex items-center justify-center border border-[#9CB633]/30">
+                          <ExternalLink size={13} className="text-[#9CB633]" />
                         </div>
                       </div>
                     )}
@@ -993,7 +993,7 @@ export default function Work() {
                 name: "Abdoulie Ebrima Jammeh",
                 role: "CEO, EJC Drilling Company",
                 avatar: "AEJ",
-                avatarGrad: "from-[#9CB633] to-cyan-500",
+                avatarGrad: "from-[#9CB633] to-[#592C72]",
                 project: "EJC Website",
                 img: `${BASE}portfolio/ejc-website.jpg`,
                 review: "I needed a professional website fast and Solotech delivered within 18 hours. The site is clean, loads fast, and has already brought us new clients who found us online.",
@@ -1002,7 +1002,7 @@ export default function Work() {
                 name: "Illyas Trawally",
                 role: "Owner, MJ's Building Essentials",
                 avatar: "IT",
-                avatarGrad: "from-red-600 to-orange-500",
+                avatarGrad: "from-[#592C72] to-[#9CB633]",
                 project: "Full Brand System",
                 img: `${BASE}portfolio/mjs-building-brand.jpg`,
                 review: "From our logo to our vehicle wrap — Solotech designed everything. Customers now recognise our brand everywhere they see it. The whole team was impressed from day one.",
@@ -1011,7 +1011,7 @@ export default function Work() {
                 name: "Fatima Sonko",
                 role: "Founder, Halal Organic Products",
                 avatar: "FS",
-                avatarGrad: "from-teal-600 to-green-500",
+                avatarGrad: "from-[#1E0A32] to-[#9CB633]",
                 project: "Brand & Packaging",
                 img: `${BASE}portfolio/halal-jar.jpg`,
                 review: "Our product packaging went from homemade to premium overnight. The mockups Solotech created look so professional that customers think we're an international brand.",

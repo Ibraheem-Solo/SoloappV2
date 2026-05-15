@@ -45,8 +45,8 @@ const supportServices = [
     icon: <Wifi size={28} />,
     title: "Connectivity & Network Support",
     desc: "Internet, Wi-Fi, and networking troubleshooting for homes and businesses.",
-    color: "hover:border-blue-500/50",
-    accent: "bg-blue-500/10 border-blue-500/25 text-blue-400",
+    color: "hover:border-[#592C72]/60",
+    accent: "bg-[#592C72]/15 border-[#592C72]/30 text-[#b8d93e]",
   },
   {
     icon: <Headphones size={28} />,
@@ -196,7 +196,7 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — solid green, desktop only */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #1E0A32 0%, #9CB633 35%, #00e5ff 55%, #9CB633 75%, #592C72 100%)', opacity: 0.7 }} />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #1E0A32 0%, #9CB633 35%, #b8d93e 55%, #9CB633 75%, #592C72 100%)', opacity: 0.7 }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -205,16 +205,16 @@ export default function FixIT() {
                   step: "01",
                   title: "Device Malfunctions",
                   desc: "Your laptop, phone, or any device breaks down, slows up, or stops working.",
-                  accent: "border-red-500/30 text-red-400",
-                  glow: "rgba(239,68,68,0.15)",
+                  accent: "border-[#9CB633]/30 text-[#9CB633]",
+                  glow: "rgba(156,182,51,0.12)",
                 },
                 {
                   icon: <Globe size={30} />,
                   step: "02",
                   title: "Visit Our Website",
                   desc: "Go to solotechdigital.com and head to Solotech FixIT — contact support in seconds.",
-                  accent: "border-blue-500/30 text-blue-400",
-                  glow: "rgba(59,130,246,0.15)",
+                  accent: "border-[#592C72]/40 text-[#b8d93e]",
+                  glow: "rgba(89,44,114,0.18)",
                 },
                 {
                   icon: <Wrench size={30} />,

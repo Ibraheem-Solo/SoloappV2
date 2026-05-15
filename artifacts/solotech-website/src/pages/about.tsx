@@ -151,10 +151,10 @@ export default function About() {
             <motion.div
               {...fadeUp}
               transition={{ delay: 0.15 }}
-              className="glass-panel p-10 rounded-3xl border-blue-500/20"
+              className="glass-panel p-10 rounded-3xl border-[#592C72]/30"
             >
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6">
-                <Eye size={24} className="text-blue-400" />
+              <div className="w-12 h-12 rounded-2xl bg-[#592C72]/25 flex items-center justify-center mb-6">
+                <Eye size={24} className="text-[#b8d93e]" />
               </div>
               <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
               <p className="text-white/70 text-lg leading-relaxed">

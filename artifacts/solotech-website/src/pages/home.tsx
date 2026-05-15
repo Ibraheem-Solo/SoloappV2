@@ -13,7 +13,7 @@ const featuredProjects = [
     title: "Al-Ihsan University Website",
     client: "Al-Ihsan University",
     tag: "Web Design",
-    color: "from-purple-900/60 to-blue-900/40",
+    color: "from-[#1E0A32]/70 to-[#0a0612]/50",
     accent: "bg-[#1E0A32]/25 text-[#9CB633] border-[#1E0A32]/40",
     image: `${BASE}portfolio/alihsan-website.jpg`,
     url: "https://alihsanuniversity.org",
@@ -23,7 +23,7 @@ const featuredProjects = [
     client: "MJ's Building",
     tag: "Brand Identity",
     color: "from-orange-900/50 to-red-900/40",
-    accent: "bg-orange-500/20 text-orange-300 border-orange-500/30",
+    accent: "bg-[#592C72]/20 text-[#b8d93e] border-[#592C72]/40",
     image: `${BASE}portfolio/mjs-building-brand.jpg`,
   },
   {
@@ -38,8 +38,8 @@ const featuredProjects = [
     title: "EJC Drilling Company",
     client: "EJC Drilling Co.",
     tag: "Web Design",
-    color: "from-blue-900/60 to-cyan-900/40",
-    accent: "bg-blue-500/20 text-blue-300 border-blue-500/30",
+    color: "from-[#1E0A32]/70 to-[#05050f]/50",
+    accent: "bg-[#1E0A32]/30 text-[#9CB633] border-[#9CB633]/30",
     image: `${BASE}portfolio/ejc-website.jpg`,
     url: "https://ejcdrilling.com",
   },
@@ -339,11 +339,11 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
                 transition={{ opacity: { duration: 0.6, delay: 0.6 }, y: { repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 } }}
-                className="absolute bottom-[22%] right-0 bg-white/5 backdrop-blur-xl border border-green-500/30 shadow-2xl px-4 py-3 rounded-2xl z-20"
+                className="absolute bottom-[22%] right-0 bg-white/5 backdrop-blur-xl border border-[#9CB633]/30 shadow-2xl px-4 py-3 rounded-2xl z-20"
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <Star size={14} className="text-green-400 fill-green-400" />
+                  <div className="w-7 h-7 rounded-full bg-[#9CB633]/20 flex items-center justify-center">
+                    <Star size={14} className="text-[#9CB633] fill-[#9CB633]" />
                   </div>
                   <div>
                     <div className="text-xs text-white/50">Client review</div>
@@ -434,9 +434,9 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 bg-black/40 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/30 bg-green-500/10 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#9CB633]/30 bg-[#9CB633]/10 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9CB633] inline-block" />
-              <span className="text-green-400 text-xs font-bold uppercase tracking-widest">Promo</span>
+              <span className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Promo</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Solotech LaunchPad</h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
@@ -464,7 +464,7 @@ export default function Home() {
                 <motion.span
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-xs font-bold px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30"
+                  className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#9CB633]/20 text-[#9CB633] border border-[#9CB633]/30"
                 >
                   Save D{ANNUAL_SAVINGS.toLocaleString()}
                 </motion.span>
@@ -1152,7 +1152,7 @@ export default function Home() {
               style={{
                 position: "absolute",
                 inset: "-80%",
-                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.15) 8%, #9CB633 14%, #c8ff00 19%, rgba(0,255,200,0.8) 26%, rgba(168,85,247,0.7) 38%, rgba(30,10,50,0.4) 52%, transparent 62%)",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.15) 8%, #9CB633 14%, #b8d93e 19%, rgba(156,182,51,0.55) 26%, rgba(168,85,247,0.7) 38%, rgba(30,10,50,0.4) 52%, transparent 62%)",
                 zIndex: 0,
               }}
             />
@@ -1209,7 +1209,7 @@ export default function Home() {
               <div className="relative z-10">
                 <h2 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
                   Ready to Grow Your Business{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#c8ff00] to-[#b8d93e]">Online?</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#d4e87a]">Online?</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-white/80 mb-10 drop-shadow">Let's build something powerful together.</p>
                 <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-sm mx-auto sm:max-w-none">
