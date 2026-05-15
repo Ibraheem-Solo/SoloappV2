@@ -458,18 +458,38 @@ export default function Store() {
       <section className="py-12 px-6 md:px-12">
         <div className="container mx-auto max-w-7xl">
           <FadeIn>
-            <div className="relative rounded-2xl border border-[#1E0A32]/30 bg-gradient-to-r from-[#592C72]/15 via-black/30 to-[#9CB633]/10 overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
-              <div className="relative z-10 text-center md:text-left">
-                <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
-                <h3 className="text-white text-2xl md:text-3xl font-bold">Need a larger order?</h3>
-                <p className="text-white/50 mt-1">We handle bulk merch, corporate gifts, and branded drops for teams of any size.</p>
+            {/* Rotating border wrapper */}
+            <div className="relative rounded-2xl p-[1.5px] overflow-hidden"
+              style={{ boxShadow: "0 0 50px rgba(156,182,51,0.14), 0 0 100px rgba(30,10,50,0.4)" }}>
+
+              {/* Spinning conic-gradient stroke */}
+              <div className="animate-cta-spin pointer-events-none" style={{
+                position: "absolute", inset: "-150%",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.15) 8%, #9CB633 14%, #b8d93e 19%, rgba(156,182,51,0.55) 26%, rgba(168,85,247,0.7) 38%, rgba(30,10,50,0.4) 52%, transparent 62%)",
+                zIndex: 0,
+              }} />
+
+              {/* Inner card */}
+              <div className="relative rounded-[10px] overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6" style={{
+                background: "linear-gradient(135deg, rgba(20,8,38,0.97) 0%, rgba(8,4,20,0.99) 50%, rgba(15,6,30,0.97) 100%)",
+                backdropFilter: "blur(48px) saturate(180%)",
+                WebkitBackdropFilter: "blur(48px) saturate(180%)",
+                zIndex: 1,
+              }}>
+                <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+                  style={{ background: "linear-gradient(90deg, transparent 5%, rgba(156,182,51,0.20) 30%, rgba(200,240,100,0.28) 55%, rgba(168,85,247,0.15) 80%, transparent 95%)" }} />
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-30 pointer-events-none" />
+                <div className="relative z-10 text-center md:text-left">
+                  <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
+                  <h3 className="text-white text-2xl md:text-3xl font-bold">Need a larger order?</h3>
+                  <p className="text-white/50 mt-1">We handle bulk merch, corporate gifts, and branded drops for teams of any size.</p>
+                </div>
+                <a href={whatsappLink("Bulk / Corporate Order")} target="_blank" rel="noopener noreferrer" className="relative z-10 shrink-0">
+                  <Button className="bg-[#9CB633] text-black font-bold hover:bg-[#b5d13d] transition-colors rounded-full px-8 h-12">
+                    Get a Quote <ArrowUpRight size={16} className="ml-1" />
+                  </Button>
+                </a>
               </div>
-              <a href={whatsappLink("Bulk / Corporate Order")} target="_blank" rel="noopener noreferrer" className="relative z-10 shrink-0">
-                <Button className="bg-[#9CB633] text-black font-bold hover:bg-[#b5d13d] transition-colors rounded-full px-8 h-12">
-                  Get a Quote <ArrowUpRight size={16} className="ml-1" />
-                </Button>
-              </a>
             </div>
           </FadeIn>
         </div>
@@ -529,31 +549,42 @@ export default function Store() {
       <section className="py-24 px-6 md:px-12">
         <div className="container mx-auto max-w-6xl text-center">
           <FadeIn>
-            <div
-              className="relative rounded-3xl overflow-hidden p-14"
-              style={{
-                background: 'linear-gradient(135deg, rgba(89,44,114,0.18) 0%, rgba(255,255,255,0.04) 50%, rgba(156,182,51,0.10) 100%)',
-                backdropFilter: 'blur(48px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(48px) saturate(180%)',
-                border: '1px solid rgba(255,255,255,0.10)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 48px rgba(0,0,0,0.35)',
-              }}
-            >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-              <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#1E0A32]/25 blur-[60px] pointer-events-none" />
-              <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
-              <div className="relative z-10">
-                <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Ready to Order?</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Something in mind?</h2>
-                <p className="text-white/50 mb-8 text-lg">Whether it's a single hoodie or 500 corporate kits — we're just a message away.</p>
-                <div className="flex justify-center">
-                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-5 sm:px-10 py-2.5 sm:py-4 rounded-full text-sm sm:text-base font-bold hover:opacity-90 transition-opacity h-auto gap-1.5 sm:gap-2">
-                      <MessageCircle size={16} className="shrink-0" />
-                      <span>Message Us on WhatsApp</span>
-                      <ArrowUpRight size={14} className="shrink-0" />
-                    </Button>
-                  </a>
+            {/* Rotating border wrapper */}
+            <div className="relative rounded-3xl p-[1.5px] overflow-hidden"
+              style={{ boxShadow: "0 0 60px rgba(156,182,51,0.18), 0 0 120px rgba(30,10,50,0.5)" }}>
+
+              {/* Spinning conic-gradient stroke */}
+              <div className="animate-cta-spin pointer-events-none" style={{
+                position: "absolute", inset: "-80%",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.15) 8%, #9CB633 14%, #b8d93e 19%, rgba(156,182,51,0.55) 26%, rgba(168,85,247,0.7) 38%, rgba(30,10,50,0.4) 52%, transparent 62%)",
+                zIndex: 0,
+              }} />
+
+              {/* Inner card */}
+              <div className="relative rounded-[22px] overflow-hidden p-14" style={{
+                background: "linear-gradient(160deg, rgba(10,10,12,0.98) 0%, rgba(8,8,10,0.99) 50%, rgba(9,9,11,0.98) 100%)",
+                backdropFilter: "blur(60px) saturate(180%)",
+                WebkitBackdropFilter: "blur(60px) saturate(180%)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07), inset 0 0 80px rgba(0,0,0,0.4)",
+                zIndex: 1,
+              }}>
+                <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+                  style={{ background: "linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.10) 30%, rgba(200,240,100,0.18) 55%, rgba(255,255,255,0.06) 80%, transparent 95%)" }} />
+                <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#1E0A32]/25 blur-[60px] pointer-events-none" />
+                <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
+                <div className="relative z-10">
+                  <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Ready to Order?</p>
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Something in mind?</h2>
+                  <p className="text-white/50 mb-8 text-lg">Whether it's a single hoodie or 500 corporate kits — we're just a message away.</p>
+                  <div className="flex justify-center">
+                    <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-5 sm:px-10 py-2.5 sm:py-4 rounded-full text-sm sm:text-base font-bold hover:opacity-90 transition-opacity h-auto gap-1.5 sm:gap-2">
+                        <MessageCircle size={16} className="shrink-0" />
+                        <span>Message Us on WhatsApp</span>
+                        <ArrowUpRight size={14} className="shrink-0" />
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
