@@ -480,15 +480,15 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative rounded-3xl flex flex-col overflow-hidden"
               style={{
-                background: "linear-gradient(160deg, rgba(30,10,50,0.95) 0%, rgba(8,4,20,0.98) 60%, rgba(20,8,40,0.95) 100%)",
+                background: "rgba(8,4,20,0.98)",
                 border: "1px solid rgba(138,80,200,0.22)",
-                boxShadow: "0 0 0 1px rgba(89,44,114,0.12), 0 0 40px rgba(89,44,114,0.10), inset 0 1px 0 rgba(160,100,255,0.10)",
+                boxShadow: "0 0 0 1px rgba(89,44,114,0.12), 0 0 40px rgba(89,44,114,0.08), inset 0 1px 0 rgba(160,100,255,0.10)",
               }}
             >
               {/* Top glowing stroke accent */}
               <div className="absolute top-0 left-8 right-8 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(138,80,200,0.6), transparent)" }} />
-              {/* Subtle corner glow */}
-              <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none rounded-full" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
+              {/* Purple glow — top-left corner only */}
+              <div className="absolute -top-10 -left-10 w-64 h-64 pointer-events-none rounded-full" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.45) 0%, transparent 65%)", filter: "blur(40px)" }} />
 
               <div className="relative z-10 p-8 flex flex-col flex-1">
                 {/* Serif italic label */}
