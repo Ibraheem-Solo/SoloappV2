@@ -104,7 +104,7 @@ const originals = [
     id: 7,
     name: "SOLO® Heritage Bomber",
     tagline: "African-print bomber jacket",
-    price: "D750",
+    price: "D1,850",
     badge: "Exclusive",
     image: `${BASE}store-heritage-real.png`,
     imgPosition: "object-[center_45%]",
