@@ -213,15 +213,15 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
           </div>
         )}
 
-        {/* Image area — click to open lightbox */}
+        {/* Image area — 1:1 square, click to open lightbox */}
         <div
-          className="relative h-64 sm:h-72 bg-[#100c1e] overflow-hidden flex-shrink-0 cursor-zoom-in"
+          className="relative aspect-square bg-[#100c1e] overflow-hidden flex-shrink-0 cursor-zoom-in"
           onClick={() => setLightboxOpen(true)}
         >
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            className={`w-full h-full object-cover ${product.imgPosition ?? "object-center"} transition-transform duration-500 ease-out group-hover:scale-[1.03]`}
           />
           {/* Color tint overlay — only for non-neutral / non-dark colors */}
           {!isNeutral && (
