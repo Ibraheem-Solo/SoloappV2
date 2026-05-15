@@ -37,7 +37,7 @@ const originals = [
     price: "D350",
     badge: "New",
     image: `${BASE}store-tshirt-real.png`,
-    imgPosition: "object-top",
+    imgPosition: "object-[center_55%]",
     icon: <Shirt size={28} />,
     colors: ["#0d0d0d", "#ffffff", "#1E0A32"],
     colorNames: ["Black", "White", "Purple"],
