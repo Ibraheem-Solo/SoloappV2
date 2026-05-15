@@ -326,7 +326,7 @@ export default function FixIT() {
                 key={s.title}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`group relative rounded-2xl border border-white/8 bg-white/[0.02] p-7 flex flex-col gap-4 transition-all duration-300 ${s.color} hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(89,44,114,0.15)]`}
+                className={`group relative glass-panel p-7 rounded-2xl flex flex-col gap-4 transition-all duration-300 ${s.color}`}
               >
                 <div className={`w-12 h-12 rounded-xl border flex items-center justify-center shrink-0 ${s.accent} group-hover:scale-110 transition-transform duration-300`}>
                   {s.icon}
@@ -368,7 +368,7 @@ export default function FixIT() {
                   {step.icon}
                 </div>
                 <div className="absolute top-0 right-6 text-[#1E0A32]/20 font-black text-4xl leading-none select-none">{step.num}</div>
-                <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 hover:border-[#1E0A32]/40 transition-colors w-full">
+                <div className="glass-panel p-6 rounded-2xl hover:border-[#592C72]/40 transition-colors w-full">
                   <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
                 </div>
@@ -395,7 +395,7 @@ export default function FixIT() {
                 key={t.title}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group flex items-start gap-5 p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#1E0A32]/50 hover:bg-[#1E0A32]/5 transition-all duration-300"
+                className="group glass-panel flex items-start gap-5 p-7 rounded-2xl hover:border-[#592C72]/40 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#1E0A32]/20 border border-[#1E0A32]/35 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/30 transition-colors">
                   {t.icon}

@@ -220,7 +220,7 @@ export default function Academy() {
                 key={p.title}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`group relative flex flex-col gap-5 p-7 rounded-2xl border border-white/8 bg-white/[0.02] ${p.color} hover:bg-white/[0.04] transition-all duration-300 cursor-default`}
+                className={`group relative glass-panel flex flex-col gap-5 p-7 rounded-2xl ${p.color} transition-all duration-300 cursor-default`}
               >
                 {/* Hover glow */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -385,7 +385,7 @@ export default function Academy() {
                 key={a.label}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group flex flex-col items-center text-center gap-4 p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#1E0A32]/50 hover:bg-[#1E0A32]/5 transition-all duration-300"
+                className="group glass-panel flex flex-col items-center text-center gap-4 p-7 rounded-2xl hover:border-[#592C72]/50 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-2xl bg-[#1E0A32]/20 border border-[#1E0A32]/30 flex items-center justify-center text-[#9CB633] group-hover:bg-[#1E0A32]/35 group-hover:scale-105 transition-all duration-300">
                   {a.icon}

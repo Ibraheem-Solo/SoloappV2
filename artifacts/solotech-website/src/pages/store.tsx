@@ -183,7 +183,7 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
       onHoverEnd={() => setHovered(false)}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="relative group rounded-2xl border border-white/8 bg-white/[0.03] backdrop-blur-sm overflow-hidden flex flex-col"
+      className="relative group glass-panel rounded-2xl flex flex-col"
     >
       {/* Glow on hover */}
       <motion.div
@@ -288,7 +288,7 @@ function CustomServiceCard({ service, delay }: { service: typeof customServices[
         onHoverEnd={() => setHovered(false)}
         whileHover={{ y: -4 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="group relative rounded-2xl border border-white/8 bg-white/[0.03] hover:border-[#1E0A32]/50 transition-all duration-300 flex flex-col h-full overflow-hidden"
+        className="group relative glass-panel rounded-2xl hover:border-[#592C72]/50 transition-all duration-300 flex flex-col h-full"
       >
         {/* Image */}
         <div className="relative h-44 overflow-hidden border-b border-white/5">
@@ -509,7 +509,7 @@ export default function Store() {
               { step: "03", title: "Receive & Enjoy", desc: "Your order is prepared and ready for collection or local delivery within 1–3 business days.", icon: <Package size={20} /> },
             ].map((item, i) => (
               <FadeIn key={item.step} delay={i * 0.1}>
-                <div className="relative rounded-2xl border border-white/8 bg-white/[0.02] p-8 flex flex-col gap-5">
+                <div className="relative glass-panel p-8 rounded-2xl flex flex-col gap-5">
                   <div className="absolute top-6 right-6 text-[#1E0A32]/30 font-black text-5xl leading-none select-none">{item.step}</div>
                   <div className="w-11 h-11 rounded-xl bg-[#1E0A32]/20 border border-[#1E0A32]/30 flex items-center justify-center text-[#9CB633]">
                     {item.icon}
