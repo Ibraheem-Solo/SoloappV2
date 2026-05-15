@@ -535,7 +535,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-3xl flex flex-col overflow-hidden -mt-8"
+              className="relative rounded-3xl flex flex-col overflow-hidden md:-mt-8"
               style={{
                 background: "linear-gradient(160deg, rgba(55,20,90,0.97) 0%, rgba(15,6,35,0.99) 55%, rgba(35,12,65,0.97) 100%)",
                 border: "1px solid rgba(160,80,220,0.45)",
