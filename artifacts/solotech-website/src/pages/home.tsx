@@ -491,8 +491,6 @@ export default function Home() {
               <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none rounded-full" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
 
               <div className="relative z-10 p-8 flex flex-col flex-1">
-                {/* Serif italic label */}
-                <p className="text-purple-400/60 text-xs uppercase tracking-[0.2em] mb-3 font-light">Starter</p>
                 <h3 className="text-2xl font-bold mb-1 text-white/90">
                   <em className="not-italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", color: "rgba(200,170,255,0.9)" }}>Starter</em>{" "}
                   <span className="not-italic font-semibold text-white/80">Package</span>
@@ -551,13 +549,12 @@ export default function Home() {
               {/* Bottom subtle glow */}
               <div className="absolute bottom-0 left-0 w-40 h-40 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
 
-              {/* Popular badge — glowing pill */}
-              <div className="absolute top-5 right-5 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest" style={{ background: "rgba(89,44,114,0.6)", border: "1px solid rgba(180,120,255,0.4)", color: "rgba(220,190,255,0.95)", boxShadow: "0 0 14px rgba(138,80,200,0.35)" }}>
+              {/* Popular badge — gradient pill */}
+              <div className="absolute top-5 right-5 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white" style={{ boxShadow: "0 0 16px rgba(156,182,51,0.25)" }}>
                 Popular
               </div>
 
               <div className="relative z-10 p-8 flex flex-col flex-1">
-                <p className="text-purple-300/60 text-xs uppercase tracking-[0.2em] mb-3 font-light">Most Popular</p>
                 <h3 className="text-2xl font-bold mb-1 text-white/90">
                   <em style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", color: "rgba(210,180,255,0.95)" }}>Pro</em>{" "}
                   <span className="font-semibold text-white/85">Package</span>
