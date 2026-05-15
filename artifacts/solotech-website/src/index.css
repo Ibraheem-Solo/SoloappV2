@@ -91,13 +91,13 @@
   --brand-accent:  #9CB633;
 
   /* Making default theme identical to dark for this premium dark site */
-  --background: 240 10% 4%;
+  --background: 240 12% 2%;
   --foreground: 0 0% 98%;
-  --border: 240 5% 15%;
+  --border: 240 5% 12%;
   
-  --card: 240 10% 6%;
+  --card: 240 12% 3%;
   --card-foreground: 0 0% 98%;
-  --card-border: 240 5% 15%;
+  --card-border: 240 5% 12%;
 
   --sidebar: 240 10% 6%;
   --sidebar-foreground: 0 0% 98%;
@@ -232,7 +232,15 @@
 }
 
 .glass-panel {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+  background: rgba(255, 255, 255, 0.028);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(89, 44, 114, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(89, 44, 114, 0.12),
+    0 0 24px rgba(89, 44, 114, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 40px rgba(89, 44, 114, 0.04);
 }
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#592C72];
