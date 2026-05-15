@@ -1148,33 +1148,64 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24 px-6 md:px-12 text-center">
         <div className="container mx-auto max-w-6xl">
-          <div
-            className="relative rounded-3xl overflow-hidden p-14"
-            style={{
-              background: 'linear-gradient(135deg, rgba(89,44,114,0.18) 0%, rgba(255,255,255,0.04) 50%, rgba(156,182,51,0.10) 100%)',
-              backdropFilter: 'blur(48px) saturate(180%)',
-              WebkitBackdropFilter: 'blur(48px) saturate(180%)',
-              border: '1px solid rgba(255,255,255,0.10)',
-              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 8px 48px rgba(0,0,0,0.35)',
-            }}
-          >
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-            <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#1E0A32]/25 blur-[60px] pointer-events-none" />
-            <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
-            <div className="relative z-10">
-              <h2 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
-              <p className="text-xl md:text-2xl text-white/70 mb-10">Let's build something powerful together.</p>
-              <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-sm mx-auto sm:max-w-none">
-                <Link href="/contact" className="flex-1 sm:flex-none">
-                  <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full font-semibold border-0 transition-colors">
-                    Start a Project
-                  </Button>
-                </Link>
-                <Link href="/contact" className="flex-1 sm:flex-none">
-                  <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full border-[#9CB633]/40 text-white/80 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/50 backdrop-blur-sm transition-colors">
-                    Launch My Website
-                  </Button>
-                </Link>
+          {/* Rotating border wrapper — 1.5px padding acts as the border */}
+          <div className="relative rounded-3xl p-[1.5px] overflow-hidden"
+            style={{ boxShadow: "0 0 60px rgba(156,182,51,0.18), 0 0 120px rgba(30,10,50,0.5)" }}>
+
+            {/* Spinning conic-gradient layer — this IS the glowing stroke */}
+            <div
+              className="animate-cta-spin pointer-events-none"
+              style={{
+                position: "absolute",
+                inset: "-80%",
+                background: "conic-gradient(from 0deg, transparent 0%, #9CB633 12%, #c8ff00 20%, #00ffcc 30%, #a855f7 45%, #1E0A32 60%, transparent 70%)",
+                zIndex: 0,
+              }}
+            />
+
+            {/* Inner card */}
+            <div
+              className="relative rounded-[22px] overflow-hidden p-12 md:p-16 text-center"
+              style={{
+                background: "linear-gradient(145deg, rgba(4,2,10,0.99) 0%, rgba(6,3,14,0.99) 55%, rgba(8,4,18,0.99) 100%)",
+                zIndex: 1,
+              }}
+            >
+              {/* Milky Way lime green — top-right, thick + opaque */}
+              <div
+                className="absolute top-0 right-0 w-[55%] h-[75%] pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at 100% 0%, #9CB633 0%, #8ab030 28%, #5a7018 52%, rgba(40,55,8,0.35) 72%, transparent 90%)",
+                  filter: "blur(2px)",
+                }}
+              />
+              {/* Deep purple atmosphere — bottom-left counterbalance */}
+              <div
+                className="absolute bottom-0 left-0 w-[40%] h-[60%] pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at 0% 100%, rgba(30,10,50,0.9) 0%, rgba(15,5,30,0.6) 45%, transparent 75%)",
+                  filter: "blur(20px)",
+                }}
+              />
+
+              <div className="relative z-10">
+                <h2 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                  Ready to Grow Your Business{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#c8ff00] to-[#b8d93e]">Online?</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-white/80 mb-10 drop-shadow">Let's build something powerful together.</p>
+                <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-sm mx-auto sm:max-w-none">
+                  <Link href="/contact" className="flex-1 sm:flex-none">
+                    <Button size="lg" className="bg-[#9CB633] hover:bg-[#8aa82d] text-white rounded-full px-10 py-3 text-base w-full font-semibold border-0 transition-colors">
+                      Start a Project
+                    </Button>
+                  </Link>
+                  <Link href="/contact" className="flex-1 sm:flex-none">
+                    <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full border-white/30 text-white/90 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/40 backdrop-blur-sm transition-colors">
+                      Launch My Website
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
