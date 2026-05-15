@@ -548,10 +548,10 @@ export default function Store() {
                 <p className="text-white/50 mb-8 text-lg">Whether it's a single hoodie or 500 corporate kits — we're just a message away.</p>
                 <div className="flex justify-center">
                   <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-6 sm:px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
-                      <MessageCircle size={18} />
-                      Message Us on WhatsApp
-                      <ArrowUpRight size={16} />
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-5 sm:px-10 py-2.5 sm:py-4 rounded-full text-sm sm:text-base font-bold hover:opacity-90 transition-opacity h-auto gap-1.5 sm:gap-2">
+                      <MessageCircle size={16} className="shrink-0" />
+                      <span>Message Us on WhatsApp</span>
+                      <ArrowUpRight size={14} className="shrink-0" />
                     </Button>
                   </a>
                 </div>
