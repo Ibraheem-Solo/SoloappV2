@@ -458,31 +458,18 @@ export default function Store() {
       <section className="py-12 px-6 md:px-12">
         <div className="container mx-auto max-w-7xl">
           <FadeIn>
-            {/* Rotating stroke wrapper — 1px for thin line */}
-            <div className="relative rounded-2xl p-[1px] overflow-hidden"
-              style={{ boxShadow: "0 0 40px rgba(156,182,51,0.10), 0 0 80px rgba(89,44,114,0.15)" }}>
-
-              {/* Spinning conic gradient border */}
-              <div className="animate-cta-spin pointer-events-none" style={{
-                position: "absolute", inset: "-120%",
-                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.20) 4%, #9CB633 6%, rgba(200,255,100,0.9) 7%, rgba(168,85,247,0.7) 10%, transparent 13%, transparent 360%)",
-                zIndex: 0,
-              }} />
-
-              {/* Inner card */}
-              <div className="relative rounded-[10px] overflow-hidden bg-gradient-to-r from-[#592C72]/15 via-black/30 to-[#9CB633]/10 px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6" style={{ zIndex: 1 }}>
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
-                <div className="relative z-10 text-center md:text-left">
-                  <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
-                  <h3 className="text-white text-2xl md:text-3xl font-bold">Need a larger order?</h3>
-                  <p className="text-white/50 mt-1">We handle bulk merch, corporate gifts, and branded drops for teams of any size.</p>
-                </div>
-                <a href={whatsappLink("Bulk / Corporate Order")} target="_blank" rel="noopener noreferrer" className="relative z-10 shrink-0">
-                  <Button className="bg-[#9CB633] text-black font-bold hover:bg-[#b5d13d] transition-colors rounded-full px-8 h-12">
-                    Get a Quote <ArrowUpRight size={16} className="ml-1" />
-                  </Button>
-                </a>
+            <div className="relative rounded-2xl border border-[#1E0A32]/30 bg-gradient-to-r from-[#592C72]/15 via-black/30 to-[#9CB633]/10 overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
+              <div className="relative z-10 text-center md:text-left">
+                <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
+                <h3 className="text-white text-2xl md:text-3xl font-bold">Need a larger order?</h3>
+                <p className="text-white/50 mt-1">We handle bulk merch, corporate gifts, and branded drops for teams of any size.</p>
               </div>
+              <a href={whatsappLink("Bulk / Corporate Order")} target="_blank" rel="noopener noreferrer" className="relative z-10 shrink-0">
+                <Button className="bg-[#9CB633] text-black font-bold hover:bg-[#b5d13d] transition-colors rounded-full px-8 h-12">
+                  Get a Quote <ArrowUpRight size={16} className="ml-1" />
+                </Button>
+              </a>
             </div>
           </FadeIn>
         </div>
