@@ -24,8 +24,8 @@ const supportServices = [
     icon: <Laptop size={28} />,
     title: "Laptops & Mobiles",
     desc: "Repair, troubleshooting, and servicing for laptops, smartphones, and tablets.",
-    color: "hover:border-[#592C72]/60",
-    accent: "bg-[#592C72]/15 border-[#592C72]/30 text-[#9CB633]",
+    color: "hover:border-[#1E0A32]/60",
+    accent: "bg-[#1E0A32]/15 border-[#1E0A32]/30 text-[#9CB633]",
   },
   {
     icon: <Wrench size={28} />,
@@ -52,8 +52,8 @@ const supportServices = [
     icon: <Headphones size={28} />,
     title: "Technical Assistance",
     desc: "Expert hands-on technical help for any digital problem you're facing.",
-    color: "hover:border-[#592C72]/60",
-    accent: "bg-[#592C72]/15 border-[#592C72]/30 text-[#9CB633]",
+    color: "hover:border-[#1E0A32]/60",
+    accent: "bg-[#1E0A32]/15 border-[#1E0A32]/30 text-[#9CB633]",
   },
   {
     icon: <LifeBuoy size={28} />,
@@ -156,7 +156,7 @@ export default function FixIT() {
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-[0.01em]">
             Modern Tech Support To Your Doorstep{" "}
-            <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #1E0A32 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               for Businesses & Individuals
             </span>
           </h1>
@@ -165,7 +165,7 @@ export default function FixIT() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink("Hi Solotech FixIT! I need technical support.")} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                 <MessageCircle size={18} />
                 Request Support
               </Button>
@@ -196,7 +196,7 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — solid green, desktop only */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #592C72 0%, #9CB633 35%, #00e5ff 55%, #9CB633 75%, #592C72 100%)', opacity: 0.7 }} />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #1E0A32 0%, #9CB633 35%, #00e5ff 55%, #9CB633 75%, #1E0A32 100%)', opacity: 0.7 }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -221,7 +221,7 @@ export default function FixIT() {
                   step: "03",
                   title: "Request a Fix",
                   desc: "Tell us the problem via WhatsApp or our contact form. We respond fast.",
-                  accent: "border-[#592C72]/40 text-purple-400",
+                  accent: "border-[#1E0A32]/40 text-purple-400",
                   glow: "rgba(89,44,114,0.22)",
                 },
                 {
@@ -285,7 +285,7 @@ export default function FixIT() {
 
                   {/* Arrow between steps — mobile only */}
                   {i < 4 && (
-                    <div className="lg:hidden mt-4 text-[#592C72]/50 text-2xl">↓</div>
+                    <div className="lg:hidden mt-4 text-[#1E0A32]/50 text-2xl">↓</div>
                   )}
                 </motion.div>
               ))}
@@ -303,7 +303,7 @@ export default function FixIT() {
               <p className="text-white/60 text-sm">Device broken? Don't stress — <span className="text-white font-semibold">we come to you.</span></p>
             </div>
             <a href={waLink("Hi Solotech FixIT! My device has a problem and I need support.")} target="_blank" rel="noopener noreferrer" className="shrink-0">
-              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                 <MessageCircle size={15} /> Request a Fix Now
               </Button>
             </a>
@@ -367,8 +367,8 @@ export default function FixIT() {
                 <div className="relative z-10 w-14 h-14 rounded-full border border-[#9CB633]/40 bg-[#0a0a14] flex items-center justify-center text-[#9CB633] group-hover:border-[#9CB633] group-hover:bg-[#9CB633]/10 transition-all duration-300 shadow-[0_0_20px_rgba(156,182,51,0.1)] group-hover:shadow-[0_0_30px_rgba(156,182,51,0.25)]">
                   {step.icon}
                 </div>
-                <div className="absolute top-0 right-6 text-[#592C72]/20 font-black text-4xl leading-none select-none">{step.num}</div>
-                <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 hover:border-[#592C72]/40 transition-colors w-full">
+                <div className="absolute top-0 right-6 text-[#1E0A32]/20 font-black text-4xl leading-none select-none">{step.num}</div>
+                <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 hover:border-[#1E0A32]/40 transition-colors w-full">
                   <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
                 </div>
@@ -395,9 +395,9 @@ export default function FixIT() {
                 key={t.title}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group flex items-start gap-5 p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#592C72]/50 hover:bg-[#592C72]/5 transition-all duration-300"
+                className="group flex items-start gap-5 p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#1E0A32]/50 hover:bg-[#1E0A32]/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#592C72]/20 border border-[#592C72]/35 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/30 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[#1E0A32]/20 border border-[#1E0A32]/35 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/30 transition-colors">
                   {t.icon}
                 </div>
                 <div>
@@ -426,7 +426,7 @@ export default function FixIT() {
               {/* Top specular highlight — glass edge light refraction */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
               {/* Ambient color orbs behind glass */}
-              <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#592C72]/25 blur-[60px] pointer-events-none" />
+              <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#1E0A32]/25 blur-[60px] pointer-events-none" />
               <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
               <div className="relative z-10">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-4">Get Help Now</p>
@@ -434,7 +434,7 @@ export default function FixIT() {
                 <p className="text-white/50 mb-8 text-lg">Our team is ready to help you solve technical issues quickly and professionally.</p>
                 <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-xs mx-auto md:max-w-none">
                   <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer" className="md:flex-none">
-                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
+                    <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
                       <MessageCircle size={18} />
                       Request Support
                     </Button>

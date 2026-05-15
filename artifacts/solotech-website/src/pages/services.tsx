@@ -16,7 +16,7 @@ const services = [
     icon: <Code size={36} />,
     title: "Web Design & Development",
     tagline: "Websites designed to convert visitors into paying customers.",
-    color: "from-[#592C72]/20 to-[#9CB633]/10",
+    color: "from-[#1E0A32]/20 to-[#9CB633]/10",
     borderColor: "hover:border-purple-500/50",
     iconColor: "text-[#9CB633]",
     benefits: [
@@ -34,7 +34,7 @@ const services = [
     icon: <Paintbrush size={36} />,
     title: "Branding & Graphic Design",
     tagline: "Identities that make your brand impossible to forget.",
-    color: "from-pink-600/20 to-[#592C72]/10",
+    color: "from-pink-600/20 to-[#1E0A32]/10",
     borderColor: "hover:border-pink-500/50",
     iconColor: "text-pink-400",
     benefits: [
@@ -237,7 +237,7 @@ export default function Services() {
                 </div>
               </div>
               <Link href="/services/fixit" className="shrink-0 self-start md:self-auto">
-                <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2 whitespace-nowrap">
+                <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2 whitespace-nowrap">
                   Explore FixIT <ArrowRight size={16} />
                 </Button>
               </Link>

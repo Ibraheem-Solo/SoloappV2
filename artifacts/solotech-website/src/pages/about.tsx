@@ -137,9 +137,9 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
               {...fadeUp}
-              className="glass-panel p-10 rounded-3xl border-[#592C72]/30"
+              className="glass-panel p-10 rounded-3xl border-[#1E0A32]/30"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#592C72]/25 flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-[#1E0A32]/25 flex items-center justify-center mb-6">
                 <Target size={24} className="text-[#9CB633]" />
               </div>
               <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
@@ -179,9 +179,9 @@ export default function About() {
                 key={i}
                 {...fadeUp}
                 transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-[#592C72]/50 transition-colors"
+                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-[#1E0A32]/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[#1E0A32]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/35 transition-colors">
                   {v.icon}
                 </div>
                 <div>
@@ -208,7 +208,7 @@ export default function About() {
                 key={i}
                 {...fadeUp}
                 transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl text-center group hover:border-[#592C72]/50 transition-colors"
+                className="glass-panel p-8 rounded-2xl text-center group hover:border-[#1E0A32]/50 transition-colors"
               >
                 <div className="w-20 h-20 rounded-2xl bg-[#9CB633] flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
                   {member.avatar}

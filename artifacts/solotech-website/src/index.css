@@ -87,7 +87,7 @@
   --elevate-2: rgba(0,0,0, .08);
 
   /* Brand colours */
-  --brand-primary: #592C72;
+  --brand-primary: #1E0A32;
   --brand-accent:  #9CB633;
 
   /* Making default theme identical to dark for this premium dark site */
@@ -255,10 +255,10 @@
   z-index: 1;
 }
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#592C72];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#1E0A32];
 }
 .bg-gradient-solotech {
-  @apply bg-gradient-to-r from-[#592C72] to-[#9CB633];
+  @apply bg-gradient-to-r from-[#1E0A32] to-[#9CB633];
 }
 
 @layer utilities {

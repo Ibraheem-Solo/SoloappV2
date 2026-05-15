@@ -254,7 +254,7 @@ function Lightbox({
         <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
           {/* Close */}
           <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#1E0A32]/25 text-[#9CB633] border border-[#1E0A32]/40">
               {project.category}
             </span>
             <button
@@ -295,7 +295,7 @@ function Lightbox({
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#592C72] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#1E0A32] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
                   Visit Live Site <ArrowUpRight size={15} />
                 </a>
@@ -404,7 +404,7 @@ function SalonLightbox({
         {/* Info panel */}
         <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
           <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#1E0A32]/25 text-[#9CB633] border border-[#1E0A32]/40">
               Print Design
             </span>
             <button
@@ -524,7 +524,7 @@ function EventFlyerLightbox({
 
         <div className="flex-1 bg-[#0e0e1c] flex flex-col overflow-y-auto">
           <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-white/8 flex-shrink-0">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#592C72]/25 text-[#9CB633] border border-[#592C72]/40">
+            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#1E0A32]/25 text-[#9CB633] border border-[#1E0A32]/40">
               Event Flyer
             </span>
             <button onClick={onClose} className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all">
@@ -727,7 +727,7 @@ export default function Work() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: i * 0.04, duration: 0.3 }}
-                  className="glass-panel rounded-2xl overflow-hidden group hover:border-[#592C72]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
+                  className="glass-panel rounded-2xl overflow-hidden group hover:border-[#1E0A32]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-900/20 cursor-pointer"
                   onClick={() => openLightbox(i)}
                 >
                   {/* Image */}
@@ -826,7 +826,7 @@ export default function Work() {
                 {/* Dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Purple glow ring */}
-                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#592C72]/60 group-hover:shadow-[inset_0_0_50px_rgba(89,44,114,0.3)] transition-all duration-300" />
+                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#1E0A32]/60 group-hover:shadow-[inset_0_0_50px_rgba(89,44,114,0.3)] transition-all duration-300" />
                 {/* Info panel — slides up on hover */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">Lima's Glow Elegance Shine</p>
@@ -883,7 +883,7 @@ export default function Work() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#592C72]/60 group-hover:shadow-[inset_0_0_50px_rgba(89,44,114,0.3)] transition-all duration-300" />
+                <div className="absolute inset-0 rounded-xl ring-0 group-hover:ring-2 group-hover:ring-[#1E0A32]/60 group-hover:shadow-[inset_0_0_50px_rgba(89,44,114,0.3)] transition-all duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-1">{item.client}</p>
                   <p className="text-white font-bold text-sm leading-snug mb-3">{item.title}</p>

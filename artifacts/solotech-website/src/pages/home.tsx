@@ -14,7 +14,7 @@ const featuredProjects = [
     client: "Al-Ihsan University",
     tag: "Web Design",
     color: "from-purple-900/60 to-blue-900/40",
-    accent: "bg-[#592C72]/25 text-[#9CB633] border-[#592C72]/40",
+    accent: "bg-[#1E0A32]/25 text-[#9CB633] border-[#1E0A32]/40",
     image: `${BASE}portfolio/alihsan-website.jpg`,
     url: "https://alihsanuniversity.org",
   },
@@ -89,7 +89,7 @@ function WorkSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-[#592C72]/50 transition-colors duration-300"
+              className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-[#1E0A32]/50 transition-colors duration-300"
             >
               <div className={`relative h-56 bg-gradient-to-br ${project.color} overflow-hidden`}>
                 <img
@@ -155,7 +155,7 @@ function ProcessInfographic() {
       <div className="relative w-[460px] h-[460px] scale-[0.65] md:scale-100 origin-top -mb-[161px] md:mb-0">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 460 460" fill="none">
           {/* Outer orbit ring */}
-          <motion.circle cx="230" cy="230" r="210" stroke="#592C72" strokeWidth="1.5" strokeOpacity="0.45"
+          <motion.circle cx="230" cy="230" r="210" stroke="#1E0A32" strokeWidth="1.5" strokeOpacity="0.45"
             initial={{ scale: 0, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }} style={{ transformOrigin: "230px 230px" }} />
           {/* Inner dashed ring */}
@@ -261,7 +261,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[92vh] px-6 md:px-12 overflow-hidden">
         {/* Purple glow */}
-        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#592C72]/20 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-[55%] h-[90%] bg-[#1E0A32]/20 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto max-w-7xl h-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 min-h-[92vh]">
@@ -321,14 +321,14 @@ export default function Home() {
             {/* Right — Person image absolutely anchored to bottom */}
             <div className="relative hidden lg:block">
               {/* Subtle ring at bottom centre */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-[#592C72]/15 border border-[#592C72]/30 blur-sm" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] h-[460px] rounded-full bg-[#1E0A32]/15 border border-[#1E0A32]/30 blur-sm" />
 
               {/* Floating badge — top area */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
                 transition={{ opacity: { duration: 0.6, delay: 0.4 }, y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" } }}
-                className="absolute top-[18%] left-4 bg-white/5 backdrop-blur-xl border border-[#592C72]/40 shadow-2xl px-4 py-3 rounded-2xl z-20"
+                className="absolute top-[18%] left-4 bg-white/5 backdrop-blur-xl border border-[#1E0A32]/40 shadow-2xl px-4 py-3 rounded-2xl z-20"
               >
                 <div className="text-xs text-white/50 mb-0.5">Latest project</div>
                 <div className="text-sm font-semibold text-white">Delivered in 18hrs ⚡</div>
@@ -658,7 +658,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 40, scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 32 }}
-              className="fixed bottom-0 left-0 right-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-xl w-full z-50 glass-panel rounded-t-3xl md:rounded-3xl border border-[#592C72]/40 max-h-[85vh] overflow-y-auto"
+              className="fixed bottom-0 left-0 right-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-xl w-full z-50 glass-panel rounded-t-3xl md:rounded-3xl border border-[#1E0A32]/40 max-h-[85vh] overflow-y-auto"
             >
               {/* Header */}
               <div className="sticky top-0 bg-[#0a0a14]/90 backdrop-blur-xl p-6 border-b border-white/10 flex items-start justify-between rounded-t-3xl">
@@ -688,9 +688,9 @@ export default function Home() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#592C72]/40 transition-colors"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:border-[#1E0A32]/40 transition-colors"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-[#1E0A32]/25 flex items-center justify-center text-[#9CB633] shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -799,7 +799,7 @@ export default function Home() {
                     transition={{ delay: 0.2 + i * 0.08 }}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/8 bg-white/[0.03] hover:border-[#9CB633]/40 hover:bg-[#9CB633]/5 transition-all duration-300 group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/30 transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#1E0A32]/20 border border-[#1E0A32]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/30 transition-colors">
                       {f.icon}
                     </div>
                     <span className="text-white/70 text-sm font-medium group-hover:text-white transition-colors">{f.label}</span>
@@ -809,7 +809,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/services/fixit">
-                  <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                  <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                     Explore FixIT <ArrowUpRight size={16} />
                   </Button>
                 </Link>
@@ -855,8 +855,8 @@ export default function Home() {
               {/* Floating stat cards — spaced to not overflow on mobile */}
               {[
                 { label: "Response Time", value: "< 1hr",  pos: "top-2 left-2 md:top-4 md:left-0",     color: "border-[#9CB633]/30" },
-                { label: "Issues Resolved", value: "100%", pos: "top-2 right-2 md:top-4 md:right-0",   color: "border-[#592C72]/40" },
-                { label: "Support Types", value: "6+",     pos: "bottom-2 left-2 md:bottom-4 md:left-4", color: "border-[#592C72]/40" },
+                { label: "Issues Resolved", value: "100%", pos: "top-2 right-2 md:top-4 md:right-0",   color: "border-[#1E0A32]/40" },
+                { label: "Support Types", value: "6+",     pos: "bottom-2 left-2 md:bottom-4 md:left-4", color: "border-[#1E0A32]/40" },
                 { label: "Satisfaction", value: "⭐ 5.0",  pos: "bottom-2 right-2 md:bottom-4 md:right-4", color: "border-[#9CB633]/30" },
               ].map((card, i) => (
                 <motion.div
@@ -905,9 +905,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-[#592C72]/50 transition-colors"
+                className="glass-panel p-8 rounded-2xl flex gap-6 items-start group hover:border-[#1E0A32]/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
+                <div className="w-14 h-14 rounded-xl bg-[#1E0A32]/25 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/35 transition-colors">
                   {item.icon}
                 </div>
                 <div>
@@ -980,7 +980,7 @@ export default function Home() {
             >
               <div className="flex flex-col gap-4">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Who We Work With</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ lineHeight: 1.1 }}>Built for Ambitious <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", display: "inline-block" }}>Brands</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ lineHeight: 1.1 }}>Built for Ambitious <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #1E0A32 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", display: "inline-block" }}>Brands</span></h2>
                 <p className="text-white/50 text-lg leading-relaxed">
                   We partner with businesses, startups, organizations, and individuals looking to build powerful digital presence and stand out in a competitive world.
                 </p>
@@ -1001,9 +1001,9 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 + i * 0.07 }}
-                    className="group flex items-center gap-4 p-4 rounded-xl border border-white/8 hover:border-[#592C72]/50 hover:bg-[#592C72]/8 transition-all duration-300 cursor-default"
+                    className="group flex items-center gap-4 p-4 rounded-xl border border-white/8 hover:border-[#1E0A32]/50 hover:bg-[#1E0A32]/8 transition-all duration-300 cursor-default"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-[#592C72]/15 border border-[#592C72]/25 flex items-center justify-center shrink-0 group-hover:bg-[#592C72]/25 transition-colors">
+                    <div className="w-9 h-9 rounded-lg bg-[#1E0A32]/15 border border-[#1E0A32]/25 flex items-center justify-center shrink-0 group-hover:bg-[#1E0A32]/25 transition-colors">
                       <item.icon size={16} className="text-[#9CB633]" />
                     </div>
                     <span className="text-white/75 text-sm font-medium group-hover:text-white transition-colors">{item.label}</span>
@@ -1041,7 +1041,7 @@ export default function Home() {
                 <div className="relative overflow-hidden">
                   {/* Glow */}
                   <div className="absolute inset-0 opacity-25 pointer-events-none"
-                    style={{ background: "radial-gradient(ellipse at 50% 100%, #592C72 0%, transparent 70%)" }} />
+                    style={{ background: "radial-gradient(ellipse at 50% 100%, #1E0A32 0%, transparent 70%)" }} />
                   <motion.img
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.5 }}
@@ -1071,14 +1071,14 @@ export default function Home() {
 
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-1">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-px bg-[#592C72] shrink-0" />
+                      <div className="w-8 h-px bg-[#1E0A32] shrink-0" />
                       <div>
                         <p className="text-white font-bold text-base leading-tight">Ibraheem Al Jatta</p>
                         <p className="text-[#9CB633] text-xs">Founder & Creative Director</p>
                       </div>
                     </div>
                     <Link href="/contact" className="sm:w-fit flex justify-center">
-                      <Button size="sm" className="bg-[#592C72] hover:bg-[#6d3589] text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group w-fit">
+                      <Button size="sm" className="text-white rounded-full px-5 font-semibold flex items-center gap-1.5 group w-fit border-0" style={{ background: "linear-gradient(160deg, rgba(30,10,50,0.95) 0%, rgba(8,4,20,0.98) 60%, rgba(20,8,40,0.95) 100%)", border: "1px solid rgba(138,80,200,0.35)", boxShadow: "0 0 20px rgba(89,44,114,0.25)" }}>
                         Start a Project
                         <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </Button>
@@ -1159,7 +1159,7 @@ export default function Home() {
             }}
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
-            <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#592C72]/25 blur-[60px] pointer-events-none" />
+            <div className="absolute -top-10 left-1/4 w-64 h-40 rounded-full bg-[#1E0A32]/25 blur-[60px] pointer-events-none" />
             <div className="absolute -bottom-8 right-1/4 w-56 h-40 rounded-full bg-[#9CB633]/15 blur-[60px] pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-6">Ready to Grow Your Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9CB633] via-[#b8d93e] to-[#7a3d9e]">Online?</span></h2>
@@ -1238,7 +1238,7 @@ export default function Home() {
                     transition={{ delay: 0.2 + i * 0.07 }}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl border border-white/8 bg-white/[0.03] hover:border-[#9CB633]/40 hover:bg-[#9CB633]/5 transition-all duration-300 group"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#592C72]/20 border border-[#592C72]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#592C72]/35 transition-colors">
+                    <div className="w-7 h-7 rounded-lg bg-[#1E0A32]/20 border border-[#1E0A32]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/35 transition-colors">
                       {f.icon}
                     </div>
                     <span className="text-white/65 text-sm font-medium group-hover:text-white transition-colors">{f.label}</span>
@@ -1248,7 +1248,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/academy">
-                  <Button className="bg-gradient-to-r from-[#9CB633] to-[#592C72] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                  <Button className="bg-gradient-to-r from-[#9CB633] to-[#1E0A32] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                     Explore Academy <ArrowUpRight size={16} />
                   </Button>
                 </Link>
@@ -1308,7 +1308,7 @@ export default function Home() {
 
               {[
                 { label: "Programs", value: "6+", pos: "top-4 right-2", color: "border-[#9CB633]/30" },
-                { label: "Skill Level", value: "All Levels", pos: "bottom-4 left-2", color: "border-[#592C72]/40" },
+                { label: "Skill Level", value: "All Levels", pos: "bottom-4 left-2", color: "border-[#1E0A32]/40" },
               ].map((card, i) => (
                 <motion.div
                   key={card.label}

@@ -38,7 +38,7 @@ export default function CookieBanner() {
         >
           <div className="bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-5 shadow-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
             {/* Icon */}
-            <div className="w-10 h-10 rounded-lg bg-[#592C72]/30 border border-[#592C72]/50 flex items-center justify-center text-[#9CB633] shrink-0">
+            <div className="w-10 h-10 rounded-lg bg-[#1E0A32]/30 border border-[#1E0A32]/50 flex items-center justify-center text-[#9CB633] shrink-0">
               <Cookie size={18} />
             </div>
 

@@ -115,7 +115,7 @@ export default function Contact() {
                 <div className="space-y-6">
                   {contactInfo.map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#592C72]/25 flex items-center justify-center text-[#9CB633] shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[#1E0A32]/25 flex items-center justify-center text-[#9CB633] shrink-0">
                         {item.icon}
                       </div>
                       <div>

@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-background text-foreground flex flex-col relative overflow-hidden font-sans">
       {/* Global Background Orbs */}
       <div className="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#9CB633]/15 blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#592C72]/25 blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#1E0A32]/25 blur-[120px] pointer-events-none" />
       <div className="fixed top-[40%] left-[-15%] w-[35%] h-[35%] rounded-full bg-[#9CB633]/8 blur-[100px] pointer-events-none" />
       
       {/* Top info bar — slides up and hides on scroll */}
