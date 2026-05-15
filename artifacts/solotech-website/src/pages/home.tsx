@@ -1158,7 +1158,7 @@ export default function Home() {
               style={{
                 position: "absolute",
                 inset: "-80%",
-                background: "conic-gradient(from 0deg, transparent 0%, #9CB633 12%, #c8ff00 20%, #00ffcc 30%, #a855f7 45%, #1E0A32 60%, transparent 70%)",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.15) 8%, #9CB633 14%, #c8ff00 19%, rgba(0,255,200,0.8) 26%, rgba(168,85,247,0.7) 38%, rgba(30,10,50,0.4) 52%, transparent 62%)",
                 zIndex: 0,
               }}
             />
@@ -1167,24 +1167,45 @@ export default function Home() {
             <div
               className="relative rounded-[22px] overflow-hidden p-12 md:p-16 text-center"
               style={{
-                background: "linear-gradient(145deg, rgba(4,2,10,0.99) 0%, rgba(6,3,14,0.99) 55%, rgba(8,4,18,0.99) 100%)",
+                background: "linear-gradient(145deg, rgba(4,2,12,0.97) 0%, rgba(6,3,16,0.96) 50%, rgba(5,3,14,0.97) 100%)",
+                backdropFilter: "blur(40px) saturate(150%)",
+                WebkitBackdropFilter: "blur(40px) saturate(150%)",
                 zIndex: 1,
               }}
             >
-              {/* Milky Way lime green — top-right, thick + opaque */}
+              {/* Top specular line */}
+              <div className="absolute top-0 left-[15%] right-[15%] h-px pointer-events-none"
+                style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.35), rgba(200,255,0,0.2), transparent)" }} />
+
+              {/* Lime green atmospheric glow — top-right corner */}
               <div
-                className="absolute top-0 right-0 w-[55%] h-[75%] pointer-events-none"
+                className="absolute -top-16 -right-16 w-80 h-72 pointer-events-none"
                 style={{
-                  background: "radial-gradient(ellipse at 100% 0%, #9CB633 0%, #8ab030 28%, #5a7018 52%, rgba(40,55,8,0.35) 72%, transparent 90%)",
-                  filter: "blur(2px)",
+                  background: "radial-gradient(ellipse at 80% 20%, rgba(156,182,51,0.38) 0%, rgba(130,160,40,0.18) 35%, transparent 68%)",
+                  filter: "blur(40px)",
                 }}
               />
-              {/* Deep purple atmosphere — bottom-left counterbalance */}
+              {/* Secondary lime — bottom-right echo */}
               <div
-                className="absolute bottom-0 left-0 w-[40%] h-[60%] pointer-events-none"
+                className="absolute -bottom-12 -right-8 w-60 h-52 pointer-events-none"
                 style={{
-                  background: "radial-gradient(ellipse at 0% 100%, rgba(30,10,50,0.9) 0%, rgba(15,5,30,0.6) 45%, transparent 75%)",
-                  filter: "blur(20px)",
+                  background: "radial-gradient(ellipse at 90% 80%, rgba(156,182,51,0.16) 0%, transparent 60%)",
+                  filter: "blur(35px)",
+                }}
+              />
+              {/* Deep purple atmosphere — top-left & bottom-left */}
+              <div
+                className="absolute -top-12 -left-12 w-72 h-64 pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at 10% 10%, rgba(30,10,50,0.7) 0%, rgba(20,6,40,0.35) 45%, transparent 70%)",
+                  filter: "blur(45px)",
+                }}
+              />
+              <div
+                className="absolute -bottom-10 -left-10 w-56 h-48 pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at 0% 100%, rgba(90,40,130,0.3) 0%, transparent 65%)",
+                  filter: "blur(30px)",
                 }}
               />
 

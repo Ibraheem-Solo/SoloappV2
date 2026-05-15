@@ -236,7 +236,7 @@
   to   { transform: rotate(360deg); }
 }
 .animate-cta-spin {
-  animation: cta-border-spin 5s linear infinite;
+  animation: cta-border-spin 14s linear infinite;
 }
 
 .glass-panel {
