@@ -724,11 +724,11 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <Code size={28} />, title: "Web Development", desc: "Websites designed to convert visitors into paying customers.", glowCorner: "top-left" },
-              { icon: <Paintbrush size={28} />, title: "Branding & Design", desc: "Identities that make your brand impossible to forget.", glowCorner: "top-right" },
-              { icon: <Share2 size={28} />, title: "Social Media", desc: "Content that builds communities and drives engagement.", glowCorner: "top-left" },
-              { icon: <Camera size={28} />, title: "Photo & Video", desc: "Visual storytelling that captivates and converts.", glowCorner: "bottom-right" },
-              { icon: <TrendingUp size={28} />, title: "Digital Marketing", desc: "Campaigns that bring the right customers to your door.", glowCorner: "bottom-left" },
+              { icon: <Code size={32} />, title: "Web Development", desc: "Websites designed to convert visitors into paying customers." },
+              { icon: <Paintbrush size={32} />, title: "Branding & Design", desc: "Identities that make your brand impossible to forget." },
+              { icon: <Share2 size={32} />, title: "Social Media", desc: "Content that builds communities and drives engagement." },
+              { icon: <Camera size={32} />, title: "Photo & Video", desc: "Visual storytelling that captivates and converts." },
+              { icon: <TrendingUp size={32} />, title: "Digital Marketing", desc: "Campaigns that bring the right customers to your door." }
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -736,48 +736,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative rounded-2xl overflow-hidden group cursor-pointer"
-                style={{
-                  background: "linear-gradient(145deg, rgba(6,3,14,0.96) 0%, rgba(10,5,22,0.98) 100%)",
-                  border: "1px solid rgba(156,182,51,0.10)",
-                  boxShadow: "0 0 0 1px rgba(89,44,114,0.08), inset 0 1px 0 rgba(156,182,51,0.07)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  transition: "border-color 0.35s ease, box-shadow 0.35s ease",
-                }}
-                whileHover={{ scale: 1.015 }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(156,182,51,0.22)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(89,44,114,0.18), 0 0 40px rgba(89,44,114,0.12), inset 0 1px 0 rgba(156,182,51,0.12)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(156,182,51,0.10)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(89,44,114,0.08), inset 0 1px 0 rgba(156,182,51,0.07)";
-                }}
+                className="glass-panel p-8 rounded-2xl group hover:border-purple-500/50 transition-colors cursor-pointer"
               >
-                {/* Top edge specular line */}
-                <div className="absolute top-0 left-6 right-6 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.28), transparent)" }} />
-
-                {/* Purple atmospheric glow — top-left corner */}
-                <div className="absolute -top-8 -left-8 w-40 h-40 rounded-full pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: "radial-gradient(circle, rgba(89,44,114,0.55) 0%, transparent 65%)", filter: "blur(28px)" }} />
-
-                {/* Lime green atmospheric glow — bottom-right corner */}
-                <div className="absolute -bottom-8 -right-8 w-36 h-36 rounded-full pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity duration-500"
-                  style={{ background: "radial-gradient(circle, rgba(156,182,51,0.40) 0%, transparent 65%)", filter: "blur(30px)" }} />
-
-                <div className="relative z-10 p-8">
-                  {/* Icon with subtle glow ring */}
-                  <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-xl group-hover:scale-110 transition-transform duration-300"
-                    style={{ background: "rgba(156,182,51,0.07)", border: "1px solid rgba(156,182,51,0.18)", boxShadow: "0 0 14px rgba(156,182,51,0.10)" }}>
-                    <span className="text-[#9CB633]">{service.icon}</span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-3 text-white/90 tracking-tight">{service.title}</h3>
-                  <p className="text-white/45 text-sm leading-relaxed">{service.desc}</p>
-
-                  {/* Bottom thin accent line */}
-                  <div className="mt-6 h-px w-full" style={{ background: "linear-gradient(90deg, rgba(156,182,51,0.15), rgba(89,44,114,0.15), transparent)" }} />
+                <div className="mb-6 text-[#9CB633] group-hover:scale-110 transition-transform duration-300 origin-left">
+                  {service.icon}
                 </div>
+                <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                <p className="text-white/60">{service.desc}</p>
               </motion.div>
             ))}
           </div>
