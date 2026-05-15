@@ -1167,61 +1167,48 @@ export default function Home() {
             <div
               className="relative rounded-[22px] overflow-hidden p-12 md:p-16 text-center"
               style={{
-                background: "linear-gradient(145deg, rgba(4,2,12,0.97) 0%, rgba(6,3,16,0.96) 50%, rgba(5,3,14,0.97) 100%)",
-                backdropFilter: "blur(40px) saturate(150%)",
-                WebkitBackdropFilter: "blur(40px) saturate(150%)",
+                background: "linear-gradient(160deg, rgba(10,10,12,0.98) 0%, rgba(8,8,10,0.99) 50%, rgba(9,9,11,0.98) 100%)",
+                backdropFilter: "blur(60px) saturate(180%)",
+                WebkitBackdropFilter: "blur(60px) saturate(180%)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07), inset 0 0 80px rgba(0,0,0,0.4)",
                 zIndex: 1,
               }}
             >
-              {/* Top specular line */}
-              <div className="absolute top-0 left-[15%] right-[15%] h-px pointer-events-none"
-                style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.35), rgba(200,255,0,0.2), transparent)" }} />
+              {/* Apple-glass top edge specular */}
+              <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+                style={{ background: "linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.10) 30%, rgba(200,240,100,0.18) 55%, rgba(255,255,255,0.06) 80%, transparent 95%)" }} />
 
               {/* Aurora — primary neon green body, anchored top-right */}
               <div className="absolute top-0 right-0 pointer-events-none"
                 style={{
                   width: "60%", height: "70%",
-                  background: "radial-gradient(ellipse at 100% 0%, rgba(156,182,51,0.55) 0%, rgba(140,190,60,0.30) 28%, rgba(100,160,50,0.10) 55%, transparent 75%)",
-                  filter: "blur(55px)",
+                  background: "radial-gradient(ellipse at 100% 0%, rgba(156,182,51,0.52) 0%, rgba(140,190,60,0.26) 30%, rgba(100,155,45,0.08) 58%, transparent 75%)",
+                  filter: "blur(58px)",
                 }}
               />
-              {/* Aurora — tighter bright core at the corner itself */}
+              {/* Aurora — bright core at the corner */}
               <div className="absolute top-0 right-0 pointer-events-none"
                 style={{
-                  width: "30%", height: "40%",
-                  background: "radial-gradient(ellipse at 100% 0%, rgba(200,240,100,0.70) 0%, rgba(156,182,51,0.38) 35%, transparent 65%)",
-                  filter: "blur(28px)",
+                  width: "28%", height: "38%",
+                  background: "radial-gradient(ellipse at 100% 0%, rgba(210,245,100,0.68) 0%, rgba(156,182,51,0.34) 38%, transparent 65%)",
+                  filter: "blur(26px)",
                 }}
               />
-              {/* Aurora — teal/cyan halo bleeding around the edges for depth */}
-              <div className="absolute top-0 right-0 pointer-events-none"
+
+              {/* Deep purple — bottom-left only */}
+              <div className="absolute bottom-0 left-0 pointer-events-none"
                 style={{
-                  width: "50%", height: "55%",
-                  background: "radial-gradient(ellipse at 95% 5%, rgba(0,210,160,0.18) 0%, rgba(0,180,130,0.08) 40%, transparent 70%)",
+                  width: "50%", height: "80%",
+                  background: "radial-gradient(ellipse at 0% 100%, rgba(60,20,90,0.72) 0%, rgba(35,10,60,0.40) 35%, rgba(20,6,38,0.15) 60%, transparent 78%)",
                   filter: "blur(50px)",
                 }}
               />
-              {/* Aurora — faint cyan whisper at far right mid */}
-              <div className="absolute top-[15%] right-0 pointer-events-none"
+              {/* Purple inner accent — tighter hot spot at corner */}
+              <div className="absolute bottom-0 left-0 pointer-events-none"
                 style={{
-                  width: "25%", height: "35%",
-                  background: "radial-gradient(ellipse at 100% 0%, rgba(80,220,180,0.14) 0%, transparent 65%)",
-                  filter: "blur(40px)",
-                }}
-              />
-              {/* Deep purple atmosphere — top-left & bottom-left */}
-              <div
-                className="absolute -top-12 -left-12 w-72 h-64 pointer-events-none"
-                style={{
-                  background: "radial-gradient(ellipse at 10% 10%, rgba(30,10,50,0.7) 0%, rgba(20,6,40,0.35) 45%, transparent 70%)",
-                  filter: "blur(45px)",
-                }}
-              />
-              <div
-                className="absolute -bottom-10 -left-10 w-56 h-48 pointer-events-none"
-                style={{
-                  background: "radial-gradient(ellipse at 0% 100%, rgba(90,40,130,0.3) 0%, transparent 65%)",
-                  filter: "blur(30px)",
+                  width: "22%", height: "50%",
+                  background: "radial-gradient(ellipse at 0% 100%, rgba(90,30,130,0.60) 0%, rgba(55,15,85,0.28) 45%, transparent 70%)",
+                  filter: "blur(28px)",
                 }}
               />
 
