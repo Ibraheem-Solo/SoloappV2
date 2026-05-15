@@ -173,68 +173,50 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 function ProductCard({ product }: { product: typeof originals[0] }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[1] ?? product.sizes[0] : null);
-  const [hovered, setHovered] = useState(false);
 
   const orderLabel = `${product.name}${selectedColor !== null ? ` — ${product.colorNames[selectedColor]}` : ""}${selectedSize ? `, Size ${selectedSize}` : ""}`;
 
   return (
-    <motion.div
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="relative group glass-panel rounded-2xl flex flex-col"
-    >
-      {/* Glow on hover */}
-      <motion.div
-        animate={{ opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-        style={{ boxShadow: `0 0 60px 0 ${product.glowColor}30` }}
-      />
-
-      {/* Card gradient bg */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} pointer-events-none rounded-2xl`} />
+    <div className="group relative flex flex-col rounded-xl overflow-hidden border border-white/10 bg-[#0d0818] hover:border-white/20 transition-colors duration-200">
 
       {/* Badge */}
       {product.badge && (
-        <div className="absolute top-4 right-4 z-10">
-          <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-[#9CB633]/20 text-[#9CB633] border border-[#9CB633]/30">
+        <div className="absolute top-3 left-3 z-10">
+          <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-[#9CB633] text-black">
             {product.badge}
           </span>
         </div>
       )}
 
       {/* Image area */}
-      <div className="relative z-10 h-52 border-b border-white/5 overflow-hidden">
-        <motion.img
+      <div className="relative h-48 sm:h-52 bg-[#100c1e] overflow-hidden flex-shrink-0">
+        <img
           src={product.image}
           alt={product.name}
-          animate={{ scale: hovered ? 1.06 : 1 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-        <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-3 left-3 h-6 w-auto opacity-75 drop-shadow-lg" />
+        <img src={`${BASE}logo.png`} alt="Solotech Digital" className="absolute top-2.5 right-2.5 h-5 w-auto opacity-50" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 p-6 flex flex-col gap-4 flex-1">
+      <div className="flex flex-col gap-3 p-4 flex-1">
+        {/* Name + tagline */}
         <div>
-          <p className="text-[#9CB633] text-[10px] font-bold uppercase tracking-widest mb-1">{product.tagline}</p>
-          <h3 className="text-white text-xl font-bold">{product.name}</h3>
-          <p className="text-white/50 text-sm mt-2 leading-relaxed">{product.description}</p>
+          <p className="text-white/40 text-[10px] uppercase tracking-widest mb-0.5">{product.tagline}</p>
+          <h3 className="text-white text-base font-semibold leading-snug">{product.name}</h3>
+          <p className="text-white/40 text-xs mt-1 leading-relaxed line-clamp-2">{product.description}</p>
         </div>
 
         {/* Color swatches */}
-        <div className="flex flex-col gap-2">
-          <p className="text-white/40 text-xs uppercase tracking-wider">Color: <span className="text-white/70">{product.colorNames[selectedColor]}</span></p>
-          <div className="flex gap-2">
+        <div className="flex items-center gap-2">
+          <span className="text-white/35 text-xs shrink-0">{product.colorNames[selectedColor]}</span>
+          <div className="flex gap-1.5">
             {product.colors.map((color, i) => (
               <button
                 key={i}
                 onClick={() => setSelectedColor(i)}
-                className={`w-6 h-6 rounded-full border-2 transition-all duration-200 ${selectedColor === i ? "border-[#9CB633] scale-110" : "border-white/20 hover:border-white/50"}`}
+                title={product.colorNames[i]}
+                className={`w-5 h-5 rounded-full border transition-all duration-150 ${selectedColor === i ? "border-[#9CB633] ring-1 ring-[#9CB633]/40 ring-offset-1 ring-offset-[#0d0818]" : "border-white/20 hover:border-white/50"}`}
                 style={{ backgroundColor: color }}
               />
             ))}
@@ -243,39 +225,35 @@ function ProductCard({ product }: { product: typeof originals[0] }) {
 
         {/* Sizes */}
         {product.sizes && (
-          <div className="flex flex-col gap-2">
-            <p className="text-white/40 text-xs uppercase tracking-wider">Size</p>
-            <div className="flex flex-wrap gap-1.5">
-              {product.sizes.map((size) => (
-                <button
-                  key={size}
-                  onClick={() => setSelectedSize(size)}
-                  className={`px-3 py-1 rounded-md text-xs font-medium border transition-all duration-200 ${
-                    selectedSize === size
-                      ? "border-[#9CB633] text-[#9CB633] bg-[#9CB633]/10"
-                      : "border-white/15 text-white/50 hover:border-white/40 hover:text-white/80"
-                  }`}
-                >
-                  {size}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-1">
+            {product.sizes.map((size) => (
+              <button
+                key={size}
+                onClick={() => setSelectedSize(size)}
+                className={`px-2.5 py-0.5 rounded text-[11px] font-medium border transition-all duration-150 ${
+                  selectedSize === size
+                    ? "border-[#9CB633] text-[#9CB633] bg-[#9CB633]/10"
+                    : "border-white/12 text-white/45 hover:border-white/35 hover:text-white/70"
+                }`}
+              >
+                {size}
+              </button>
+            ))}
           </div>
         )}
 
         {/* Price + CTA */}
-        <div className="mt-auto pt-4 border-t border-white/8 flex items-center justify-between gap-3">
-          <span className="text-2xl font-bold text-white">{product.price}</span>
-          <a href={whatsappLink(orderLabel)} target="_blank" rel="noopener noreferrer" className="flex-1">
-            <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-[#9CB633]/50 text-[#9CB633] text-sm font-semibold hover:bg-[#9CB633]/10 hover:border-[#9CB633] transition-all duration-200 group/btn">
-              <MessageCircle size={15} />
-              Order on WhatsApp
-              <ArrowUpRight size={13} className="opacity-0 -translate-x-1 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-200" />
+        <div className="mt-auto flex items-center justify-between gap-2 pt-3 border-t border-white/8">
+          <span className="text-white font-bold text-lg leading-none">{product.price}</span>
+          <a href={whatsappLink(orderLabel)} target="_blank" rel="noopener noreferrer">
+            <button className="flex items-center gap-1.5 bg-[#9CB633] hover:bg-[#b5d13d] active:scale-95 text-black font-semibold rounded-lg transition-all duration-150 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1.5">
+              <MessageCircle size={12} className="shrink-0" />
+              <span className="hidden xs:inline">Order on </span>WhatsApp
             </button>
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
