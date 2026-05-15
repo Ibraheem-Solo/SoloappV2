@@ -809,7 +809,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/services/fixit">
-                  <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                  <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                     Explore FixIT <ArrowUpRight size={16} />
                   </Button>
                 </Link>
@@ -980,7 +980,7 @@ export default function Home() {
             >
               <div className="flex flex-col gap-4">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest">Who We Work With</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ lineHeight: 1.1 }}>Built for Ambitious <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #1E0A32 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", display: "inline-block" }}>Brands</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ lineHeight: 1.1 }}>Built for Ambitious <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", display: "inline-block" }}>Brands</span></h2>
                 <p className="text-white/50 text-lg leading-relaxed">
                   We partner with businesses, startups, organizations, and individuals looking to build powerful digital presence and stand out in a competitive world.
                 </p>
@@ -1303,7 +1303,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/academy">
-                  <Button className="bg-gradient-to-r from-[#9CB633] to-[#1E0A32] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                  <Button className="bg-gradient-to-r from-[#9CB633] to-[#592C72] text-white border-0 px-7 py-3 rounded-full font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                     Explore Academy <ArrowUpRight size={16} />
                   </Button>
                 </Link>

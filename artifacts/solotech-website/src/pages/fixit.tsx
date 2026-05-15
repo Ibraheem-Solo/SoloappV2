@@ -156,7 +156,7 @@ export default function FixIT() {
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.05] tracking-[0.01em]">
             Modern Tech Support To Your Doorstep{" "}
-            <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #1E0A32 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               for Businesses & Individuals
             </span>
           </h1>
@@ -165,7 +165,7 @@ export default function FixIT() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink("Hi Solotech FixIT! I need technical support.")} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                 <MessageCircle size={18} />
                 Request Support
               </Button>
@@ -196,7 +196,7 @@ export default function FixIT() {
           {/* Timeline steps */}
           <div className="relative">
             {/* Connecting line — solid green, desktop only */}
-            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #1E0A32 0%, #9CB633 35%, #00e5ff 55%, #9CB633 75%, #1E0A32 100%)', opacity: 0.7 }} />
+            <div className="hidden lg:block absolute left-[10%] right-[10%] z-0 rounded-full" style={{ top: 'calc(3rem - 1px)', height: '2px', background: 'linear-gradient(90deg, #1E0A32 0%, #9CB633 35%, #00e5ff 55%, #9CB633 75%, #592C72 100%)', opacity: 0.7 }} />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-4">
               {[
@@ -303,7 +303,7 @@ export default function FixIT() {
               <p className="text-white/60 text-sm">Device broken? Don't stress — <span className="text-white font-semibold">we come to you.</span></p>
             </div>
             <a href={waLink("Hi Solotech FixIT! My device has a problem and I need support.")} target="_blank" rel="noopener noreferrer" className="shrink-0">
-              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-6 py-2.5 rounded-full text-sm font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                 <MessageCircle size={15} /> Request a Fix Now
               </Button>
             </a>
@@ -434,7 +434,7 @@ export default function FixIT() {
                 <p className="text-white/50 mb-8 text-lg">Our team is ready to help you solve technical issues quickly and professionally.</p>
                 <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-xs mx-auto md:max-w-none">
                   <a href={waLink("Hi Solotech FixIT! I need immediate technical support.")} target="_blank" rel="noopener noreferrer" className="md:flex-none">
-                    <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
                       <MessageCircle size={18} />
                       Request Support
                     </Button>

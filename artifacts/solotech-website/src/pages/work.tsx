@@ -295,7 +295,7 @@ function Lightbox({
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#1E0A32] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-gradient-to-r from-[#592C72] to-violet-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
                   Visit Live Site <ArrowUpRight size={15} />
                 </a>

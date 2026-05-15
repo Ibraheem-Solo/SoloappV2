@@ -28,7 +28,7 @@ const originals = [
     colorNames: ["Midnight Black", "Deep Purple", "Lime Edition"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     description: "Premium 400gsm fleece. Embroidered logo. Dropped shoulders. Built for creators.",
-    gradient: "from-[#1E0A32]/30 to-[#9CB633]/10",
+    gradient: "from-[#592C72]/30 to-[#9CB633]/10",
     glowColor: "#1E0A32",
   },
   {
@@ -43,7 +43,7 @@ const originals = [
     colorNames: ["Black", "White", "Purple"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     description: "100% organic cotton. Screen-printed design. Relaxed fit for the modern creative.",
-    gradient: "from-[#9CB633]/20 to-[#1E0A32]/10",
+    gradient: "from-[#9CB633]/20 to-[#592C72]/10",
     glowColor: "#9CB633",
   },
   {
@@ -58,7 +58,7 @@ const originals = [
     colorNames: ["Natural", "Black"],
     sizes: null,
     description: "12oz waxed canvas. Double-stitched handles. Screen-printed Solotech mark.",
-    gradient: "from-amber-900/20 to-[#1E0A32]/10",
+    gradient: "from-amber-900/20 to-[#592C72]/10",
     glowColor: "#9CB633",
   },
   {
@@ -73,7 +73,7 @@ const originals = [
     colorNames: ["Matte Black", "Ceramic White"],
     sizes: null,
     description: "11oz ceramic. Dishwasher safe. Wrap-around print with the Solotech insignia.",
-    gradient: "from-slate-800/40 to-[#1E0A32]/10",
+    gradient: "from-slate-800/40 to-[#592C72]/10",
     glowColor: "#1E0A32",
   },
   {
@@ -88,7 +88,7 @@ const originals = [
     colorNames: ["Black", "Purple"],
     sizes: ["One Size"],
     description: "Adjustable snapback. Embroidered wordmark. UV-resistant fabric. Built to last.",
-    gradient: "from-[#1E0A32]/20 to-[#9CB633]/10",
+    gradient: "from-[#592C72]/20 to-[#9CB633]/10",
     glowColor: "#1E0A32",
   },
   {
@@ -103,7 +103,7 @@ const originals = [
     colorNames: ["Black", "White", "Purple", "Lime"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     description: "Piqué cotton polo. Embroidered chest logo. Ribbed collar and cuffs. Smart-casual ready.",
-    gradient: "from-[#9CB633]/15 to-[#1E0A32]/10",
+    gradient: "from-[#9CB633]/15 to-[#592C72]/10",
     glowColor: "#9CB633",
   },
   {
@@ -118,7 +118,7 @@ const originals = [
     colorNames: ["Royal Purple", "Gold Kente", "Forest Green"],
     sizes: ["S", "M", "L", "XL", "XXL"],
     description: "Ankara & kente-inspired designs. Premium fabric. Celebrating African identity with modern cut.",
-    gradient: "from-amber-900/25 to-[#1E0A32]/15",
+    gradient: "from-amber-900/25 to-[#592C72]/15",
     glowColor: "#D4A017",
   },
 ];
@@ -370,7 +370,7 @@ export default function Store() {
             Creative{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #9CB633 0%, #1E0A32 100%)",
+                background: "linear-gradient(135deg, #9CB633 0%, #592C72 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -389,7 +389,7 @@ export default function Store() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#originals">
-              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity h-auto">
+              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity h-auto">
                 Shop Originals
               </Button>
             </a>
@@ -458,7 +458,7 @@ export default function Store() {
       <section className="py-12 px-6 md:px-12">
         <div className="container mx-auto max-w-7xl">
           <FadeIn>
-            <div className="relative rounded-2xl border border-[#1E0A32]/30 bg-gradient-to-r from-[#1E0A32]/15 via-black/30 to-[#9CB633]/10 overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="relative rounded-2xl border border-[#1E0A32]/30 bg-gradient-to-r from-[#592C72]/15 via-black/30 to-[#9CB633]/10 overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
               <div className="relative z-10 text-center md:text-left">
                 <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
@@ -548,7 +548,7 @@ export default function Store() {
                 <p className="text-white/50 mb-8 text-lg">Whether it's a single hoodie or 500 corporate kits — we're just a message away.</p>
                 <div className="flex justify-center">
                   <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Solotech Digital! I'd like to place a store order or enquire about custom branding.")}`} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-6 sm:px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-6 sm:px-10 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                       <MessageCircle size={18} />
                       Message Us on WhatsApp
                       <ArrowUpRight size={16} />

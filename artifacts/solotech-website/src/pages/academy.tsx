@@ -157,7 +157,7 @@ export default function Academy() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
             <a href="#programs">
-              <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-9 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
+              <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-9 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2">
                 <Play size={16} />
                 Explore Programs
               </Button>
@@ -458,7 +458,7 @@ export default function Academy() {
                 <p className="text-white/50 mb-8 text-lg">Join Solotech Academy and gain the skills to create, innovate, and succeed in the digital world.</p>
                 <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-xs mx-auto md:max-w-none">
                   <a href={waLink("Hi Solotech Academy! I'd like to enrol in a course.")} target="_blank" rel="noopener noreferrer" className="md:flex-none">
-                    <Button className="bg-gradient-to-r from-[#1E0A32] to-[#9CB633] text-white border-0 px-8 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
+                    <Button className="bg-gradient-to-r from-[#592C72] to-[#9CB633] text-white border-0 px-8 py-4 rounded-full text-base font-bold hover:opacity-90 transition-opacity h-auto gap-2 w-full">
                       <MessageCircle size={18} />
                       Enroll Now
                     </Button>
