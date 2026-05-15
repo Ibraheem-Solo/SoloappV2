@@ -469,16 +469,10 @@ export default function Store() {
                 zIndex: 0,
               }} />
 
-              {/* Inner card */}
-              <div className="relative rounded-[10px] overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6" style={{
-                background: "linear-gradient(135deg, rgba(20,8,38,0.97) 0%, rgba(8,4,20,0.99) 50%, rgba(15,6,30,0.97) 100%)",
-                backdropFilter: "blur(48px) saturate(180%)",
-                WebkitBackdropFilter: "blur(48px) saturate(180%)",
-                zIndex: 1,
-              }}>
-                <div className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-                  style={{ background: "linear-gradient(90deg, transparent 5%, rgba(156,182,51,0.20) 30%, rgba(200,240,100,0.28) 55%, rgba(168,85,247,0.15) 80%, transparent 95%)" }} />
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-30 pointer-events-none" />
+              {/* Inner card — original design */}
+              <div className="relative rounded-[10px] overflow-hidden px-8 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+                style={{ background: 'linear-gradient(to right, rgba(89,44,114,0.15), rgba(0,0,0,0.30), rgba(156,182,51,0.10))', zIndex: 1 }}>
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTYwIDAgTDAgMCAwIDYwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==')] opacity-40 pointer-events-none" />
                 <div className="relative z-10 text-center md:text-left">
                   <p className="text-[#9CB633] text-xs font-bold uppercase tracking-widest mb-2">Bulk & Corporate</p>
                   <h3 className="text-white text-2xl md:text-3xl font-bold">Need a larger order?</h3>
