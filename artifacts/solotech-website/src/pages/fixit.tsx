@@ -296,7 +296,7 @@ export default function FixIT() {
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 p-6 rounded-2xl border border-white/8 bg-white/[0.02]"
+            className="glass-panel mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 p-6 rounded-2xl"
           >
             <div className="flex items-center gap-3">
               <Laptop size={20} className="text-[#9CB633] shrink-0" />

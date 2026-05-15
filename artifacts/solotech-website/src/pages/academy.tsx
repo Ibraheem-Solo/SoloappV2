@@ -192,7 +192,7 @@ export default function Academy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.45 + i * 0.08 }}
-                className="px-5 py-3 rounded-2xl border border-white/8 bg-white/[0.03] backdrop-blur-sm"
+                className="glass-panel px-5 py-3 rounded-2xl"
               >
                 <div className="text-white font-bold text-lg">{s.value}</div>
                 <div className="text-white/40 text-xs">{s.label}</div>
@@ -285,7 +285,7 @@ export default function Academy() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
-                    className="flex items-start gap-4 p-4 rounded-xl border border-white/8 bg-white/[0.02] hover:border-[#9CB633]/35 hover:bg-[#9CB633]/5 transition-all duration-300 group"
+                    className="glass-panel flex items-start gap-4 p-4 rounded-xl hover:border-[#9CB633]/35 transition-all duration-300 group"
                   >
                     <div className="w-9 h-9 rounded-lg bg-[#1E0A32]/20 border border-[#1E0A32]/30 flex items-center justify-center text-[#9CB633] shrink-0 group-hover:bg-[#1E0A32]/35 transition-colors">
                       {f.icon}
@@ -419,7 +419,7 @@ export default function Academy() {
                 key={i}
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group flex flex-col gap-5 p-8 rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#9CB633]/40 hover:bg-[#9CB633]/5 transition-all duration-300"
+                className="group glass-panel flex flex-col gap-5 p-8 rounded-2xl hover:border-[#9CB633]/40 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#9CB633]/15 border border-[#9CB633]/25 flex items-center justify-center text-[#9CB633] group-hover:bg-[#9CB633]/25 transition-colors">
                   {card.icon}
