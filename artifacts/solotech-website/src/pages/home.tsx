@@ -1177,20 +1177,36 @@ export default function Home() {
               <div className="absolute top-0 left-[15%] right-[15%] h-px pointer-events-none"
                 style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.35), rgba(200,255,0,0.2), transparent)" }} />
 
-              {/* 15-degree lime cone from top-right corner */}
-              <div
-                className="absolute inset-0 pointer-events-none"
+              {/* Aurora — primary neon green body, anchored top-right */}
+              <div className="absolute top-0 right-0 pointer-events-none"
                 style={{
-                  background: "conic-gradient(from 180deg at 100% 0%, rgba(255,255,220,0.90) 0deg, rgba(210,245,80,0.75) 4deg, rgba(156,182,51,0.55) 10deg, rgba(120,150,35,0.18) 13deg, transparent 15deg, transparent 360deg)",
-                  filter: "blur(8px)",
+                  width: "60%", height: "70%",
+                  background: "radial-gradient(ellipse at 100% 0%, rgba(156,182,51,0.55) 0%, rgba(140,190,60,0.30) 28%, rgba(100,160,50,0.10) 55%, transparent 75%)",
+                  filter: "blur(55px)",
                 }}
               />
-              {/* Inner sharp core — tighter, less blur for the bright edge */}
-              <div
-                className="absolute inset-0 pointer-events-none"
+              {/* Aurora — tighter bright core at the corner itself */}
+              <div className="absolute top-0 right-0 pointer-events-none"
                 style={{
-                  background: "conic-gradient(from 180deg at 100% 0%, rgba(255,255,240,0.95) 0deg, rgba(230,255,120,0.60) 3deg, rgba(156,182,51,0.25) 8deg, transparent 11deg, transparent 360deg)",
-                  filter: "blur(3px)",
+                  width: "30%", height: "40%",
+                  background: "radial-gradient(ellipse at 100% 0%, rgba(200,240,100,0.70) 0%, rgba(156,182,51,0.38) 35%, transparent 65%)",
+                  filter: "blur(28px)",
+                }}
+              />
+              {/* Aurora — teal/cyan halo bleeding around the edges for depth */}
+              <div className="absolute top-0 right-0 pointer-events-none"
+                style={{
+                  width: "50%", height: "55%",
+                  background: "radial-gradient(ellipse at 95% 5%, rgba(0,210,160,0.18) 0%, rgba(0,180,130,0.08) 40%, transparent 70%)",
+                  filter: "blur(50px)",
+                }}
+              />
+              {/* Aurora — faint cyan whisper at far right mid */}
+              <div className="absolute top-[15%] right-0 pointer-events-none"
+                style={{
+                  width: "25%", height: "35%",
+                  background: "radial-gradient(ellipse at 100% 0%, rgba(80,220,180,0.14) 0%, transparent 65%)",
+                  filter: "blur(40px)",
                 }}
               />
               {/* Deep purple atmosphere — top-left & bottom-left */}
