@@ -1177,65 +1177,20 @@ export default function Home() {
               <div className="absolute top-0 left-[15%] right-[15%] h-px pointer-events-none"
                 style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.35), rgba(200,255,0,0.2), transparent)" }} />
 
-              {/* Light rays green — large base volume */}
+              {/* 15-degree lime cone from top-right corner */}
               <div
-                className="absolute -top-24 -right-24 pointer-events-none"
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  width: "130%", height: "110%",
-                  background: "radial-gradient(ellipse at 85% 10%, rgba(156,182,51,0.72) 0%, rgba(140,170,45,0.42) 22%, rgba(110,140,35,0.18) 45%, transparent 68%)",
-                  filter: "blur(52px)",
-                }}
-              />
-              {/* White-hot core — sun-like source point */}
-              <div
-                className="absolute -top-8 right-0 w-56 h-44 pointer-events-none"
-                style={{
-                  background: "radial-gradient(ellipse at 65% 20%, rgba(255,255,240,0.80) 0%, rgba(230,255,120,0.55) 18%, rgba(180,220,50,0.30) 38%, transparent 60%)",
-                  filter: "blur(14px)",
-                }}
-              />
-              {/* Ray 1 — long diagonal sweep */}
-              <div
-                className="absolute -top-2 right-[8%] pointer-events-none"
-                style={{
-                  width: "55%", height: "8px",
-                  background: "linear-gradient(90deg, transparent, rgba(200,240,80,0.65), rgba(255,255,200,0.45), transparent)",
-                  filter: "blur(7px)",
-                  transform: "rotate(-22deg)",
-                  transformOrigin: "right center",
-                  borderRadius: "50%",
-                }}
-              />
-              {/* Ray 2 — shorter, steeper */}
-              <div
-                className="absolute top-8 right-[4%] pointer-events-none"
-                style={{
-                  width: "38%", height: "5px",
-                  background: "linear-gradient(90deg, transparent, rgba(180,220,60,0.50), rgba(230,255,150,0.35), transparent)",
-                  filter: "blur(5px)",
-                  transform: "rotate(-35deg)",
-                  transformOrigin: "right center",
-                  borderRadius: "50%",
-                }}
-              />
-              {/* Ray 3 — wide fan, lower angle */}
-              <div
-                className="absolute top-16 right-[10%] pointer-events-none"
-                style={{
-                  width: "45%", height: "6px",
-                  background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.40), rgba(200,240,80,0.25), transparent)",
+                  background: "conic-gradient(from 180deg at 100% 0%, rgba(255,255,220,0.90) 0deg, rgba(210,245,80,0.75) 4deg, rgba(156,182,51,0.55) 10deg, rgba(120,150,35,0.18) 13deg, transparent 15deg, transparent 360deg)",
                   filter: "blur(8px)",
-                  transform: "rotate(-10deg)",
-                  transformOrigin: "right center",
-                  borderRadius: "50%",
                 }}
               />
-              {/* Soft bottom-right echo */}
+              {/* Inner sharp core — tighter, less blur for the bright edge */}
               <div
-                className="absolute -bottom-8 -right-4 w-64 h-48 pointer-events-none"
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: "radial-gradient(ellipse at 85% 80%, rgba(156,182,51,0.24) 0%, rgba(100,130,30,0.10) 50%, transparent 72%)",
-                  filter: "blur(36px)",
+                  background: "conic-gradient(from 180deg at 100% 0%, rgba(255,255,240,0.95) 0deg, rgba(230,255,120,0.60) 3deg, rgba(156,182,51,0.25) 8deg, transparent 11deg, transparent 360deg)",
+                  filter: "blur(3px)",
                 }}
               />
               {/* Deep purple atmosphere — top-left & bottom-left */}
