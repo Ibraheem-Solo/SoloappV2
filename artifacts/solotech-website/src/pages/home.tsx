@@ -1225,7 +1225,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/contact" className="flex-1 sm:flex-none">
-                    <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full border-white/30 text-white/90 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/40 backdrop-blur-sm transition-colors">
+                    <Button size="lg" variant="outline" className="rounded-full px-10 py-3 text-base w-full border-[#9CB633]/40 text-white/80 hover:border-[#9CB633] hover:text-[#9CB633] bg-black/50 backdrop-blur-sm transition-colors">
                       Launch My Website
                     </Button>
                   </Link>
