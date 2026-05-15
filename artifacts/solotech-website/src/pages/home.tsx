@@ -478,30 +478,58 @@ export default function Home() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 rounded-3xl flex flex-col"
+              className="relative rounded-3xl flex flex-col overflow-hidden"
+              style={{
+                background: "linear-gradient(160deg, rgba(30,10,50,0.95) 0%, rgba(8,4,20,0.98) 60%, rgba(20,8,40,0.95) 100%)",
+                border: "1px solid rgba(138,80,200,0.22)",
+                boxShadow: "0 0 0 1px rgba(89,44,114,0.12), 0 0 40px rgba(89,44,114,0.10), inset 0 1px 0 rgba(160,100,255,0.10)",
+              }}
             >
-              <h3 className="text-2xl font-bold mb-1">Starter Package</h3>
-              <p className="text-white/50 text-sm mb-6">One-time fee — no subscription</p>
-              <div className="text-4xl font-bold text-gradient mb-1">D5,000</div>
-              <p className="text-white/40 text-sm mb-8">One-time payment</p>
-              <ul className="space-y-4 mb-8 flex-1">
-                {[
-                  "1-page professional website",
-                  "Mobile responsive design",
-                  "Delivered in 24 hours",
-                  "Perfect for startups & small businesses",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80">
-                    <CheckCircle className="text-[#9CB633] shrink-0 w-5 h-5 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact">
-                <Button className="w-full bg-transparent hover:bg-[#9CB633]/10 text-[#9CB633] border border-[#9CB633]/60 hover:border-[#9CB633] rounded-full py-3 px-8 transition-all hover:scale-[1.02]">
-                  Get Started
-                </Button>
-              </Link>
+              {/* Top glowing stroke accent */}
+              <div className="absolute top-0 left-8 right-8 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(138,80,200,0.6), transparent)" }} />
+              {/* Subtle corner glow */}
+              <div className="absolute top-0 left-0 w-48 h-48 pointer-events-none rounded-full" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
+
+              <div className="relative z-10 p-8 flex flex-col flex-1">
+                {/* Serif italic label */}
+                <p className="text-purple-400/60 text-xs uppercase tracking-[0.2em] mb-3 font-light">Starter</p>
+                <h3 className="text-2xl font-bold mb-1 text-white/90">
+                  <em className="not-italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", color: "rgba(200,170,255,0.9)" }}>Starter</em>{" "}
+                  <span className="not-italic font-semibold text-white/80">Package</span>
+                </h3>
+                <p className="text-purple-300/40 text-sm mb-6">One-time fee — no subscription</p>
+
+                {/* Price */}
+                <div className="mb-1">
+                  <span className="text-4xl font-bold" style={{ color: "rgba(180,140,255,0.95)", textShadow: "0 0 30px rgba(138,80,200,0.4)" }}>D5,000</span>
+                </div>
+                <p className="text-purple-400/40 text-sm mb-8">One-time payment</p>
+
+                {/* Thin divider */}
+                <div className="h-px mb-6 w-full" style={{ background: "linear-gradient(90deg, transparent, rgba(138,80,200,0.3), transparent)" }} />
+
+                <ul className="space-y-4 mb-8 flex-1">
+                  {[
+                    "1-page professional website",
+                    "Mobile responsive design",
+                    "Delivered in 24 hours",
+                    "Perfect for startups & small businesses",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="w-4 h-4 rounded-full mt-0.5 shrink-0 flex items-center justify-center" style={{ border: "1px solid rgba(138,80,200,0.5)", boxShadow: "0 0 8px rgba(138,80,200,0.25)" }}>
+                        <div className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(180,140,255,0.8)" }} />
+                      </div>
+                      <span className="text-white/65 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link href="/contact">
+                  <Button className="w-full rounded-full py-3 px-8 text-sm font-semibold transition-all hover:scale-[1.02]" style={{ background: "transparent", border: "1px solid rgba(138,80,200,0.45)", color: "rgba(200,170,255,0.9)", boxShadow: "0 0 16px rgba(89,44,114,0.15), inset 0 1px 0 rgba(160,100,255,0.08)" }}>
+                    Get Started
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Pro Card */}
@@ -509,88 +537,104 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 rounded-3xl border-purple-500/50 relative overflow-hidden flex flex-col"
+              className="relative rounded-3xl flex flex-col overflow-hidden"
+              style={{
+                background: "linear-gradient(160deg, rgba(55,20,90,0.95) 0%, rgba(15,6,35,0.98) 55%, rgba(35,12,65,0.95) 100%)",
+                border: "1px solid rgba(138,80,200,0.38)",
+                boxShadow: "0 0 0 1px rgba(89,44,114,0.18), 0 0 60px rgba(89,44,114,0.18), inset 0 1px 0 rgba(200,150,255,0.14)",
+              }}
             >
-              <div className="absolute top-0 right-0 bg-gradient-solotech text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">POPULAR</div>
+              {/* Top glowing stroke — brighter on pro */}
+              <div className="absolute top-0 left-6 right-6 h-px pointer-events-none" style={{ background: "linear-gradient(90deg, transparent, rgba(180,120,255,0.85), transparent)" }} />
+              {/* Corner glow */}
+              <div className="absolute top-0 right-0 w-56 h-56 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(138,80,200,0.22) 0%, transparent 70%)", filter: "blur(35px)" }} />
+              {/* Bottom subtle glow */}
+              <div className="absolute bottom-0 left-0 w-40 h-40 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(89,44,114,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
 
-              <h3 className="text-2xl font-bold mb-1">Pro Package</h3>
-              <p className="text-white/50 text-sm mb-6">Full website + ongoing support</p>
-
-              {/* Animated Price */}
-              <div className="mb-1 flex items-end gap-2">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={proPrice}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-4xl font-bold text-gradient"
-                  >
-                    D{proPrice.toLocaleString()}
-                  </motion.div>
-                </AnimatePresence>
-                <span className="text-white/50 text-lg font-normal mb-1">{proLabel}</span>
+              {/* Popular badge — glowing pill */}
+              <div className="absolute top-5 right-5 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest" style={{ background: "rgba(89,44,114,0.6)", border: "1px solid rgba(180,120,255,0.4)", color: "rgba(220,190,255,0.95)", boxShadow: "0 0 14px rgba(138,80,200,0.35)" }}>
+                Popular
               </div>
 
-              {/* Savings / Monthly equiv */}
-              <div className="h-6 mb-8">
-                <AnimatePresence mode="wait">
-                  {isAnnual ? (
+              <div className="relative z-10 p-8 flex flex-col flex-1">
+                <p className="text-purple-300/60 text-xs uppercase tracking-[0.2em] mb-3 font-light">Most Popular</p>
+                <h3 className="text-2xl font-bold mb-1 text-white/90">
+                  <em style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: "italic", color: "rgba(210,180,255,0.95)" }}>Pro</em>{" "}
+                  <span className="font-semibold text-white/85">Package</span>
+                </h3>
+                <p className="text-purple-300/40 text-sm mb-6">Full website + ongoing support</p>
+
+                {/* Animated Price */}
+                <div className="mb-1 flex items-end gap-2">
+                  <AnimatePresence mode="wait">
                     <motion.div
-                      key="annual-info"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="flex items-center gap-3"
+                      key={proPrice}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-4xl font-bold"
+                      style={{ color: "rgba(200,165,255,0.98)", textShadow: "0 0 40px rgba(138,80,200,0.55)" }}
                     >
-                      <span className="text-white/40 text-sm line-through">D{(PRO_MONTHLY_PRICE * 12).toLocaleString()}/year</span>
-                      <span className="text-green-400 text-sm font-semibold">You save D{ANNUAL_SAVINGS.toLocaleString()}</span>
+                      D{proPrice.toLocaleString()}
                     </motion.div>
-                  ) : (
-                    <motion.p
-                      key="monthly-info"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="text-white/40 text-sm"
-                    >
-                      D{(PRO_MONTHLY_PRICE * 12).toLocaleString()}/year — switch to annual to save D{ANNUAL_SAVINGS.toLocaleString()}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+                  </AnimatePresence>
+                  <span className="text-purple-300/50 text-lg font-normal mb-1">{proLabel}</span>
+                </div>
+
+                {/* Savings */}
+                <div className="h-6 mb-6">
+                  <AnimatePresence mode="wait">
+                    {isAnnual ? (
+                      <motion.div key="annual-info" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-3">
+                        <span className="text-purple-400/40 text-sm line-through">D{(PRO_MONTHLY_PRICE * 12).toLocaleString()}/year</span>
+                        <span className="text-purple-300/80 text-sm font-semibold">Save D{ANNUAL_SAVINGS.toLocaleString()}</span>
+                      </motion.div>
+                    ) : (
+                      <motion.p key="monthly-info" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-purple-400/40 text-sm">
+                        Switch to annual to save D{ANNUAL_SAVINGS.toLocaleString()}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Thin divider */}
+                <div className="h-px mb-6 w-full" style={{ background: "linear-gradient(90deg, transparent, rgba(180,120,255,0.4), transparent)" }} />
+
+                <ul className="space-y-3 mb-6 flex-1">
+                  {[
+                    "Custom domain included",
+                    "Multi-page premium website",
+                    "Copywriting & branding assistance",
+                    "WhatsApp integration",
+                    "Ongoing support & edits",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="w-4 h-4 rounded-full mt-0.5 shrink-0 flex items-center justify-center" style={{ border: "1px solid rgba(180,120,255,0.55)", boxShadow: "0 0 10px rgba(138,80,200,0.35)" }}>
+                        <div className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(210,170,255,0.9)" }} />
+                      </div>
+                      <span className="text-white/70 text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* What's included toggle */}
+                <button
+                  data-testid="pro-details-toggle"
+                  onClick={() => setShowProDetails(true)}
+                  className="flex items-center gap-2 text-sm transition-colors mb-4 font-medium"
+                  style={{ color: "rgba(180,140,255,0.7)" }}
+                >
+                  <ChevronDown size={16} />
+                  See everything that's included
+                </button>
+
+                <Link href="/contact">
+                  <Button className="w-full rounded-full py-3 px-8 text-sm font-semibold transition-all hover:scale-[1.02] border-0" style={{ background: "linear-gradient(135deg, rgba(89,44,114,0.85) 0%, rgba(60,20,100,0.9) 100%)", color: "rgba(230,210,255,0.98)", boxShadow: "0 0 24px rgba(138,80,200,0.35), inset 0 1px 0 rgba(200,160,255,0.15)", border: "1px solid rgba(180,120,255,0.3)" }}>
+                    Get Pro — D{proPrice.toLocaleString()}{proLabel}
+                  </Button>
+                </Link>
               </div>
-
-              <ul className="space-y-3 mb-6 flex-1">
-                {[
-                  "Custom domain included",
-                  "Multi-page premium website",
-                  "Copywriting & branding assistance",
-                  "WhatsApp integration",
-                  "Ongoing support & edits",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80">
-                    <CheckCircle className="text-[#592C72] shrink-0 w-5 h-5 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* What's included toggle */}
-              <button
-                data-testid="pro-details-toggle"
-                onClick={() => setShowProDetails(true)}
-                className="flex items-center gap-2 text-sm text-[#9CB633] hover:text-[#9CB633] transition-colors mb-4 font-medium"
-              >
-                <ChevronDown size={16} />
-                See everything that's included
-              </button>
-
-              <Link href="/contact">
-                <Button className="w-full bg-gradient-solotech text-white rounded-full py-3 px-8 hover:opacity-90 transition-all hover:scale-[1.02]">
-                  Get Pro — D{proPrice.toLocaleString()}{proLabel}
-                </Button>
-              </Link>
             </motion.div>
           </div>
         </div>
