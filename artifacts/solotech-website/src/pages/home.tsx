@@ -1177,20 +1177,38 @@ export default function Home() {
               <div className="absolute top-0 left-[15%] right-[15%] h-px pointer-events-none"
                 style={{ background: "linear-gradient(90deg, transparent, rgba(156,182,51,0.35), rgba(200,255,0,0.2), transparent)" }} />
 
-              {/* Lime green atmospheric glow — top-right corner */}
+              {/* Liquid glass green — base body, top-right */}
               <div
-                className="absolute -top-16 -right-16 w-80 h-72 pointer-events-none"
+                className="absolute -top-20 -right-20 w-96 h-80 pointer-events-none"
                 style={{
-                  background: "radial-gradient(ellipse at 80% 20%, rgba(156,182,51,0.38) 0%, rgba(130,160,40,0.18) 35%, transparent 68%)",
-                  filter: "blur(40px)",
+                  background: "radial-gradient(ellipse at 75% 25%, rgba(156,182,51,0.45) 0%, rgba(130,160,40,0.22) 40%, transparent 70%)",
+                  filter: "blur(48px)",
                 }}
               />
-              {/* Secondary lime — bottom-right echo */}
+              {/* Liquid glass — white-hot light core (the specular "entry point") */}
               <div
-                className="absolute -bottom-12 -right-8 w-60 h-52 pointer-events-none"
+                className="absolute -top-6 right-6 w-40 h-32 pointer-events-none"
                 style={{
-                  background: "radial-gradient(ellipse at 90% 80%, rgba(156,182,51,0.16) 0%, transparent 60%)",
-                  filter: "blur(35px)",
+                  background: "radial-gradient(ellipse at 60% 30%, rgba(240,255,180,0.55) 0%, rgba(200,230,80,0.30) 30%, rgba(156,182,51,0.12) 58%, transparent 75%)",
+                  filter: "blur(18px)",
+                }}
+              />
+              {/* Liquid glass — thin caustic light streak */}
+              <div
+                className="absolute top-4 right-[5%] w-28 h-3 pointer-events-none"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(230,255,150,0.50), rgba(255,255,220,0.30), transparent)",
+                  filter: "blur(6px)",
+                  transform: "rotate(-18deg)",
+                  borderRadius: "50%",
+                }}
+              />
+              {/* Liquid glass — soft bottom-right echo for depth */}
+              <div
+                className="absolute -bottom-10 -right-6 w-56 h-44 pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at 85% 75%, rgba(156,182,51,0.18) 0%, rgba(100,130,30,0.09) 45%, transparent 70%)",
+                  filter: "blur(36px)",
                 }}
               />
               {/* Deep purple atmosphere — top-left & bottom-left */}
