@@ -328,7 +328,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
                 transition={{ opacity: { duration: 0.6, delay: 0.4 }, y: { repeat: Infinity, duration: 3.5, ease: "easeInOut" } }}
-                className="absolute top-[18%] left-4 glass-panel px-4 py-3 rounded-2xl z-20 border-[#592C72]/40"
+                className="absolute top-[18%] left-4 bg-white/5 backdrop-blur-xl border border-[#592C72]/40 shadow-2xl px-4 py-3 rounded-2xl z-20"
               >
                 <div className="text-xs text-white/50 mb-0.5">Latest project</div>
                 <div className="text-sm font-semibold text-white">Delivered in 18hrs ⚡</div>
@@ -339,7 +339,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0, y: [0, 8, 0] }}
                 transition={{ opacity: { duration: 0.6, delay: 0.6 }, y: { repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 } }}
-                className="absolute bottom-[22%] right-0 glass-panel px-4 py-3 rounded-2xl z-20 border-green-500/30"
+                className="absolute bottom-[22%] right-0 bg-white/5 backdrop-blur-xl border border-green-500/30 shadow-2xl px-4 py-3 rounded-2xl z-20"
               >
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center">
