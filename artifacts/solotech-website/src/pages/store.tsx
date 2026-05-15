@@ -465,7 +465,7 @@ export default function Store() {
               {/* Spinning conic gradient border */}
               <div className="animate-cta-spin pointer-events-none" style={{
                 position: "absolute", inset: "-120%",
-                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.10) 8%, #9CB633 13%, rgba(0,255,200,0.6) 20%, rgba(168,85,247,0.5) 32%, rgba(89,44,114,0.3) 48%, transparent 58%)",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(156,182,51,0.20) 4%, #9CB633 6%, rgba(200,255,100,0.9) 7%, rgba(168,85,247,0.7) 10%, transparent 13%, transparent 360%)",
                 zIndex: 0,
               }} />
 
