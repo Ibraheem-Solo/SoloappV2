@@ -126,7 +126,7 @@ const customServices = [
   },
   {
     icon: <Star size={22} />,
-    image: `${BASE}store-custom-event.png`,
+    image: `${BASE}store-custom-event.jpg`,
     title: "Event Branding Kits",
     desc: "Custom event merch packages — T-shirts, banners, lanyards, programs. Delivered on time.",
     tag: "Custom Quote",
