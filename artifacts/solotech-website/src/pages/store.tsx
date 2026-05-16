@@ -133,7 +133,7 @@ const customServices = [
   },
   {
     icon: <Gift size={22} />,
-    image: `${BASE}store-custom-gifts.png`,
+    image: `${BASE}store-custom-gifts.jpg`,
     title: "Corporate Gift Sets",
     desc: "Premium curated gift sets for clients, partners, and employees. Personalised packaging included.",
     tag: "From D1,200",
