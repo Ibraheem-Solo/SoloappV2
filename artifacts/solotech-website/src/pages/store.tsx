@@ -119,7 +119,7 @@ const originals = [
 const customServices = [
   {
     icon: <Package size={22} />,
-    image: `${BASE}store-custom-merch.png`,
+    image: `${BASE}store-custom-merch.jpg`,
     title: "Company Merchandise",
     desc: "Branded apparel, bags, and accessories for your entire team. Minimum order: 10 units.",
     tag: "From D3,500",
@@ -140,7 +140,7 @@ const customServices = [
   },
   {
     icon: <ShoppingBag size={22} />,
-    image: `${BASE}store-custom-packaging.png`,
+    image: `${BASE}store-custom-packaging.jpg`,
     title: "Branded Packaging",
     desc: "Custom boxes, bags, tissue paper, stickers, and labels for your products. Minimum: 50 units.",
     tag: "Custom Quote",
