@@ -85,10 +85,10 @@ function WorkSection() {
           {featuredProjects.slice(0, 3).map((project, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="rounded-3xl overflow-hidden glass-panel group border border-white/10 hover:border-[#1E0A32]/50 transition-colors duration-300"
             >
               <div className={`relative h-56 bg-gradient-to-br ${project.color} overflow-hidden`}>

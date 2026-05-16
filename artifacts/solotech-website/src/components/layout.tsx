@@ -32,6 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [location]);
 
   // Set dark mode manually since the entire app is dark theme
@@ -146,7 +147,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       <main className="flex-1 w-full z-10 pt-[7.5rem]">
-        {children}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location}
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+            transition={{
+              opacity: { duration: 0.35, ease: "easeOut" },
+              y: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+              filter: { duration: 0.3, ease: "easeOut" },
+            }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       <footer className="border-t border-white/5 bg-black/50 z-10 relative">
