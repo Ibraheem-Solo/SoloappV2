@@ -82,3 +82,20 @@ git rm -r --cached dist
 git rm -r --cached build
 git rm -r --cached .cache
 git rm -r --cached .upm
+
+node_modules/
+dist/
+build/
+.cache/
+.upm/
+.env
+.env.*
+.DS_Store
+*.log
+artifacts/
+
+git rm -r --cached node_modules || true
+git rm -r --cached dist || true
+git rm -r --cached build || true
+git rm -r --cached artifacts || true
+
